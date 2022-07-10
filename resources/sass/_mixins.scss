@@ -1,0 +1,24 @@
+@mixin custom-scrollbar() {
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: $primary_color;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $secondary_color;
+        border-radius: 20px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: lighten($secondary_color, 5%);
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: $secondary_color $primary_color;
+}

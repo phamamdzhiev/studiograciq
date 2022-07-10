@@ -1,0 +1,64 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+//Icons
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+// Variables
+@import 'variables';
+
+//Mixins
+@import "mixins";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// common and globals
+html {
+    font-size: 62.5%;
+    @include custom-scrollbar;
+}
+
+body {
+    font-size: 1.7rem;
+    color: white;
+    background-color: $primary_color;
+    height: 2000px;
+    max-width: 2000px;
+    margin: auto;
+}
+
+.container-fluid {
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        display: inline-block;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    &:hover {
+        color: white;
+    }
+}
+
+i.bi {
+    font-size: 2rem;
+    margin: 0 2px;
+    @media screen and (max-width: 1000px) {
+        font-size: 1.6rem;
+    }
+}
+
+//utils
+.text_secondary {
+    color: $secondary_color;
+}
