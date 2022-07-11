@@ -23,7 +23,7 @@ export default {
 
 <style scoped lang="scss">
 .header-contacts {
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 991px) {
         font-size: 1.3rem;
     }
 }
