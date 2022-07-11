@@ -1,17 +1,17 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 //Icons
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 //Mixins
 @import "mixins";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 // common and globals
 html {
@@ -61,4 +61,27 @@ i.bi {
 //utils
 .text_secondary {
     color: $secondary_color;
+}
+.text_primary {
+    color: $primary_color;
+}
+
+.btn_primary {
+    background-color: $primary_color_fade;
+    border: 4px solid transparent;
+    border-radius: 0;
+    padding: 1rem 2rem;
+    transition: background 200ms ease-in;
+    color: white;
+    // @media screen and (max-width: 992px) {
+    //     font-size: 1.2rem;
+    // }
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus:hover {
+        background: transparent;
+        border: 4px solid $primary_color_fade;
+        color: $primary_color;
+    }
 }

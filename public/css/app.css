@@ -10319,3 +10319,21 @@ i.bi {
 .text_secondary {
   color: #9e49a3;
 }
+
+.text_primary {
+  color: #0C1011;
+}
+
+.btn_primary {
+  background-color: #192123;
+  border: 4px solid transparent;
+  border-radius: 0;
+  padding: 1rem 2rem;
+  transition: background 200ms ease-in;
+  color: white;
+}
+.btn_primary:hover, .btn_primary:focus, .btn_primary:active, .btn_primary:focus:hover {
+  background: transparent;
+  border: 4px solid #192123;
+  color: #0C1011;
+}
