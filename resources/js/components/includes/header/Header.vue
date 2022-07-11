@@ -7,9 +7,8 @@
           <router-link to="/">
             <img
               class="img-fluid py-4 px-1"
-              width="110"
+              width="125"
               src="/storage/assets/logo-transparent.png"
-              style="filter: invert(1)"
               alt="Brand Logo"
             />
           </router-link>

@@ -20381,11 +20381,8 @@ var _hoisted_4 = {
 var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     "class": "img-fluid py-4 px-1",
-    width: "110",
+    width: "125",
     src: "/storage/assets/logo-transparent.png",
-    style: {
-      "filter": "invert(1)"
-    },
     alt: "Brand Logo"
   }, null, -1
   /* HOISTED */
