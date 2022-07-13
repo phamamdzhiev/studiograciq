@@ -1,4 +1,4 @@
-import Homepage from "./components/pages/homepage/Homepage";
+import Homepage from "./pages/homepage/Homepage";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [{ path: "/", component: Homepage }];

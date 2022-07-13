@@ -1,7 +1,7 @@
 <template>
     <div id="top-bar-header">
         <div class="container-fluid">
-            <HeaderContacts class="text-center"/>
+            <HeaderContacts/>
         </div>
     </div>
 </template>
