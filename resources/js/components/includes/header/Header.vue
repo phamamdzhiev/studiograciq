@@ -7,7 +7,7 @@
           <router-link to="/">
             <img
               class="img-fluid py-4 px-1"
-              width="125"
+              width="120"
               src="/storage/assets/logo-transparent.png"
               alt="Brand Logo"
             />

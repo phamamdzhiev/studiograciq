@@ -4,7 +4,7 @@
             image="https://hair.nelson.themerex.net/wp-content/uploads/2020/05/image-88-copyright.jpg"
         >
             <div id="homepage-banner-slot">
-                <div class="container-fluid">
+                <div class="container-xxl">
                     <h1 class="heading text_primary">
                         <span class="d-block">Почувстай твоя</span>
                         <span class="d-block"> нов "Грация" стил</span>
@@ -19,18 +19,28 @@
                 </div>
             </div>
         </BrandBanner>
-        <HomepageAbout/>
+       <div class="container-xxl">
+           <section-divider/>
+           <HomepageAbout/>
+           <section-divider/>
+           <HomepageServices/>
+           <section-divider/>
+       </div>
     </div>
 </template>
 <script>
 import BrandBanner from "./BrandBanner.vue";
 import HomepageAbout from "./HomepageAbout";
+import HomepageServices from "./HomepageServices";
+import SectionDivider from "../../components/SectionDivider";
 
 export default {
     name: "Homepage",
     components: {
         BrandBanner,
-        HomepageAbout
+        HomepageAbout,
+        HomepageServices,
+        SectionDivider
     },
 };
 </script>
@@ -44,13 +54,12 @@ export default {
 }
 
 #homepage-banner-slot {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 0;
     padding: 1rem;
     transform: translate(0, -75%);
     @media screen and (max-width: 992px) {
-        // text-align: center;
         left: 50%;
         transform: translate(-60%, -65%);
         width: 85%;

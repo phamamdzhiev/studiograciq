@@ -10276,11 +10276,10 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 body {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   color: white;
   background-color: #0C1011;
   height: 2000px;
-  max-width: 2000px;
   margin: auto;
   font-family: "Montserrat", sans-serif;
 }
