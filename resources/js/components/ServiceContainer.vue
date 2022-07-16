@@ -25,7 +25,7 @@ export default {
     background-color: #1d2223;
 
     a#read-more {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     .heading {

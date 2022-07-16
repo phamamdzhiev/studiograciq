@@ -24,8 +24,14 @@
             <HomepageAbout/>
             <section-divider/>
             <HomepageServices/>
-                <section-divider/>
+            <section-divider/>
             <HomepageShop/>
+            <section-divider/>
+        </div>
+        <Brands/>
+        <div class="container-xxl">
+            <section-divider/>
+            <HomepageContacts/>
         </div>
     </div>
 </template>
@@ -34,7 +40,9 @@ import BrandBanner from "./BrandBanner.vue";
 import HomepageAbout from "./HomepageAbout";
 import HomepageServices from "./HomepageServices";
 import HomepageShop from "./HomepageShop";
+import HomepageContacts from "./HomepageContacts";
 import SectionDivider from "../../components/SectionDivider";
+import Brands from "./Brands";
 
 export default {
     name: "Homepage",
@@ -43,7 +51,9 @@ export default {
         HomepageAbout,
         HomepageServices,
         SectionDivider,
-        HomepageShop
+        HomepageShop,
+        Brands,
+        HomepageContacts
     },
 };
 </script>

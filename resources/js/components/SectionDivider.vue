@@ -11,7 +11,7 @@ export default {
 <style lang="scss" scoped>
 .section-divider {
     margin: 6rem auto;
-    width: 150px;
+    width: 100px;
     height: 1px;
     background-color: #9e49a3;
 
