@@ -19,19 +19,21 @@
                 </div>
             </div>
         </BrandBanner>
-       <div class="container-xxl">
-           <section-divider/>
-           <HomepageAbout/>
-           <section-divider/>
-           <HomepageServices/>
-           <section-divider/>
-       </div>
+        <div class="container-xxl">
+            <section-divider/>
+            <HomepageAbout/>
+            <section-divider/>
+            <HomepageServices/>
+                <section-divider/>
+            <HomepageShop/>
+        </div>
     </div>
 </template>
 <script>
 import BrandBanner from "./BrandBanner.vue";
 import HomepageAbout from "./HomepageAbout";
 import HomepageServices from "./HomepageServices";
+import HomepageShop from "./HomepageShop";
 import SectionDivider from "../../components/SectionDivider";
 
 export default {
@@ -40,7 +42,8 @@ export default {
         BrandBanner,
         HomepageAbout,
         HomepageServices,
-        SectionDivider
+        SectionDivider,
+        HomepageShop
     },
 };
 </script>

@@ -1,9 +1,10 @@
 <template>
-    <div class="section-wrapper my-5">
-        <ServiceContainer/>
-        <ServiceContainer/>
-        <ServiceContainer/>
-        <ServiceContainer/>
+    <div class="section-wrapper my-5" id="homepageServices">
+        <ServiceContainer title="Подстрижка" tagline="Таглине, таглине, таглине, таглине" icon="bi-scissors" url="/"/>
+        <ServiceContainer title="Изсушаване" tagline="Таглине, таглине, таглине, таглине" icon="bi-wind" url="/"/>
+        <ServiceContainer title="Боядисване" tagline="Таглине, таглине, таглине, таглине" icon="bi-palette2" url="/"/>
+        <ServiceContainer title="Официални прически" tagline="Таглине, таглине, таглине, таглине" icon="bi-stars"
+                          url="/"/>
     </div>
 </template>
 

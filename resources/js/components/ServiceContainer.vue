@@ -1,16 +1,19 @@
 <template>
     <div class="service-singleton text-center p-5">
         <!--        <img src="" alt="">-->
-        <i class="bi bi-scissors animated text_secondary" style="font-size: 7rem"></i>
-        <h1 class="heading fw-light">Подстрижка</h1>
-        <p class="my-5">Tagline, tagline, tagline, tagline</p>
-        <a href="/" class="d-inline-block fw-bold text_tertiary" id="read-more">Прочети повече</a>
+        <i :class="icon" class="bi animated text_secondary" style="font-size: 6.5rem"></i>
+        <router-link to="/"> <!-- price list anchor-->
+            <h1 class="heading fw-light">{{ title }}</h1>
+        </router-link>
+        <p class="my-5">{{ tagline }}</p>
+        <router-link to="/" class="d-inline-block fw-bold text_tertiary" id="read-more">Виж още</router-link>
     </div>
 </template>
 
 <script>
 export default {
-    name: "ServiceContainer"
+    name: "ServiceContainer",
+    props: ['title', 'tagline', 'url', 'icon']
 }
 </script>
 
