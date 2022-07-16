@@ -20950,12 +20950,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       'd-none': $setup.isHidden
     }, "d-flex justify-content-between align-items-center d-lg-flex"]),
     id: "navigation"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Navigation), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_HeaderContacts, {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Navigation, {
+    onLinkClicked: _cache[0] || (_cache[0] = function ($event) {
+      return $setup.isHidden = true;
+    })
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_HeaderContacts, {
     "class": "d-none d-xl-flex"
   })], 2
   /* CLASS */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    onClick: _cache[0] || (_cache[0] = function () {
+    onClick: _cache[1] || (_cache[1] = function () {
       return $setup.hamburgerHandler && $setup.hamburgerHandler.apply($setup, arguments);
     }),
     id: "hamburger",
@@ -21020,12 +21024,20 @@ var _withScopeId = function _withScopeId(n) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-26943786"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
 
-var _hoisted_1 = ["innerHTML"];
+var _hoisted_1 = {
+  id: "main-nav"
+};
+var _hoisted_2 = ["innerHTML"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _this = this;
+
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("nav", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.links, function (link) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("nav", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.links, function (link) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
+      onClick: _cache[0] || (_cache[0] = function ($event) {
+        return _this.$emit('link-clicked');
+      }),
       "class": "me-4 py-4 px-1",
       key: link.id
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
@@ -21033,7 +21045,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       innerHTML: link.icon
     }, null, 8
     /* PROPS */
-    , _hoisted_1), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    , _hoisted_2), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
       "class": "nav_link d-inline-block",
       id: "icon-".concat(link.slug),
       to: link.url
@@ -23832,7 +23844,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "a.nav_link[data-v-26943786] {\n  position: relative;\n}\na.nav_link[data-v-26943786]::after {\n  content: \"\";\n  display: block;\n  width: 0;\n  height: 2px;\n  background-color: #9e49a3;\n  position: absolute;\n  left: 0;\n  right: 0;\n  transition: width 200ms ease-in;\n  bottom: -1px;\n}\na.nav_link[data-v-26943786]:hover::after {\n  width: 100%;\n}\n@media screen and (min-width: 992px) {\nspan.icon-wrapper[data-v-26943786] {\n    display: none !important;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@media screen and (max-width: 992px) {\nnav#main-nav ul[data-v-26943786] {\n    display: flex;\n    flex-direction: column;\n}\n}\na.nav_link[data-v-26943786] {\n  position: relative;\n}\na.nav_link[data-v-26943786]::after {\n  content: \"\";\n  display: block;\n  width: 0;\n  height: 2px;\n  background-color: #9e49a3;\n  position: absolute;\n  left: 0;\n  right: 0;\n  transition: width 200ms ease-in;\n  bottom: -1px;\n}\na.nav_link[data-v-26943786]:hover::after, a.nav_link.router-link-active[data-v-26943786]::after {\n  width: 100%;\n}\n@media screen and (min-width: 992px) {\nspan.icon-wrapper[data-v-26943786] {\n    display: none !important;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
