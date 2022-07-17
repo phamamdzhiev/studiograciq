@@ -32,14 +32,14 @@ export default {
                 icon: '<i class="bi bi-scissors me-3 fs-1"></i>',
                 slug: "services",
                 label: "Услуги",
-                url: "/",
+                url: "/services",
             },
             {
                 id: 2,
                 icon: '<i class="bi bi-person-fill me-3 fs-1"></i>',
                 slug: "about",
                 label: "За мен",
-                url: "/",
+                url: "/services",
             },
             {
                 id: 3,

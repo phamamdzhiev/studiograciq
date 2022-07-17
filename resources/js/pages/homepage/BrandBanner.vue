@@ -1,7 +1,6 @@
 <template>
     <div class="banner-section">
         <div
-            id="homepage-brand-banner"
             class="carousel slide"
             data-bs-ride="carousel"
         >

@@ -14,11 +14,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{--font awsome--}}
-    <script src="https://kit.fontawesome.com/4787c0013c.js" crossorigin="anonymous"></script>
+    {{--<script src="https://kit.fontawesome.com/4787c0013c.js" crossorigin="anonymous"></script>--}}
 </head>
 <body>
 <div id="app"></div>
-<!-- Scripts -->
+<!-- Vue -->
 <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>

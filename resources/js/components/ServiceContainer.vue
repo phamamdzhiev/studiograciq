@@ -6,7 +6,7 @@
             <h1 class="heading fw-light">{{ title }}</h1>
         </router-link>
         <p class="my-5">{{ tagline }}</p>
-        <router-link to="/" class="d-inline-block fw-bold text_tertiary" id="read-more">Виж още</router-link>
+        <router-link to="/services" class="d-inline-block fw-bold text_tertiary" id="read-more">Виж още</router-link>
     </div>
 </template>
 

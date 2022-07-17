@@ -20324,13 +20324,13 @@ __webpack_require__.r(__webpack_exports__);
       icon: '<i class="bi bi-scissors me-3 fs-1"></i>',
       slug: "services",
       label: "Услуги",
-      url: "/"
+      url: "/services"
     }, {
       id: 2,
       icon: '<i class="bi bi-person-fill me-3 fs-1"></i>',
       slug: "about",
       label: "За мен",
-      url: "/"
+      url: "/services"
     }, {
       id: 3,
       icon: '<i class="bi bi-currency-dollar me-3 fs-1"></i>',
@@ -20768,7 +20768,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.tagline), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/",
+    to: "/services",
     "class": "d-inline-block fw-bold text_tertiary",
     id: "read-more"
   }, {
@@ -21122,7 +21122,6 @@ var _hoisted_1 = {
   "class": "banner-section"
 };
 var _hoisted_2 = {
-  id: "homepage-brand-banner",
   "class": "carousel slide",
   "data-bs-ride": "carousel"
 };
@@ -21434,7 +21433,7 @@ var _hoisted_1 = {
   id: "homepageContacts"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"contacts-singleton text-center p-5\" data-v-25ddb069><h1 data-v-25ddb069>Локация</h1><h3 class=\"text_fourtriary py-4\" data-v-25ddb069><span class=\"d-block\" data-v-25ddb069> ул. Стоян Попов №8 </span><span class=\"d-block\" data-v-25ddb069> гр. Пещера </span></h3><a href=\"https://goo.gl/maps/1Bm3DzHKc4eHLhgh9\" target=\"_blank\" class=\"d-inline-block fw-bold text_tertiary\" data-v-25ddb069>Виж на картата</a></div><div class=\"contacts-singleton text-center p-5\" data-v-25ddb069><h1 data-v-25ddb069>Контакти</h1><h3 class=\"text_fourtriary py-4\" data-v-25ddb069><span class=\"d-block\" data-v-25ddb069> 0878741978 </span><span class=\"d-block\" data-v-25ddb069> Faceboock: </span><span class=\"d-block\" data-v-25ddb069> INstagram: </span></h3><a href=\"tel:+35914543548\" class=\"d-inline-block fw-bold text_tertiary\" data-v-25ddb069>Запази час</a></div>", 2);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"contacts-singleton text-center p-5\" data-v-25ddb069><h1 data-v-25ddb069>Локация</h1><h3 class=\"text_fourtriary py-4\" data-v-25ddb069><span class=\"d-block\" data-v-25ddb069> ул. Стоян Попов №8 </span><span class=\"d-block\" data-v-25ddb069> гр. Пещера </span></h3><a href=\"https://goo.gl/maps/1Bm3DzHKc4eHLhgh9\" target=\"_blank\" class=\"d-inline-block fw-bold text_tertiary\" data-v-25ddb069>Виж на картата</a></div><div class=\"contacts-singleton text-center p-5\" data-v-25ddb069><h1 data-v-25ddb069>Контакти</h1><div class=\"py-4 d-flex flex-column align-items-start mx-auto mw-mc\" data-v-25ddb069><h3 class=\"text_fourtriary\" data-v-25ddb069><i class=\"bi bi-telephone-fill\" data-v-25ddb069></i><a href=\"tel:+359878741978\" class=\"ps-2 text_fourtriary\" data-v-25ddb069>0878 741 978</a></h3><h3 class=\"text_fourtriary\" data-v-25ddb069><i class=\"bi bi-facebook\" data-v-25ddb069></i><a target=\"_blank\" href=\"https://www.facebook.com/studio.gratzia\" class=\"ps-2 text_fourtriary\" data-v-25ddb069>Facebook</a></h3><h3 class=\"text_fourtriary\" data-v-25ddb069><i class=\"bi bi-instagram\" data-v-25ddb069></i><a target=\"_blank\" href=\"/\" class=\"ps-2 text_fourtriary\" data-v-25ddb069>Instagram</a></h3></div><a href=\"tel:+35914543548\" class=\"d-inline-block fw-bold text_tertiary\" data-v-25ddb069>Запази час</a></div>", 2);
 
 var _hoisted_4 = {
   "class": "contacts-singleton text-center p-5"
@@ -21458,7 +21457,7 @@ var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Вижграфик");
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Виж график ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -21712,6 +21711,12 @@ var routes = [{
   name: "pricelist",
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_pages_pricelist_Pricelist_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pricelist/Pricelist */ "./resources/js/pages/pricelist/Pricelist.vue"));
+  }
+}, {
+  path: "/services",
+  name: "services",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_pages_services_Services_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/services/Services */ "./resources/js/pages/services/Services.vue"));
   }
 }];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_1__.createRouter)({
@@ -23964,7 +23969,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#homepageContacts[data-v-25ddb069] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  gap: 20px;\n}\n@media screen and (max-width: 992px) {\n#homepageContacts[data-v-25ddb069] {\n    grid-template-columns: 1fr 1fr;\n}\n}\n@media screen and (max-width: 576px) {\n#homepageContacts[data-v-25ddb069] {\n    grid-template-columns: 1fr;\n}\n}\n.contacts-singleton[data-v-25ddb069] {\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-evenly;\n  background-color: #1d2223;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#homepageContacts[data-v-25ddb069] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  gap: 20px;\n}\n@media screen and (max-width: 992px) {\n#homepageContacts[data-v-25ddb069] {\n    grid-template-columns: 1fr 1fr;\n}\n}\n@media screen and (max-width: 576px) {\n#homepageContacts[data-v-25ddb069] {\n    grid-template-columns: 1fr;\n}\n}\n.contacts-singleton[data-v-25ddb069] {\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-evenly;\n  background-color: #1d2223;\n}\n.mw-mc[data-v-25ddb069] {\n  max-width: -webkit-max-content;\n  max-width: -moz-max-content;\n  max-width: max-content;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -62325,7 +62330,7 @@ function useRoute() {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_pages_pricelist_Pricelist_vue") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_pages_pricelist_Pricelist_vue":1,"resources_js_pages_services_Services_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
