@@ -13,7 +13,20 @@
 <script>
 export default {
     name: "ServiceContainer",
-    props: ['title', 'tagline', 'url', 'icon']
+    props: {
+        title: {
+            required: true
+        },
+        tagline: {
+            required: true
+        },
+        url: {
+            required: true
+        },
+        icon: {
+            required: true
+        },
+    }
 }
 </script>
 

@@ -41,13 +41,13 @@ export default {
                 label: "За мен",
                 url: "/services",
             },
-            {
-                id: 3,
-                icon: '<i class="bi bi-currency-dollar me-3 fs-1"></i>',
-                slug: "prices",
-                label: "Ценоразпис",
-                url: "/pricelist",
-            },
+            // {
+            //     id: 3,
+            //     icon: '<i class="bi bi-currency-dollar me-3 fs-1"></i>',
+            //     slug: "prices",
+            //     label: "Ценоразпис",
+            //     url: "/pricelist",
+            // },
             {
                 id: 4,
                 icon: '<i class="bi bi-bag-heart-fill me-3 fs-1"></i>',

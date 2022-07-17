@@ -1,14 +1,23 @@
 <template>
-    <div class="section-wrapper my-5" id="pricelist">
-        <div class="container-xxl">
-            <div id="pricelist-container" class="px-4 py-5">
-                <h1 class="heading text-center mb-5">Ценоразпис</h1>
-                <div class="d-grid">
-                    <PriceSingleton
-                        v-for="price in prices" :key="price.id"
-                        :title="price.title"
-                        :price="price.price"
-                    />
+    <div id="services">
+        <div class="position-relative">
+            <img id="service-banner-image" class="img-fluid"
+                 src="https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-31-dark-copyright.jpg" alt="">
+            <div class="position-absolute top-50 start-50 translate-middle w-100 text-center">
+                <h1 class="heading underlined">Всички услуги</h1>
+            </div>
+        </div>
+        <div class="section-wrapper my-5" id="pricelist">
+            <div class="container-xxl">
+                <div id="pricelist-container" class="px-4 py-5">
+                    <h1 class="text-center mb-5">Ценоразпис</h1>
+                    <div class="d-grid">
+                        <PriceSingleton
+                            v-for="price in prices" :key="price.id"
+                            :title="price.title"
+                            :price="price.price"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,10 +62,16 @@ export default {
     }
 }
 
-// .heading {
-//   font-size: 2.6rem;
-//   @media screen and (max-width: 992px) {
-//       font-size: 2.2rem;
-//   }
-// }
+.heading {
+    font-size: 5rem;
+    @media screen and (max-width: 992px) {
+        font-size: 2.6rem;
+    }
+}
+
+img#service-banner-image {
+    @media screen and (max-width: 576px) {
+        height: 200px;
+    }
+}
 </style>

@@ -20217,7 +20217,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ServiceContainer",
-  props: ['title', 'tagline', 'url', 'icon']
+  props: {
+    title: {
+      required: true
+    },
+    tagline: {
+      required: true
+    },
+    url: {
+      required: true
+    },
+    icon: {
+      required: true
+    }
+  }
 });
 
 /***/ }),
@@ -20331,13 +20344,14 @@ __webpack_require__.r(__webpack_exports__);
       slug: "about",
       label: "За мен",
       url: "/services"
-    }, {
-      id: 3,
-      icon: '<i class="bi bi-currency-dollar me-3 fs-1"></i>',
-      slug: "prices",
-      label: "Ценоразпис",
-      url: "/pricelist"
-    }, {
+    }, // {
+    //     id: 3,
+    //     icon: '<i class="bi bi-currency-dollar me-3 fs-1"></i>',
+    //     slug: "prices",
+    //     label: "Ценоразпис",
+    //     url: "/pricelist",
+    // },
+    {
       id: 4,
       icon: '<i class="bi bi-bag-heart-fill me-3 fs-1"></i>',
       slug: "shop",
@@ -21707,16 +21721,10 @@ var routes = [{
   component: _pages_homepage_Homepage__WEBPACK_IMPORTED_MODULE_0__["default"],
   name: "home"
 }, {
-  path: "/pricelist",
-  name: "pricelist",
-  component: function component() {
-    return __webpack_require__.e(/*! import() */ "resources_js_pages_pricelist_Pricelist_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pricelist/Pricelist */ "./resources/js/pages/pricelist/Pricelist.vue"));
-  }
-}, {
   path: "/services",
   name: "services",
   component: function component() {
-    return __webpack_require__.e(/*! import() */ "resources_js_pages_services_Services_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/services/Services */ "./resources/js/pages/services/Services.vue"));
+    return __webpack_require__.e(/*! import() */ "resources_js_pages_pricelist_Pricelist_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pricelist/Pricelist */ "./resources/js/pages/pricelist/Pricelist.vue"));
   }
 }];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_1__.createRouter)({
@@ -62330,7 +62338,7 @@ function useRoute() {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_pages_pricelist_Pricelist_vue":1,"resources_js_pages_services_Services_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if (chunkId === "resources_js_pages_pricelist_Pricelist_vue") return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

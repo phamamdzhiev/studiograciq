@@ -123,32 +123,53 @@ var _withScopeId = function _withScopeId(n) {
 };
 
 var _hoisted_1 = {
+  id: "services"
+};
+
+var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "position-relative"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    id: "service-banner-image",
+    "class": "img-fluid",
+    src: "https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-31-dark-copyright.jpg",
+    alt: ""
+  }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "position-absolute top-50 start-50 translate-middle w-100 text-center"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+    "class": "heading underlined"
+  }, "Всички услуги")])], -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_3 = {
   "class": "section-wrapper my-5",
   id: "pricelist"
 };
-var _hoisted_2 = {
+var _hoisted_4 = {
   "class": "container-xxl"
 };
-var _hoisted_3 = {
+var _hoisted_5 = {
   id: "pricelist-container",
   "class": "px-4 py-5"
 };
 
-var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-    "class": "heading text-center mb-5"
+    "class": "text-center mb-5"
   }, "Ценоразпис", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_5 = {
+var _hoisted_7 = {
   "class": "d-grid"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_PriceSingleton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PriceSingleton");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.prices, function (price) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.prices, function (price) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PriceSingleton, {
       key: price.id,
       title: price.title,
@@ -158,7 +179,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["title", "price"]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])])]);
+  ))])])])])]);
 }
 
 /***/ }),
@@ -202,7 +223,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#pricelist-container[data-v-771db574] {\n  background-color: #1d2223;\n}\n.d-grid[data-v-771db574] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 0 30px;\n}\n@media screen and (max-width: 992px) {\n.d-grid[data-v-771db574] {\n    grid-template-columns: 1fr;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#pricelist-container[data-v-771db574] {\n  background-color: #1d2223;\n}\n.d-grid[data-v-771db574] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 0 30px;\n}\n@media screen and (max-width: 992px) {\n.d-grid[data-v-771db574] {\n    grid-template-columns: 1fr;\n}\n}\n.heading[data-v-771db574] {\n  font-size: 5rem;\n}\n@media screen and (max-width: 992px) {\n.heading[data-v-771db574] {\n    font-size: 2.6rem;\n}\n}\n@media screen and (max-width: 576px) {\nimg#service-banner-image[data-v-771db574] {\n    height: 200px;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

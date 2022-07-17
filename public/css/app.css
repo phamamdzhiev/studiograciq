@@ -10380,3 +10380,24 @@ i.bi {
 .bi-facebook {
   color: #1877F2;
 }
+
+.underlined {
+  position: relative;
+}
+.underlined:after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  margin: 1.25rem auto;
+  background-color: #9e49a3;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 576px) {
+  .underlined:after {
+    width: 85px;
+  }
+}

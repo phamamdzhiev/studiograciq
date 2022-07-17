@@ -146,3 +146,22 @@ i.bi {
     color: #1877F2;
 }
 
+.underlined {
+    position: relative;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 2px;
+        margin: 1.25rem auto;
+        background-color: $secondary_color;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        @media screen and (max-width: 576px) {
+            width: 85px;
+        }
+    }
+}
