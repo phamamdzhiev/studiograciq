@@ -39,7 +39,7 @@ export default {
                 icon: '<i class="bi bi-person-fill me-3 fs-1"></i>',
                 slug: "about",
                 label: "За мен",
-                url: "/services",
+                url: "/about",
             },
             // {
             //     id: 3,

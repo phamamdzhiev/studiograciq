@@ -20343,7 +20343,7 @@ __webpack_require__.r(__webpack_exports__);
       icon: '<i class="bi bi-person-fill me-3 fs-1"></i>',
       slug: "about",
       label: "За мен",
-      url: "/services"
+      url: "/about"
     }, // {
     //     id: 3,
     //     icon: '<i class="bi bi-currency-dollar me-3 fs-1"></i>',
@@ -21415,11 +21415,40 @@ var _hoisted_1 = {
   "class": "section-wrapper my-5"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"image-wrapper\" data-v-c5404d32><img class=\"img-fluid\" src=\"https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-10-copyright.jpg\" alt=\"About me section image\" data-v-c5404d32></div><div class=\"info-wrapper\" data-v-c5404d32><h1 class=\"heading\" data-v-c5404d32> Обслужване <span class=\"d-block\" data-v-c5404d32>над очакванията</span></h1><p class=\"text text_fourtriary my-4\" data-v-c5404d32> Фризьорският ни салон е мястото, създадено за жените, <span class=\"d-block\" data-v-c5404d32>които ценят високото качество, перфектното</span><span class=\"d-block\" data-v-c5404d32>обслужване и първокласната визия.</span><span class=\"d-block mt-3\" data-v-c5404d32>Добре дошли в &quot;Грация&quot;!</span></p><button class=\"btn_tertiary btn-inverse mt-4\" type=\"button\" data-v-c5404d32> Повече за мен </button></div>", 2);
+var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "image-wrapper"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    "class": "img-fluid",
+    src: "https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-10-copyright.jpg",
+    alt: "About me section image"
+  })], -1
+  /* HOISTED */
+  );
+});
 
-var _hoisted_4 = [_hoisted_2];
+var _hoisted_3 = {
+  "class": "info-wrapper"
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h1 class=\"heading\" data-v-c5404d32> Обслужване <span class=\"d-block\" data-v-c5404d32>над очакванията</span></h1><p class=\"text text_fourtriary my-4\" data-v-c5404d32> Фризьорският ни салон е мястото, създадено за жените, <span class=\"d-block\" data-v-c5404d32>които ценят високото качество, перфектното</span><span class=\"d-block\" data-v-c5404d32>обслужване и първокласната визия.</span><span class=\"d-block mt-3\" data-v-c5404d32>Добре дошли в &quot;Грация&quot;!</span></p>", 2);
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Повече за мен ");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_4);
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/about",
+    "class": "btn_tertiary btn-inverse mt-4 d-inline-block"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_6];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])]);
 }
 
 /***/ }),
@@ -21724,7 +21753,13 @@ var routes = [{
   path: "/services",
   name: "services",
   component: function component() {
-    return __webpack_require__.e(/*! import() */ "resources_js_pages_pricelist_Pricelist_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pricelist/Pricelist */ "./resources/js/pages/pricelist/Pricelist.vue"));
+    return __webpack_require__.e(/*! import() */ "resources_js_pages_services_Services_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/services/Services */ "./resources/js/pages/services/Services.vue"));
+  }
+}, {
+  path: "/about",
+  name: "about",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_pages_about_About_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/about/About */ "./resources/js/pages/about/About.vue"));
   }
 }];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_1__.createRouter)({
@@ -62338,7 +62373,7 @@ function useRoute() {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_pages_pricelist_Pricelist_vue") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_pages_services_Services_vue":1,"resources_js_pages_about_About_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

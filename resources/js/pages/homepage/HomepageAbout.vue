@@ -17,9 +17,9 @@
                 <span class="d-block">обслужване и първокласната визия.</span>
                 <span class="d-block mt-3">Добре дошли в "Грация"!</span>
             </p>
-            <button class="btn_tertiary btn-inverse mt-4" type="button">
+            <router-link to="/about" class="btn_tertiary btn-inverse mt-4 d-inline-block">
                 Повече за мен
-            </button>
+            </router-link>
         </div>
     </div>
 </template>

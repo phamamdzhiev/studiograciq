@@ -1,12 +1,7 @@
 <template>
     <div id="services">
-        <div class="position-relative">
-            <img id="service-banner-image" class="img-fluid"
-                 src="https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-31-dark-copyright.jpg" alt="">
-            <div class="position-absolute top-50 start-50 translate-middle w-100 text-center">
-                <h1 class="heading underlined">Всички услуги</h1>
-            </div>
-        </div>
+        <PageBanner title="Всички услуги" image="https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-31-dark-copyright.jpg"/>
+
         <div class="section-wrapper my-5" id="pricelist">
             <div class="container-xxl">
                 <div id="pricelist-container" class="px-4 py-5">
@@ -26,12 +21,14 @@
 <script>
 import PriceSingleton from "./PriceSingleton";
 import SectionDivider from "../../components/SectionDivider";
+import PageBanner from "../../components/PageBanner";
 
 export default {
-    name: "Pricelist",
+    name: "Services",
     components: {
         PriceSingleton,
-        SectionDivider
+        SectionDivider,
+        PageBanner
     },
     setup() {
         const prices = [
@@ -62,16 +59,4 @@ export default {
     }
 }
 
-.heading {
-    font-size: 5rem;
-    @media screen and (max-width: 992px) {
-        font-size: 2.6rem;
-    }
-}
-
-img#service-banner-image {
-    @media screen and (max-width: 576px) {
-        height: 200px;
-    }
-}
 </style>

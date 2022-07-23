@@ -6,7 +6,12 @@ const routes = [
     {
         path: "/services",
         name: "services",
-        component: () => import("./pages/pricelist/Pricelist"),
+        component: () => import("./pages/services/Services"),
+    },
+    {
+        path: "/about",
+        name: "about",
+        component: () => import("./pages/about/About"),
     },
 ];
 
