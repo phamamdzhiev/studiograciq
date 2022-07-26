@@ -13,6 +13,12 @@ const routes = [
         name: "about",
         component: () => import("./pages/about/About"),
     },
+    {
+        path: "/product/:id",
+        name: "product.page",
+        props: true,
+        component: () => import("./pages/product/Product"),
+    },
 ];
 
 const router = createRouter({

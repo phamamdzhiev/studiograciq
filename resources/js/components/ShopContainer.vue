@@ -1,6 +1,6 @@
 <template>
     <div class="shop-item-singleton text-center p-4">
-        <router-link to="/">
+        <router-link :to="`/product/${Math.floor(Math.random() * 10)}`">
             <img src="https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg"
                  class="img-fluid mb-4"
                  alt="Product item image"
