@@ -11,15 +11,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["id"],
   setup: function setup() {
-    function buyNowHandler() {
-      alert(1);
+    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_0__.useStore)();
+
+    function submitFormHandler() {
+      store.commit("Cart/setCart", {
+        id: 2,
+        name: 'Tst product from COmmit'
+      });
     }
 
     return {
-      buyNowHandler: buyNowHandler
+      submitFormHandler: submitFormHandler
     };
   }
 });
@@ -101,7 +108,8 @@ var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
     max: "10",
     name: "number",
     id: "number",
-    value: "1"
+    value: "1",
+    required: ""
   }, null, -1
   /* HOISTED */
   );
@@ -111,26 +119,16 @@ var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "submit",
     "class": "btn_tertiary btn-inverse ms-3"
-  }, " Купи сега ", -1
+  }, " Добави в кошницата ", -1
   /* HOISTED */
   );
 });
 
 var _hoisted_12 = [_hoisted_10, _hoisted_11];
 
-var _hoisted_13 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    type: "button",
-    id: "add_to_cart",
-    "class": "btn_tertiary btn-inverse ms-3"
-  }, " Добави в кошницата ", -1
-  /* HOISTED */
-  );
-});
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"aditional-details mt-5\" data-v-1b42dc54><ul data-v-1b42dc54><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Номер:</span>25087055 </li><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Категория:</span>Дамска козметика </li><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Тагове:</span>Дамска козметика </li></ul></div>", 1);
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"aditional-details mt-5\" data-v-1b42dc54><ul data-v-1b42dc54><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Номер:</span>25087055 </li><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Категория:</span>Дамска козметика </li><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Тагове:</span>Дамска козметика </li></ul></div>", 1);
-
-var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "row"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -145,13 +143,13 @@ var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
-      return $setup.buyNowHandler && $setup.buyNowHandler.apply($setup, arguments);
+      return $setup.submitFormHandler && $setup.submitFormHandler.apply($setup, arguments);
     }, ["prevent"])),
     id: "buy_now",
     "class": "form"
   }, _hoisted_12, 32
   /* HYDRATE_EVENTS */
-  ), _hoisted_13]), _hoisted_14])])]), _hoisted_15])]);
+  )]), _hoisted_13])])]), _hoisted_14])]);
 }
 
 /***/ }),

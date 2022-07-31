@@ -10,13 +10,18 @@
                 >{{ link.label }}
                 </router-link>
             </li>
+            <li class="me-4 py-4 px-1 d-lg-inline-block d-none">
+                <Cart/>
+            </li>
         </ul>
     </nav>
 </template>
 
 <script>
+import Cart from "./Cart";
 export default {
     name: "Navigation",
+    components: {Cart},
     props: ["label"],
     setup() {
         const links = [
@@ -76,6 +81,7 @@ nav#main-nav ul {
     @media screen and (max-width: 992px) {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
     }
 }
 

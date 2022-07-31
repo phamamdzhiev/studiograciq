@@ -21,16 +21,21 @@
                     <Navigation @link-clicked="isHidden = true"/>
                     <HeaderContacts class="d-none d-xl-flex"/>
                 </div>
-                <div
-                    @click="hamburgerHandler"
-                    id="hamburger"
-                    :class="{ opened: !isHidden }"
-                    class="d-flex d-lg-none"
-                >
-                    <div class="bar bar-1"></div>
-                    <div class="bar bar-2"></div>
-                    <div class="bar bar-3"></div>
-                </div>
+               <div id="hamburger-wrapper" class="d-lg-none d-flex align-items-center">
+                   <div class="me-4">
+                       <Cart/>
+                   </div>
+                   <div
+                       @click="hamburgerHandler"
+                       id="hamburger"
+                       :class="{ opened: !isHidden }"
+                       class="d-flex"
+                   >
+                       <div class="bar bar-1"></div>
+                       <div class="bar bar-2"></div>
+                       <div class="bar bar-3"></div>
+                   </div>
+               </div>
             </div>
         </div>
     </header>
@@ -41,10 +46,12 @@ import TopBarHeader from "./TopBarHeader";
 import HeaderContacts from "./HeaderContacts";
 import Navigation from "./Navigation";
 import {ref} from "vue";
+import Cart from "./Cart";
 
 export default {
     name: "Header",
     components: {
+        Cart,
         TopBarHeader,
         HeaderContacts,
         Navigation,
@@ -100,13 +107,17 @@ export default {
         }
     }
 
+    div#hamburger-wrapper {
+        margin: 0 0 0 auto;
+    }
+
     div#hamburger {
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-around;
         width: 35px;
         height: 35px;
-        margin: 0 0 0 auto;
+
 
         .bar {
             width: 100%;
