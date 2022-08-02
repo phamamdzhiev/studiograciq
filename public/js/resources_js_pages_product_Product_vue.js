@@ -11,22 +11,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["id"],
-  setup: function setup() {
-    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_0__.useStore)();
+  setup: function setup(props) {
+    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_1__.useStore)();
+    var cartItemAmount = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(1);
+    var item = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      return store.getters["Data/getShopItemsByID"](parseInt(props.id));
+    }); //test cart
+
+    var cart = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      return store.getters["Cart/getCart"];
+    });
 
     function submitFormHandler() {
-      store.commit("Cart/setCart", {
-        id: 2,
-        name: 'Tst product from COmmit'
-      });
+      item.value['amount'] = cartItemAmount.value;
+      store.commit("Cart/setCart", item.value);
+      console.log('Cart', cart.value);
     }
 
     return {
-      submitFormHandler: submitFormHandler
+      submitFormHandler: submitFormHandler,
+      item: item,
+      cartItemAmount: cartItemAmount
     };
   }
 });
@@ -51,6 +62,7 @@ var _withScopeId = function _withScopeId(n) {
 };
 
 var _hoisted_1 = {
+  key: 0,
   id: "product-singleton"
 };
 var _hoisted_2 = {
@@ -80,42 +92,17 @@ var _hoisted_5 = {
 var _hoisted_6 = {
   "class": "right section p-3"
 };
-
-var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-    "class": "price text_secondary underlined"
-  }, "24.99 BGN", -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": "text_fourtriary mt-5"
-  }, " Tame your flyaways, add shine and smooth your hair with this luxurious spray. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. ", -1
-  /* HOISTED */
-  );
-});
-
+var _hoisted_7 = {
+  "class": "price text_secondary underlined"
+};
+var _hoisted_8 = {
+  "class": "text_fourtriary mt-5"
+};
 var _hoisted_9 = {
   "class": "d-flex mt-5 align-items-center w-100"
 };
 
 var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "number",
-    min: "1",
-    max: "10",
-    name: "number",
-    id: "number",
-    value: "1",
-    required: ""
-  }, null, -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "submit",
     "class": "btn_tertiary btn-inverse ms-3"
@@ -124,11 +111,9 @@ var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_12 = [_hoisted_10, _hoisted_11];
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"aditional-details mt-5\" data-v-1b42dc54><ul data-v-1b42dc54><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Номер:</span>25087055 </li><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Категория:</span>Дамска козметика </li></ul></div>", 1);
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"aditional-details mt-5\" data-v-1b42dc54><ul data-v-1b42dc54><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Номер:</span>25087055 </li><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Категория:</span>Дамска козметика </li><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Тагове:</span>Дамска козметика </li></ul></div>", 1);
-
-var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "row"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -140,16 +125,62 @@ var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
+var _hoisted_13 = {
+  key: 1,
+  "class": "mt-5 text-center min-vh-100"
+};
+var _hoisted_14 = {
+  "class": "container-xxl"
+};
+
+var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+    "class": ""
+  }, "Този продукт не съществува!", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Към начална страница ");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-    onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+
+  return $setup.item ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.item.price) + " BGN", 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.item.desc), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $setup.submitFormHandler && $setup.submitFormHandler.apply($setup, arguments);
     }, ["prevent"])),
     id: "buy_now",
     "class": "form"
-  }, _hoisted_12, 32
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "number",
+    min: "1",
+    max: "10",
+    name: "number",
+    id: "number",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $setup.cartItemAmount = $event;
+    }),
+    required: ""
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.cartItemAmount]]), _hoisted_10], 32
   /* HYDRATE_EVENTS */
-  )]), _hoisted_13])])]), _hoisted_14])]);
+  )]), _hoisted_11])])]), _hoisted_12])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    "class": "d-inline-block mt-5 btn_secondary",
+    to: "/"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_16];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])]));
 }
 
 /***/ }),
@@ -170,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "h1[data-v-1b42dc54] {\n  margin: 0;\n}\n.price[data-v-1b42dc54] {\n  font-size: 3.5rem;\n}\nform input#number[data-v-1b42dc54] {\n  border: 4px solid #798a8a;\n  border-radius: 0;\n  padding: 1rem 2rem;\n  background-color: transparent;\n  color: white;\n  outline: 0;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n          user-select: none;\n}\n.aditional-details ul[data-v-1b42dc54] {\n  display: flex;\n  flex-direction: column;\n}\n.aditional-details ul li[data-v-1b42dc54] {\n  display: inline-block;\n}\n.underlined[data-v-1b42dc54]::after {\n  background-color: #798a8a;\n  height: 1px;\n  left: 0;\n  transform: translateX(0);\n}\n.section[data-v-1b42dc54] {\n  outline: 2px solid red;\n}\n.section.bottom[data-v-1b42dc54] {\n  margin-top: 1rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "h1[data-v-1b42dc54] {\n  margin: 0;\n}\n.price[data-v-1b42dc54] {\n  font-size: 3.5rem;\n}\nform input#number[data-v-1b42dc54] {\n  border: 4px solid #798a8a;\n  border-radius: 0;\n  padding: 1rem 2rem;\n  background-color: transparent;\n  color: white;\n  outline: 0;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n          user-select: none;\n}\n.aditional-details ul[data-v-1b42dc54] {\n  display: flex;\n  flex-direction: column;\n}\n.aditional-details ul li[data-v-1b42dc54] {\n  display: inline-block;\n}\n.underlined[data-v-1b42dc54]::after {\n  background-color: #798a8a;\n  height: 1px;\n  left: 0;\n  transform: translateX(0);\n}\n.section.bottom[data-v-1b42dc54] {\n  margin-top: 1rem;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -1,5 +1,5 @@
 <template>
-    <div id="product-singleton">
+    <div id="product-singleton" v-if="item">
         <div class="container-xxl">
             <div class="row">
                 <div class="col-lg-6">
@@ -13,16 +13,9 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="right section p-3">
-                        <h1 class="price text_secondary underlined">24.99 BGN</h1>
+                        <h1 class="price text_secondary underlined">{{ item.price }} BGN</h1>
                         <p class="text_fourtriary mt-5">
-                            Tame your flyaways, add shine and smooth your hair with this
-                            luxurious spray. Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                            occaecat cupidatat non proident.
+                            {{ item.desc }}
                         </p>
                         <div class="d-flex mt-5 align-items-center w-100">
                             <form @submit.prevent="submitFormHandler" id="buy_now" class="form">
@@ -32,7 +25,7 @@
                                     max="10"
                                     name="number"
                                     id="number"
-                                    value="1"
+                                    v-model="cartItemAmount"
                                     required
                                 />
                                 <button type="submit" class="btn_tertiary btn-inverse ms-3">
@@ -49,9 +42,6 @@
                                     <span class="text-white me-3">Категория:</span>Дамска
                                     козметика
                                 </li>
-                                <li class="text_fourtriary">
-                                    <span class="text-white me-3">Тагове:</span>Дамска козметика
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -64,21 +54,45 @@
             </div>
         </div>
     </div>
+    <div class="mt-5 text-center min-vh-100" v-else>
+        <div class="container-xxl">
+            <h1 class="">Този продукт не съществува!</h1>
+            <router-link class="d-inline-block mt-5 btn_secondary" to="/">
+                Към начална страница
+            </router-link>
+        </div>
+    </div>
 </template>
 <script>
 import {useStore} from 'vuex'
+import {computed, ref} from "vue";
 
 export default {
     props: ["id"],
-    setup() {
+    setup(props) {
         const store = useStore();
+        const cartItemAmount = ref(1);
+
+        const item = computed(() => {
+            return store.getters["Data/getShopItemsByID"](parseInt(props.id));
+        });
+
+        //test cart
+        const cart = computed(() => {
+            return store.getters["Cart/getCart"];
+        });
+
 
         function submitFormHandler() {
-            store.commit("Cart/setCart", {id: 2, name: 'Tst product from COmmit'});
+            item.value['amount'] = cartItemAmount.value;
+            store.commit("Cart/setCart", item.value);
+            console.log('Cart', cart.value)
         }
 
         return {
             submitFormHandler,
+            item,
+            cartItemAmount
         };
     },
 };
@@ -126,8 +140,6 @@ form {
 }
 
 .section {
-    //temp
-    outline: 2px solid red;
 
     &.bottom {
         margin-top: 1rem;

@@ -6,10 +6,12 @@ import router from "./router";
 import {createStore} from 'vuex'
 import MainApp from "./MainApp";
 import Cart from "./store/cart";
+import Data from "./store/data";
 
 const store = createStore({
     modules: {
-        Cart
+        Cart,
+        Data
     }
 });
 const app = createApp(MainApp);

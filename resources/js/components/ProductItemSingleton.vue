@@ -1,20 +1,21 @@
 <template>
     <div class="shop-item-singleton text-center p-4">
-        <router-link :to="`/product/${Math.floor(Math.random() * 10)}`">
-            <img src="https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg"
+        <router-link :to="`/product/${id}`">
+            <img :src="image"
                  class="img-fluid mb-4"
                  alt="Product item image"
             />
-            <h1 class="item-heading fw-light">Маска за коса</h1>
-            <p class="my-3 text_fourtriary">НЯкъв дъми тест</p>
-            <p class="fw-bold text_secondary mt-5" id="price">$ 42.52</p>
+            <h1 class="item-heading fw-light">{{title}}</h1>
+            <p class="my-3 text_fourtriary">{{desc}}</p>
+            <p class="fw-bold text_secondary mt-5" id="price">{{price}} BGN</p>
         </router-link>
     </div>
 </template>
 
 <script>
 export default {
-    name: "ShopContainer"
+    name: "ProductItemSingleton",
+    props: ['image', 'title', 'desc', 'price', 'id']
 }
 </script>
 

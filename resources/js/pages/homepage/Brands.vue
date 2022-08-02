@@ -39,7 +39,6 @@
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import ShopContainer from "../../components/ShopContainer";
 import {Autoplay} from "swiper";
 
 export default {
