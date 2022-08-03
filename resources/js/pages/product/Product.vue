@@ -14,9 +14,14 @@
                 <div class="col-lg-6">
                     <div class="right section p-3">
                         <h1 class="price text_secondary underlined">{{ item.price }} BGN</h1>
-                        <p class="text_fourtriary mt-5">
-                            {{ item.desc }}
-                        </p>
+                        <div class="aditional-details mt-5">
+                            <ul>
+                                <li class="text_fourtriary">
+                                    <span class="text-white me-3">Номер:</span>
+                                    <span>{{item.id + '0'.repeat(2)}}</span>
+                                </li>
+                            </ul>
+                        </div>
                         <div class="d-flex mt-5 align-items-center w-100">
                             <form @submit.prevent="submitFormHandler" id="buy_now" class="form">
                                 <input
@@ -26,24 +31,17 @@
                                     name="number"
                                     id="number"
                                     v-model="cartItemAmount"
+                                    :class="{'disabled-class': isAddedInCart}"
                                     required
                                 />
                                 <button type="submit" class="btn_tertiary btn-inverse ms-3">
-                                    Добави в кошницата
+                                    {{ (isAddedInCart) ? 'Премахни от ' : 'Добави в ' }}кошницата
                                 </button>
                             </form>
                         </div>
-                        <div class="aditional-details mt-5">
-                            <ul>
-                                <li class="text_fourtriary">
-                                    <span class="text-white me-3">Номер:</span>25087055
-                                </li>
-                                <li class="text_fourtriary">
-                                    <span class="text-white me-3">Категория:</span>Дамска
-                                    козметика
-                                </li>
-                            </ul>
-                        </div>
+                        <p class="text_fourtriary mt-5">
+                            {{ item.desc }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -77,22 +75,35 @@ export default {
             return store.getters["Data/getShopItemsByID"](parseInt(props.id));
         });
 
-        //test cart
+        const itemsFromSession = JSON.parse(sessionStorage.getItem('cart')).Cart.cart;
+
+        const currentProduct = itemsFromSession.find(el => {
+            return el.id === parseInt(props.id);
+        });
+
+        if (typeof currentProduct !== 'undefined') {
+            cartItemAmount.value = currentProduct.amount;
+        }
+
         const cart = computed(() => {
             return store.getters["Cart/getCart"];
         });
+
+        const isAddedInCart = computed(() => {
+            return cart.value.some(el => el.id === parseInt(props.id));
+        })
 
 
         function submitFormHandler() {
             item.value['amount'] = cartItemAmount.value;
             store.commit("Cart/setCart", item.value);
-            console.log('Cart', cart.value)
         }
 
         return {
             submitFormHandler,
             item,
-            cartItemAmount
+            cartItemAmount,
+            isAddedInCart
         };
     },
 };

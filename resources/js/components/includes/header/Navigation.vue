@@ -58,15 +58,15 @@ export default {
                 icon: '<i class="bi bi-bag-heart-fill me-3 fs-1"></i>',
                 slug: "shop",
                 label: "Магазин",
-                url: "/",
+                url: "/shop",
             },
-            {
-                id: 5,
-                icon: '<i class="bi bi-calendar-week-fill me-3 fs-1"></i>',
-                slug: "appointments",
-                label: "График",
-                url: "/",
-            },
+            // {
+            //     id: 5,
+            //     icon: '<i class="bi bi-calendar-week-fill me-3 fs-1"></i>',
+            //     slug: "appointments",
+            //     label: "График",
+            //     url: "/",
+            // },
         ];
 
         return {

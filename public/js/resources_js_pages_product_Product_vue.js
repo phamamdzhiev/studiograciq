@@ -22,22 +22,35 @@ __webpack_require__.r(__webpack_exports__);
     var cartItemAmount = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(1);
     var item = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
       return store.getters["Data/getShopItemsByID"](parseInt(props.id));
-    }); //test cart
+    });
+    var itemsFromSession = JSON.parse(sessionStorage.getItem('cart')).Cart.cart;
+    var currentProduct = itemsFromSession.find(function (el) {
+      return el.id === parseInt(props.id);
+    });
+
+    if (typeof currentProduct !== 'undefined') {
+      cartItemAmount.value = currentProduct.amount;
+    }
 
     var cart = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
       return store.getters["Cart/getCart"];
+    });
+    var isAddedInCart = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      return cart.value.some(function (el) {
+        return el.id === parseInt(props.id);
+      });
     });
 
     function submitFormHandler() {
       item.value['amount'] = cartItemAmount.value;
       store.commit("Cart/setCart", item.value);
-      console.log('Cart', cart.value);
     }
 
     return {
       submitFormHandler: submitFormHandler,
       item: item,
-      cartItemAmount: cartItemAmount
+      cartItemAmount: cartItemAmount,
+      isAddedInCart: isAddedInCart
     };
   }
 });
@@ -96,24 +109,32 @@ var _hoisted_7 = {
   "class": "price text_secondary underlined"
 };
 var _hoisted_8 = {
-  "class": "text_fourtriary mt-5"
+  "class": "aditional-details mt-5"
 };
 var _hoisted_9 = {
-  "class": "d-flex mt-5 align-items-center w-100"
+  "class": "text_fourtriary"
 };
 
 var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    type: "submit",
-    "class": "btn_tertiary btn-inverse ms-3"
-  }, " Добави в кошницата ", -1
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "text-white me-3"
+  }, "Номер:", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"aditional-details mt-5\" data-v-1b42dc54><ul data-v-1b42dc54><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Номер:</span>25087055 </li><li class=\"text_fourtriary\" data-v-1b42dc54><span class=\"text-white me-3\" data-v-1b42dc54>Категория:</span>Дамска козметика </li></ul></div>", 1);
+var _hoisted_11 = {
+  "class": "d-flex mt-5 align-items-center w-100"
+};
+var _hoisted_12 = {
+  type: "submit",
+  "class": "btn_tertiary btn-inverse ms-3"
+};
+var _hoisted_13 = {
+  "class": "text_fourtriary mt-5"
+};
 
-var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "row"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -125,15 +146,15 @@ var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_13 = {
+var _hoisted_15 = {
   key: 1,
   "class": "mt-5 text-center min-vh-100"
 };
-var _hoisted_14 = {
+var _hoisted_16 = {
   "class": "container-xxl"
 };
 
-var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_17 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
     "class": ""
   }, "Този продукт не съществува!", -1
@@ -141,16 +162,16 @@ var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Към начална страница ");
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Към начална страница ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
   return $setup.item ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.item.price) + " BGN", 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.item.desc), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.item.id + '0'.repeat(2)), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $setup.submitFormHandler && $setup.submitFormHandler.apply($setup, arguments);
     }, ["prevent"])),
@@ -165,17 +186,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $setup.cartItemAmount = $event;
     }),
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'disabled-class': $setup.isAddedInCart
+    }),
     required: ""
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.cartItemAmount]]), _hoisted_10], 32
+  }, null, 2
+  /* CLASS */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.cartItemAmount]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.isAddedInCart ? 'Премахни от ' : 'Добави в ') + "кошницата ", 1
+  /* TEXT */
+  )], 32
   /* HYDRATE_EVENTS */
-  )]), _hoisted_11])])]), _hoisted_12])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.item.desc), 1
+  /* TEXT */
+  )])])]), _hoisted_14])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     "class": "d-inline-block mt-5 btn_secondary",
     to: "/"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_16];
+      return [_hoisted_18];
     }),
     _: 1
     /* STABLE */

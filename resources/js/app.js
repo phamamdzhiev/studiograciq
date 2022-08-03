@@ -1,6 +1,8 @@
 require("./bootstrap");
 
 import {createApp} from "vue";
+import createPersistedState from "vuex-persistedstate";
+import {cartPersist} from "./store/persist";
 import VueSmoothScroll from 'vue3-smooth-scroll'
 import router from "./router";
 import {createStore} from 'vuex'
@@ -12,7 +14,10 @@ const store = createStore({
     modules: {
         Cart,
         Data
-    }
+    },
+    plugins: [
+        createPersistedState(cartPersist),
+    ],
 });
 const app = createApp(MainApp);
 app.use(router);

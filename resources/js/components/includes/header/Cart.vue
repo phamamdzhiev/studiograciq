@@ -17,12 +17,13 @@ export default {
     name: "Cart",
     setup() {
         const store = useStore();
+
         const getCartItems = computed(() => {
             return store.getters['Cart/getCart'];
         });
 
         return {
-            getCartItems
+            getCartItems,
         }
     }
 }

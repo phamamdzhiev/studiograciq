@@ -19,6 +19,16 @@ const routes = [
         props: true,
         component: () => import("./pages/product/Product"),
     },
+    {
+        path: "/cart",
+        name: "cart.page",
+        component: () => import("./pages/cart/CartPage"),
+    },
+    {
+        path: "/shop",
+        name: "shop.page",
+        component: () => import("./pages/shop/ShopPage"),
+    },
 ];
 
 const router = createRouter({

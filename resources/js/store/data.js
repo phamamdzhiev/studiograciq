@@ -8,7 +8,7 @@ export default {
                     title: 'TEst',
                     image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
                     price: '123',
-                    desc: 'no desc for now'
+                    desc: 'no desc for now',
                 },
                 {
                     id: 12,

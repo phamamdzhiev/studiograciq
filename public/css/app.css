@@ -10415,3 +10415,8 @@ i.bi {
     width: 85px;
   }
 }
+
+.disabled-class {
+  pointer-events: none;
+  opacity: 0.7;
+}
