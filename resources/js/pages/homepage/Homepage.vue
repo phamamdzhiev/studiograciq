@@ -9,13 +9,13 @@
                         <span class="d-block">Почувстай твоя</span>
                         <span class="d-block"> нов "Грация" стил</span>
                     </h1>
-                    <button
-                        type="button"
-                        class="btn_primary fw-bold px-5 mt-5"
+                    <router-link
+                        to="/services"
+                        class="d-inline-block text-center btn_primary fw-bold px-5 mt-5"
                         id="custom_button"
                     >
                         Услуги
-                    </button>
+                    </router-link>
                 </div>
             </div>
         </BrandBanner>

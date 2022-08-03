@@ -9,6 +9,8 @@ import {createStore} from 'vuex'
 import MainApp from "./MainApp";
 import Cart from "./store/cart";
 import Data from "./store/data";
+import {plugin, defaultConfig} from '@formkit/vue'
+import '@formkit/themes/genesis'
 
 const store = createStore({
     modules: {
@@ -21,6 +23,7 @@ const store = createStore({
 });
 const app = createApp(MainApp);
 app.use(router);
+app.use(plugin, defaultConfig);
 app.use(VueSmoothScroll, {
     duration: 50,
     updateHistory: false,

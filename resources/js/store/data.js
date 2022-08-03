@@ -4,35 +4,35 @@ export default {
         return {
             shopItems: [
                 {
-                    id: 11,
-                    title: 'TEst',
+                    id: 1,
+                    title: 'Alfaparf Ампули за косопад',
                     image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
                     price: '123',
                     desc: 'no desc for now',
                 },
                 {
-                    id: 12,
+                    id: 2,
                     title: 'TEst 1',
                     image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
                     price: '9',
                     desc: 'no desc for now'
                 },
                 {
-                    id: 31,
+                    id: 3,
                     title: 'TEst 2',
                     image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
                     price: '53',
                     desc: 'no desc for now'
                 },
                 {
-                    id: 14,
+                    id: 4,
                     title: 'TEst 3',
                     image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
                     price: '23',
                     desc: 'no desc for now'
                 },
                 {
-                    id: 15,
+                    id: 5,
                     title: 'TEst 3',
                     image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
                     price: '23',

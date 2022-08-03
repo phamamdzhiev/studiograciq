@@ -13,7 +13,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "PageBanner",
-  props: ['title', 'image']
+  props: {
+    title: {
+      required: true
+    },
+    image: {
+      required: true
+    },
+    black: {
+      "default": false
+    }
+  }
 });
 
 /***/ }),
@@ -113,9 +123,6 @@ var _hoisted_2 = ["src", "alt"];
 var _hoisted_3 = {
   "class": "position-absolute top-50 start-50 translate-middle w-100 text-center"
 };
-var _hoisted_4 = {
-  "class": "heading underlined"
-};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     id: "banner-image",
@@ -124,8 +131,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     alt: $props.title
   }, null, 8
   /* PROPS */
-  , _hoisted_2), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
-  /* TEXT */
+  , _hoisted_2), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["heading underlined", {
+      'text-black': $props.black
+    }])
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 3
+  /* TEXT, CLASS */
   )])]);
 }
 

@@ -1,7 +1,16 @@
 <template>
     <div id="product-singleton" v-if="item">
         <div class="container-xxl">
+            <div class="back">
+               <router-link to="/shop" class="d-inline-flex align-items-center text_tertiary my-1 p-3">
+                   <i class="bi bi-arrow-left me-3"></i>
+                   Назад към магазина
+               </router-link>
+            </div>
             <div class="row">
+                <div class="col-12">
+                    <h1 class="my-4 px-3 fw-light heading" style="font-size: 3rem">{{item.title}}</h1>
+                </div>
                 <div class="col-lg-6">
                     <div class="left section p-3">
                         <img
@@ -17,7 +26,7 @@
                         <div class="aditional-details mt-5">
                             <ul>
                                 <li class="text_fourtriary">
-                                    <span class="text-white me-3">Номер:</span>
+                                    <span class="me-3">Каталожен номер:</span>
                                     <span>{{item.id + '0'.repeat(2)}}</span>
                                 </li>
                             </ul>

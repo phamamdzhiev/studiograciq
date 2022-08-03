@@ -3,7 +3,7 @@
         <img id="banner-image" class="img-fluid"
              :src="image" :alt="title">
         <div class="position-absolute top-50 start-50 translate-middle w-100 text-center">
-            <h1 class="heading underlined">{{title}}</h1>
+            <h1 class="heading underlined" :class="{'text-black': black}">{{title}}</h1>
         </div>
     </div>
 </template>
@@ -11,7 +11,17 @@
 <script>
 export default {
     name: "PageBanner",
-    props: ['title', 'image']
+    props: {
+        title: {
+            required: true
+        },
+        image: {
+            required: true
+        },
+        black: {
+            default: false
+        }
+    }
 }
 </script>
 
