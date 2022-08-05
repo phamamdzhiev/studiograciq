@@ -66,8 +66,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "OrderFrom"
+  name: "OrderFrom",
+  setup: function setup() {
+    var shipping = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
+
+    function submitHandler() {
+      alert(222);
+    }
+
+    return {
+      shipping: shipping,
+      submitHandler: submitHandler
+    };
+  }
 });
 
 /***/ }),
@@ -223,7 +237,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     modelValue: $setup.showModal,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $setup.showModal = $event;
-    })
+    }),
+    ssr: false,
+    classes: "modal-container"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_OrderFrom)];
@@ -269,18 +285,27 @@ var _hoisted_1 = {
   id: "order-form-wrapper",
   "class": "container text-black p-5"
 };
+
+var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", {
+    "class": "text-white"
+  }, "* Всички поръчки се изпращат с наложен платеж")], -1
+  /* HOISTED */
+  );
+});
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_FormKit = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("FormKit");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
     type: "form",
-    id: "registration-example",
-    "submit-label": "Register",
-    "Ф": "",
-    actions: false
+    id: "order-form",
+    "submit-label": "",
+    "incomplete-message": "Моля, попълнете формата коректно",
+    actions: false,
+    onSubmit: $setup.submitHandler
   }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
-      var value = _ref.value;
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
         type: "text",
         name: "name",
@@ -288,29 +313,50 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         validation: "required"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
         type: "text",
+        name: "mobile",
+        label: "Мобилен номер",
+        validation: "required|number"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
+        type: "text",
         name: "email",
         label: "Имейл",
         validation: "email"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
-        type: "text",
-        name: "mobile",
-        label: "Мобилен номер",
+        type: "radio",
+        name: "shipping",
+        modelValue: $setup.shipping,
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+          return $setup.shipping = $event;
+        }),
+        options: {
+          '1': 'Взимане от салона - ул. Стоян Попов 8, гр. Пещера',
+          '2': 'Доставка до адрес (+ 7 BGN)',
+          '3': 'Доставка до oфис (+ 5 BGN)'
+        },
         validation: "required"
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
+      }, null, 8
+      /* PROPS */
+      , ["modelValue", "options"]), $setup.shipping === '2' || $setup.shipping === '3' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_FormKit, {
+        key: 0,
         type: "text",
-        name: "mobile",
-        label: "Адрес за доставка",
+        name: "address",
+        label: $setup.shipping === '2' ? 'Адрес на клиента' : 'Адрес на офис на Еконт',
         validation: "required",
-        help: "Доставката се извършва от куриерска фирма ЕКОНТ"
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
+        help: "Доставката се извършва от куриерска фирма Еконт"
+      }, null, 8
+      /* PROPS */
+      , ["label"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
         type: "submit",
-        label: "Register"
-      })];
+        label: "Поръчай",
+        "input-class": "$reset btn_tertiary"
+      }), _hoisted_2];
     }),
     _: 1
     /* STABLE */
 
-  })]);
+  }, 8
+  /* PROPS */
+  , ["onSubmit"])]);
 }
 
 /***/ }),
@@ -331,7 +377,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".table thead th[data-v-73a46b36] {\n  background-color: #659498;\n  padding: 15px;\n}\n.table td.product_title a[data-v-73a46b36]:hover {\n  color: #659498;\n}\n.btn i[data-v-73a46b36] {\n  transition: transform 250ms ease-in;\n}\n.btn:hover i[data-v-73a46b36] {\n  transform: scale(1.1);\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "[data-v-73a46b36] .modal-container {\n  margin-top: 3rem;\n}\n@media screen and (max-width: 576px) {\n[data-v-73a46b36] .modal-container {\n    margin-top: 0;\n}\n}\n.table thead th[data-v-73a46b36] {\n  background-color: #659498;\n  padding: 15px;\n}\n.table td.product_title a[data-v-73a46b36]:hover {\n  color: #659498;\n}\n.btn i[data-v-73a46b36] {\n  transition: transform 250ms ease-in;\n}\n.btn:hover i[data-v-73a46b36] {\n  transform: scale(1.1);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -354,7 +400,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#order-form-wrapper[data-v-524f7cf2] {\n    border-radius: 4px;\n    background-color: #9e49a3;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#order-form-wrapper[data-v-524f7cf2] {\n    border-radius: 4px;\n    background-color: #192123;\n    max-width: 500px;\n    margin: auto;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

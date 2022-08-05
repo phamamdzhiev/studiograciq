@@ -1,0 +1,70 @@
+.btn_primary {
+    background-color: $primary_color_fade;
+    border: 4px solid transparent;
+    border-radius: 0;
+    padding: 1rem 2rem;
+    transition: background 200ms ease-in;
+    color: white;
+    // @media screen and (max-width: 992px) {
+    //     font-size: 1.2rem;
+    // }
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus:hover {
+        background: transparent;
+        border: 4px solid $primary_color_fade;
+        color: $primary_color;
+    }
+}
+
+.btn_secondary {
+    background-color: $secondary_color;
+    border: 4px solid transparent;
+    border-radius: 0;
+    padding: 1rem 2rem;
+    transition: background 200ms ease-in;
+    color: white;
+    // @media screen and (max-width: 992px) {
+    //     font-size: 1.2rem;
+    // }
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus:hover {
+        background: transparent;
+        border: 4px solid $secondary_color;
+        color: $secondary_color;
+    }
+}
+
+.btn_tertiary {
+    background-color: $tertiary_color;
+    border: 4px solid transparent;
+    border-radius: 0;
+    padding: 1rem 2rem;
+    transition: background 200ms ease-in;
+    color: white;
+    // @media screen and (max-width: 992px) {
+    //     font-size: 1.2rem;
+    // }
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus:hover {
+        background: transparent;
+        border: 4px solid $tertiary_color;
+    }
+
+    &.btn-inverse {
+        background-color: transparent;
+        border: 4px solid $tertiary_color;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &:focus:hover {
+            background: $tertiary_color;
+        }
+    }
+}

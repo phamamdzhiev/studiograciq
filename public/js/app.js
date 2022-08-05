@@ -21792,7 +21792,23 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_10__.createStore)({
 });
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_MainApp__WEBPACK_IMPORTED_MODULE_5__["default"]);
 app.use(_router__WEBPACK_IMPORTED_MODULE_4__["default"]);
-app.use(_formkit_vue__WEBPACK_IMPORTED_MODULE_8__.plugin, _formkit_vue__WEBPACK_IMPORTED_MODULE_8__.defaultConfig);
+app.use(_formkit_vue__WEBPACK_IMPORTED_MODULE_8__.plugin, (0,_formkit_vue__WEBPACK_IMPORTED_MODULE_8__.defaultConfig)({
+  messages: {
+    en: {
+      validation: {
+        required: function required() {
+          return 'Това поле е задължително';
+        },
+        number: function number() {
+          return 'Това поле трябва да съдържа само цифри';
+        },
+        email: function email() {
+          return 'Моля, въведете валиден имейл адрес';
+        }
+      }
+    }
+  }
+}));
 app.use((vue3_smooth_scroll__WEBPACK_IMPORTED_MODULE_3___default()), {
   duration: 50,
   updateHistory: false,

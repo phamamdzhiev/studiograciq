@@ -1,0 +1,42 @@
+//formkit
+.formkit-label,
+.formkit-help {
+    color: #d3d3d3 !important;
+}
+
+.formkit-input:not([type="submit"]) {
+    border: 2px solid $fourtriary_color;
+    box-shadow: none;
+    outline: 0;
+    color: white;
+}
+
+.formkit-inner {
+    box-shadow: none !important;
+}
+
+.formkit-message {
+    color: #ed4337 !important;
+}
+
+.formkit-options {
+    display: flex;
+    flex-direction: column;
+}
+
+[data-type="radio"] .formkit-input:checked ~ .formkit-decorator .formkit-icon {
+    color: $tertiary_color !important;
+}
+
+[data-type="radio"] .formkit-input:checked ~ .formkit-decorator {
+    box-shadow: 0 0 0 1px $tertiary_color !important;
+}
+
+.formkit-wrapper {
+    max-width: unset !important;
+}
+
+.vfm__content {
+    max-width: 500px !important;
+    margin: auto !important;
+}

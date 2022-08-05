@@ -6,20 +6,17 @@
 
 // Fonts
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
-
 //Icons
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
-
-// Variables
-@import "variables";
-
-//Mixins
-@import "mixins";
-
-// Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-// common and globals
+@import "variables";
+@import "global";
+@import "buttons";
+@import "utils";
+@import "mixins";
+@import "formKit";
+
 html {
     font-size: 62.5%;
     @include custom-scrollbar;
@@ -31,168 +28,4 @@ body {
     background-color: $primary_color;
     margin: auto;
     font-family: "Montserrat", sans-serif;
-}
-
-.container-fluid {
-    padding-left: 2.2rem;
-    padding-right: 2.2rem;
-}
-
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-        display: inline-block;
-    }
-}
-
-a {
-    text-decoration: none;
-    color: white;
-
-    &:hover {
-        color: white;
-    }
-}
-
-i.bi {
-    font-size: 2rem;
-    margin: 0 2px;
-    @media screen and (max-width: 1000px) {
-        font-size: 1.6rem;
-    }
-}
-
-//utils
-.text_primary {
-    color: $primary_color;
-}
-
-.text_secondary {
-    color: $secondary_color;
-}
-
-.text_tertiary {
-    color: $tertiary_color;
-}
-
-.text_fourtriary {
-    color: $fourtriary_color;
-}
-
-.btn_primary {
-    background-color: $primary_color_fade;
-    border: 4px solid transparent;
-    border-radius: 0;
-    padding: 1rem 2rem;
-    transition: background 200ms ease-in;
-    color: white;
-    // @media screen and (max-width: 992px) {
-    //     font-size: 1.2rem;
-    // }
-    &:hover,
-    &:focus,
-    &:active,
-    &:focus:hover {
-        background: transparent;
-        border: 4px solid $primary_color_fade;
-        color: $primary_color;
-    }
-}
-
-.btn_secondary {
-    background-color: $secondary_color;
-    border: 4px solid transparent;
-    border-radius: 0;
-    padding: 1rem 2rem;
-    transition: background 200ms ease-in;
-    color: white;
-    // @media screen and (max-width: 992px) {
-    //     font-size: 1.2rem;
-    // }
-    &:hover,
-    &:focus,
-    &:active,
-    &:focus:hover {
-        background: transparent;
-        border: 4px solid $secondary_color;
-        color: $secondary_color;
-    }
-}
-
-.btn_tertiary {
-    background-color: $tertiary_color;
-    border: 4px solid transparent;
-    border-radius: 0;
-    padding: 1rem 2rem;
-    transition: background 200ms ease-in;
-    color: white;
-    // @media screen and (max-width: 992px) {
-    //     font-size: 1.2rem;
-    // }
-    &:hover,
-    &:focus,
-    &:active,
-    &:focus:hover {
-        background: transparent;
-        border: 4px solid $tertiary_color;
-    }
-
-    &.btn-inverse {
-        background-color: transparent;
-        border: 4px solid $tertiary_color;
-
-        &:hover,
-        &:focus,
-        &:active,
-        &:focus:hover {
-            background: $tertiary_color;
-        }
-    }
-}
-
-.bi-instagram {
-    background: #d6249f;
-    background: radial-gradient(
-            circle at 30% 107%,
-            #fdf497 0%,
-            #fdf497 5%,
-            #fd5949 45%,
-            #d6249f 60%,
-            #285aeb 90%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.bi-facebook {
-    color: #1877f2;
-}
-
-.underlined {
-    position: relative;
-
-    &:after {
-        content: "";
-        display: block;
-        width: 100px;
-        height: 2px;
-        margin: 1.25rem auto;
-        background-color: $secondary_color;
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        @media screen and (max-width: 576px) {
-            width: 85px;
-        }
-    }
-}
-
-.disabled-class {
-    pointer-events: none;
-    opacity: 0.7;
 }

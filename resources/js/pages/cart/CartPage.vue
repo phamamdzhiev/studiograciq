@@ -42,7 +42,7 @@
                     Направи поръчка - {{ grandTotal }} BGN
                 </button>
             </div>
-            <vue-final-modal v-model="showModal">
+            <vue-final-modal v-model="showModal" :ssr="false" classes="modal-container">
                 <OrderFrom/>
             </vue-final-modal>
         </div>
@@ -100,6 +100,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+::v-deep .modal-container {
+    margin-top: 3rem;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    @media screen and (max-width: 576px) {
+        margin-top: 0;
+    }
+}
+
 .table {
     thead {
         th {

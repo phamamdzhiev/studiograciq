@@ -23,7 +23,23 @@ const store = createStore({
 });
 const app = createApp(MainApp);
 app.use(router);
-app.use(plugin, defaultConfig);
+app.use(plugin, defaultConfig({
+    messages: {
+        en: {
+            validation: {
+                required() {
+                    return 'Това поле е задължително';
+                },
+                number() {
+                    return 'Това поле трябва да съдържа само цифри';
+                },
+                email() {
+                    return 'Моля, въведете валиден имейл адрес';
+                }
+            }
+        }
+    }
+}));
 app.use(VueSmoothScroll, {
     duration: 50,
     updateHistory: false,
