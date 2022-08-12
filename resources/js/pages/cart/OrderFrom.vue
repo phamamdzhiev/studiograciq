@@ -23,7 +23,7 @@
             <FormKit
                 type="text"
                 name="email"
-                label="Имейл"
+                label="Имейл (незадължителен)"
                 validation="email"
             />
             <FormKit
@@ -59,14 +59,33 @@
 
 <script>
 import {ref} from "vue";
+import {useRouter} from "vue-router";
+import axios from "axios"
+import {useStore} from "vuex";
 
 export default {
     name: "OrderFrom",
-    setup() {
+    props: ['cartItems'],
+    setup(props) {
         const shipping = ref(null);
+        const router = useRouter();
+        const store = useStore();
 
-        function submitHandler() {
-            alert(222)
+        async function submitHandler(data) {
+            const formData = {
+                customerData: data,
+                cartItems: props.cartItems
+            }
+
+            try {
+                const res = await axios.post('api/v1/create/order', formData);
+                if (res) {
+                    store.commit('Cart/emptyCart');
+                    await router.replace('/');
+                }
+            } catch (e) {
+                console.log(e)
+            }
         }
 
         return {

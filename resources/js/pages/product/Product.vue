@@ -2,14 +2,14 @@
     <div id="product-singleton" v-if="item">
         <div class="container-xxl">
             <div class="back">
-               <router-link to="/shop" class="d-inline-flex align-items-center text_tertiary my-1 p-3">
-                   <i class="bi bi-arrow-left me-3"></i>
-                   Назад към магазина
-               </router-link>
+                <router-link to="/shop" class="d-inline-flex align-items-center text_tertiary my-1 p-3">
+                    <i class="bi bi-arrow-left me-3"></i>
+                    Назад към магазина
+                </router-link>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <h1 class="my-4 px-3 fw-light heading" style="font-size: 3rem">{{item.title}}</h1>
+                    <h1 class="my-4 px-3 fw-light heading" style="font-size: 3rem">{{ item.title }}</h1>
                 </div>
                 <div class="col-lg-6">
                     <div class="left section p-3">
@@ -27,7 +27,7 @@
                             <ul>
                                 <li class="text_fourtriary">
                                     <span class="me-3">Каталожен номер:</span>
-                                    <span>{{item.id + '0'.repeat(2)}}</span>
+                                    <span>{{ item.id + '0'.repeat(2) }}</span>
                                 </li>
                             </ul>
                         </div>
@@ -75,7 +75,11 @@ import {useStore} from 'vuex'
 import {computed, ref} from "vue";
 
 export default {
-    props: ["id"],
+    props: {
+        id: {
+            required: true
+        }
+    },
     setup(props) {
         const store = useStore();
         const cartItemAmount = ref(1);
@@ -84,13 +88,19 @@ export default {
             return store.getters["Data/getShopItemsByID"](parseInt(props.id));
         });
 
-        const itemsFromSession = JSON.parse(sessionStorage.getItem('cart')).Cart.cart;
+        let itemsFromSession;
+        let currentProduct;
 
-        const currentProduct = itemsFromSession.find(el => {
-            return el.id === parseInt(props.id);
-        });
+        if (
+            JSON.parse(sessionStorage.getItem('cart')) !== null &&
+            JSON.parse(sessionStorage.getItem('cart')).length > 0
+        ) {
+            itemsFromSession = JSON.parse(sessionStorage.getItem('cart')).Cart.cart;
 
-        if (typeof currentProduct !== 'undefined') {
+            currentProduct = itemsFromSession.find(el => {
+                return el.id === parseInt(props.id);
+            });
+
             cartItemAmount.value = currentProduct.amount;
         }
 

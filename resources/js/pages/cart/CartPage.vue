@@ -43,7 +43,7 @@
                 </button>
             </div>
             <vue-final-modal v-model="showModal" :ssr="false" classes="modal-container">
-                <OrderFrom/>
+                <OrderFrom :cart-items="cartItems" />
             </vue-final-modal>
         </div>
         <div class="text-center min-vh-100" v-else>

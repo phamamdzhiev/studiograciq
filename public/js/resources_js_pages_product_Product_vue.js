@@ -16,19 +16,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ["id"],
+  props: {
+    id: {
+      required: true
+    }
+  },
   setup: function setup(props) {
     var store = (0,vuex__WEBPACK_IMPORTED_MODULE_1__.useStore)();
     var cartItemAmount = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(1);
     var item = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
       return store.getters["Data/getShopItemsByID"](parseInt(props.id));
     });
-    var itemsFromSession = JSON.parse(sessionStorage.getItem('cart')).Cart.cart;
-    var currentProduct = itemsFromSession.find(function (el) {
-      return el.id === parseInt(props.id);
-    });
+    var itemsFromSession;
+    var currentProduct;
 
-    if (typeof currentProduct !== 'undefined') {
+    if (JSON.parse(sessionStorage.getItem('cart')) !== null && JSON.parse(sessionStorage.getItem('cart')).length > 0) {
+      itemsFromSession = JSON.parse(sessionStorage.getItem('cart')).Cart.cart;
+      currentProduct = itemsFromSession.find(function (el) {
+        return el.id === parseInt(props.id);
+      });
       cartItemAmount.value = currentProduct.amount;
     }
 
