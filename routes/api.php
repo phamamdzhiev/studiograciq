@@ -25,3 +25,7 @@ Route::group(['prefix' => 'products'], function () {
     Route::get('all', [\App\Http\Controllers\ProductController::class, 'index'])->name('get.products.all');
     Route::get('single/{id}', [\App\Http\Controllers\ProductController::class, 'show'])->name('get.product.single');
 });
+
+Route::group(['prefix' => 'order'], function () {
+    Route::post('create', [\App\Http\Controllers\OrderController::class, 'store'])->name('create.order');
+});

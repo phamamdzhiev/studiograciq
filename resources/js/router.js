@@ -29,6 +29,11 @@ const routes = [
         name: "shop.page",
         component: () => import("./pages/shop/ShopPage"),
     },
+    // {
+    //     path: "/delivery",
+    //     name: "delivery.page",
+    //     component: () => import("./pages/delivery/DeliveryPage"),
+    // }
 ];
 
 const router = createRouter({

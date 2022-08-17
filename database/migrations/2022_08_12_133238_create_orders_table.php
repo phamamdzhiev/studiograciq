@@ -13,16 +13,19 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
-//        Schema::create('orders', function (Blueprint $table) {
-//            $table->id();
-//            $table->string('name');
-//            $table->string('mobile');
-//            $table->string('address')->nullable();
-//            $table->string('email')->nullable();
-//            $table->string('shipping_type');
-//            $table->string('product');
-//            $table->timestamps();
-//        });
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id();
+            $table->string('street');
+            $table->string('city');
+            $table->string('region');
+            $table->string('postal_code');
+            $table->string('country');
+            $table->string('shipping_type');
+            $table->longText('delivery_desc');
+            $table->unsignedBigInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -32,6 +35,6 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-//        Schema::dropIfExists('orders');
+        Schema::dropIfExists('orders');
     }
 }

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Order;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -27,7 +29,33 @@ class OrderController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-        return response()->json($request->all());
+//        $request->orderData->validate([
+//            'name' => 'required',
+//            'email' => 'email',
+//            'mobile' => 'required',
+//            'street' => 'required',
+//            'city' => 'required',
+//            'postal_code' => 'required'
+//        ]);
+
+        $newCustomer = Customer::create([
+            'name' => $request->orderData['name'],
+            'email' => $request->orderData['email'],
+            'mobile' => $request->orderData['mobile']
+        ]);
+
+        $newOrder = Order::create([
+            'street' => $request->orderData['street'],
+            'city' => $request->orderData['city'],
+            'region' => $request->orderData['region'],
+            'country' => 'Bulgaria',
+            'postal_code' => $request->orderData['postal_code'],
+            'shipping_type' => $request->orderData['shipping'],
+            'delivery_desc' => 'N/A',
+            'customer_id' => $newCustomer->id
+        ]);
+
+        return response()->json($newOrder);
     }
 
     /**
