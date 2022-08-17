@@ -20,7 +20,7 @@
                     <tr v-for="item in cartItems" :key="item.id">
                         <td class="product_title">
                             <router-link :to="`/product/${item.id}`">
-                                {{ item.title }}
+                                {{ item.name }}
                             </router-link>
                         </td>
                         <td>{{ item.price }} BGN</td>

@@ -7,7 +7,7 @@
                 <i class="bi bi-bag-heart-fill fs-1 me-3"></i>Всички продукти
             </h1>
 
-            <div class="shop">
+            <div class="shop" v-if="shopItems.length > 0">
                 <div v-for="item in shopItems" :key="item.id">
                     <ProductItemSingleton
                         :id="item.id"
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import {computed} from "vue";
+import {computed, onMounted} from "vue";
 import {useStore} from "vuex";
 import ProductItemSingleton from "../../components/ProductItemSingleton";
 import PageBanner from "../../components/PageBanner";
@@ -42,6 +42,13 @@ export default {
         const shopItems = computed(() => {
             return store.getters['Data/getShopItems'];
         });
+
+        onMounted(() => {
+            if (shopItems.value.length <= 1) {
+                store.dispatch('Data/setShopItems');
+            }
+        });
+
 
         return {
             shopItems

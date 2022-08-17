@@ -57,6 +57,11 @@ __webpack_require__.r(__webpack_exports__);
     var shopItems = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
       return store.getters['Data/getShopItems'];
     });
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
+      if (shopItems.value.length <= 1) {
+        store.dispatch('Data/setShopItems');
+      }
+    });
     return {
       shopItems: shopItems
     };
@@ -143,6 +148,7 @@ var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
 });
 
 var _hoisted_4 = {
+  key: 0,
   "class": "shop"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -154,7 +160,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     black: true,
     title: "Магазин",
     image: "https://hair.nelson.themerex.net/wp-content/uploads/2020/04/hair-global-bg1-copyright.jpg"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.shopItems, function (item) {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, $setup.shopItems.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.shopItems, function (item) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: item.id
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ProductItemSingleton, {
@@ -168,7 +174,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["id", "image", "title", "desc", "price"])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])])], 64
+  ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])], 64
   /* STABLE_FRAGMENT */
   );
 }

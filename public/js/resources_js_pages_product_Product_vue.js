@@ -24,8 +24,14 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(props) {
     var store = (0,vuex__WEBPACK_IMPORTED_MODULE_1__.useStore)();
     var cartItemAmount = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(1);
+    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
     var item = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
       return store.getters["Data/getShopItemsByID"](parseInt(props.id));
+    });
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
+      if (store.getters['Data/getShopItems'].length <= 0) {
+        store.dispatch('Data/setShopItems');
+      }
     });
     var itemsFromSession;
     var currentProduct;
@@ -56,7 +62,8 @@ __webpack_require__.r(__webpack_exports__);
       submitFormHandler: submitFormHandler,
       item: item,
       cartItemAmount: cartItemAmount,
-      isAddedInCart: isAddedInCart
+      isAddedInCart: isAddedInCart,
+      isLoading: isLoading
     };
   }
 });
@@ -179,20 +186,18 @@ var _hoisted_20 = {
   key: 1,
   "class": "mt-5 text-center min-vh-100"
 };
-var _hoisted_21 = {
-  "class": "container-xxl"
-};
 
-var _hoisted_22 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+var _hoisted_21 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "container-xxl"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
     "class": ""
-  }, "Този продукт не съществува!", -1
+  }, "Зареждане..."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <router-link class=\"d-inline-block mt-5 btn_secondary\" to=\"/\">"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                Към начална страница"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </router-link>")], -1
   /* HOISTED */
   );
 });
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Към начална страница ");
-
+var _hoisted_22 = [_hoisted_21];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
@@ -239,17 +244,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* HYDRATE_EVENTS */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.item.desc), 1
   /* TEXT */
-  )])])]), _hoisted_19])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    "class": "d-inline-block mt-5 btn_secondary",
-    to: "/"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_23];
-    }),
-    _: 1
-    /* STABLE */
-
-  })])]));
+  )])])]), _hoisted_19])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_20, _hoisted_22));
 }
 
 /***/ }),

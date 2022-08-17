@@ -63,16 +63,16 @@
     </div>
     <div class="mt-5 text-center min-vh-100" v-else>
         <div class="container-xxl">
-            <h1 class="">Този продукт не съществува!</h1>
-            <router-link class="d-inline-block mt-5 btn_secondary" to="/">
-                Към начална страница
-            </router-link>
+            <h1 class="">Зареждане...</h1>
+<!--            <router-link class="d-inline-block mt-5 btn_secondary" to="/">-->
+<!--                Към начална страница-->
+<!--            </router-link>-->
         </div>
     </div>
 </template>
 <script>
 import {useStore} from 'vuex'
-import {computed, ref} from "vue";
+import {computed, ref, onMounted} from "vue";
 
 export default {
     props: {
@@ -83,9 +83,16 @@ export default {
     setup(props) {
         const store = useStore();
         const cartItemAmount = ref(1);
+        const isLoading = ref(false);
 
         const item = computed(() => {
             return store.getters["Data/getShopItemsByID"](parseInt(props.id));
+        });
+
+        onMounted(() => {
+            if (store.getters['Data/getShopItems'].length <= 0) {
+                store.dispatch('Data/setShopItems');
+            }
         });
 
         let itemsFromSession;
@@ -122,7 +129,8 @@ export default {
             submitFormHandler,
             item,
             cartItemAmount,
-            isAddedInCart
+            isAddedInCart,
+            isLoading
         };
     },
 };

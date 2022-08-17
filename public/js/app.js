@@ -21976,59 +21976,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   namespaced: true,
   state: function state() {
     return {
-      shopItems: [{
-        id: 1,
-        title: 'Alfaparf Ампули за косопад',
-        image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
-        price: '123',
-        desc: 'no desc for now'
-      }, {
-        id: 2,
-        title: 'TEst 1',
-        image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
-        price: '9',
-        desc: 'no desc for now'
-      }, {
-        id: 3,
-        title: 'TEst 2',
-        image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
-        price: '53',
-        desc: 'no desc for now'
-      }, {
-        id: 4,
-        title: 'TEst 3',
-        image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
-        price: '23',
-        desc: 'no desc for now'
-      }, {
-        id: 5,
-        title: 'TEst 3',
-        image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
-        price: '23',
-        desc: 'no desc for now'
-      }, {
-        id: 6,
-        title: 'TEst 3',
-        image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
-        price: '23',
-        desc: 'no desc for now'
-      }, {
-        id: 7,
-        title: 'TEst 3',
-        image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
-        price: '23',
-        desc: 'no desc for now'
-      }, {
-        id: 8,
-        title: 'TEst 3',
-        image: 'https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-24-copyright-150x150.jpg',
-        price: '23',
-        desc: 'no desc for now'
-      }]
+      shopItems: []
     };
   },
   getters: {
@@ -22044,7 +21999,28 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mutations: {},
-  actions: {}
+  actions: {
+    setShopItems: function setShopItems(_ref) {
+      var state = _ref.state;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/products/all').then(function (res) {
+        if (res.status === 200) {
+          state.shopItems = res.data;
+        }
+      })["catch"](function (e) {
+        return console.log('Could not fetch products', e);
+      });
+    },
+    setShopItem: function setShopItem(_ref2, id) {
+      var state = _ref2.state;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/products/single/".concat(id)).then(function (res) {
+        if (res.status === 200) {
+          state.shopItems = [res.data];
+        }
+      })["catch"](function (e) {
+        return console.log('Could not fetch products', e);
+      });
+    }
+  }
 });
 
 /***/ }),

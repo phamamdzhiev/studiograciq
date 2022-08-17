@@ -8,21 +8,21 @@ class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *2022_08_17_132616_create_products_table
      * @return void
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+//        Schema::create('orders', function (Blueprint $table) {
+//            $table->id();
 //            $table->string('name');
 //            $table->string('mobile');
 //            $table->string('address')->nullable();
 //            $table->string('email')->nullable();
 //            $table->string('shipping_type');
 //            $table->string('product');
-            $table->timestamps();
-        });
+//            $table->timestamps();
+//        });
     }
 
     /**
@@ -32,6 +32,6 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+//        Schema::dropIfExists('orders');
     }
 }
