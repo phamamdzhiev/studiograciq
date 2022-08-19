@@ -20396,14 +20396,13 @@ __webpack_require__.r(__webpack_exports__);
       slug: "shop",
       label: "Магазин",
       url: "/shop"
-    } // {
-    //     id: 5,
-    //     icon: '<i class="bi bi-calendar-week-fill me-3 fs-1"></i>',
-    //     slug: "appointments",
-    //     label: "График",
-    //     url: "/",
-    // },
-    ];
+    }, {
+      id: 5,
+      icon: '<i class="bi bi-calendar-week-fill me-3 fs-1"></i>',
+      slug: "appointments",
+      label: "График",
+      url: "/appointments"
+    }];
     return {
       links: links
     };
@@ -21903,6 +21902,12 @@ var routes = [{
   name: "shop.page",
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_pages_shop_ShopPage_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/shop/ShopPage */ "./resources/js/pages/shop/ShopPage.vue"));
+  }
+}, {
+  path: "/appointments",
+  name: "appointments.page",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_pages_appointments_AppointmentsPage_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/appointments/AppointmentsPage */ "./resources/js/pages/appointments/AppointmentsPage.vue"));
   }
 } // {
 //     path: "/delivery",
@@ -83612,7 +83617,7 @@ function useRoute() {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_pages_services_Services_vue":1,"resources_js_pages_about_About_vue":1,"resources_js_pages_product_Product_vue":1,"resources_js_pages_cart_CartPage_vue":1,"resources_js_pages_shop_ShopPage_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_pages_services_Services_vue":1,"resources_js_pages_about_About_vue":1,"resources_js_pages_product_Product_vue":1,"resources_js_pages_cart_CartPage_vue":1,"resources_js_pages_shop_ShopPage_vue":1,"resources_js_pages_appointments_AppointmentsPage_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

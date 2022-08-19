@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/v1/create/order', [\App\Http\Controllers\OrderController::class, 'store'])->name('store.order');
+Route::get('appointments', [\App\Http\Controllers\AppointmentController::class, 'index'])->name('get.appointments');
 
 
 Route::group(['prefix' => 'products'], function () {

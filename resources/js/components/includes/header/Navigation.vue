@@ -60,13 +60,13 @@ export default {
                 label: "Магазин",
                 url: "/shop",
             },
-            // {
-            //     id: 5,
-            //     icon: '<i class="bi bi-calendar-week-fill me-3 fs-1"></i>',
-            //     slug: "appointments",
-            //     label: "График",
-            //     url: "/",
-            // },
+            {
+                id: 5,
+                icon: '<i class="bi bi-calendar-week-fill me-3 fs-1"></i>',
+                slug: "appointments",
+                label: "График",
+                url: "/appointments",
+            },
         ];
 
         return {

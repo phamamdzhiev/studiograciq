@@ -29,6 +29,11 @@ const routes = [
         name: "shop.page",
         component: () => import("./pages/shop/ShopPage"),
     },
+    {
+        path: "/appointments",
+        name: "appointments.page",
+        component: () => import("./pages/appointments/AppointmentsPage"),
+    }
     // {
     //     path: "/delivery",
     //     name: "delivery.page",
