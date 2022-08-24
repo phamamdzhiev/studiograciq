@@ -21,7 +21,14 @@ class CreateProductsTable extends Migration
             $table->string('brand');
             $table->string('image_big');
             $table->string('image_small');
-            $table->string('cat_number');
+            $table->string('catalogue_number');
+
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('product_categories')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

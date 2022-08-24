@@ -8,14 +8,14 @@ import router from "./router";
 import {createStore} from 'vuex'
 import MainApp from "./MainApp";
 import Cart from "./store/cart";
-import Data from "./store/data";
+// import Data from "./store/data";
 import {plugin, defaultConfig} from '@formkit/vue'
 import '@formkit/themes/genesis'
 
 const store = createStore({
     modules: {
         Cart,
-        Data
+        // Data
     },
     plugins: [
         createPersistedState(cartPersist),

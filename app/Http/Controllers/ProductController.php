@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductCategory;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -13,17 +15,26 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Builder $data
+     * @param Request $request
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(Builder $data, Request $request): JsonResponse
     {
-        return response()->json(Product::getAll());
+        if ($request->has('category')) {
+            $sql = DB::table('products')->where('category_id', '=', $request->query('category'));
+        } else {
+            $sql = DB::table('products');
+        }
+
+        return response()->json($sql->get());
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
+     * @param $id
      * @return Response
      */
     public function store(Request $request, $id)

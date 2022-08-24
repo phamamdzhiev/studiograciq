@@ -22,6 +22,22 @@ a {
     }
 }
 
+.page.admin {
+    a {
+        color: black;
+        &.nav-link {
+            color: white;
+        }
+
+        &:hover {
+            color: black;
+            &.nav-link {
+                color: white;
+            }
+        }
+    }
+}
+
 i.bi {
     font-size: 2rem;
     margin: 0 2px;

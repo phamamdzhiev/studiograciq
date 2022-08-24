@@ -13,12 +13,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Vue -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
     {{--font awsome--}}
     {{--<script src="https://kit.fontawesome.com/4787c0013c.js" crossorigin="anonymous"></script>--}}
 </head>
 <body>
 <div id="app"></div>
-<!-- Vue -->
-<script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>

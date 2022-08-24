@@ -4,8 +4,10 @@
     <div class="section-wrapper my-5">
         <div class="container-xxl">
             <h1 class="my-5 d-flex align-items-center">
-                <i class="bi bi-bag-heart-fill fs-1 me-3"></i>Всички продукти
+                <i class="bi bi-bag-heart-fill fs-1 me-3"></i>Продукти
             </h1>
+
+            <CategoriesHeader @changeUri="emitHandler"/>
 
             <div class="shop" v-if="shopItems.length > 0">
                 <div v-for="item in shopItems" :key="item.id">
@@ -18,6 +20,9 @@
                     />
                 </div>
             </div>
+            <div class="my-5" v-else>
+                <h2 class="text-center">Няма намерени продукти в тази категория :(</h2>
+            </div>
         </div>
     </div>
 
@@ -25,33 +30,53 @@
 </template>
 
 <script>
-import {computed, onMounted} from "vue";
+import {onMounted, ref} from "vue";
 import {useStore} from "vuex";
 import ProductItemSingleton from "../../components/ProductItemSingleton";
+import CategoriesHeader from "./CategoriesHeader";
 import PageBanner from "../../components/PageBanner";
+import axios from "axios";
 
 export default {
     name: "ShopPage",
     components: {
         ProductItemSingleton,
-        PageBanner
+        PageBanner,
+        CategoriesHeader
     },
     setup() {
         const store = useStore();
+        const shopItems = ref([]);
+        const DATA_API = ref('/api/products/all');
 
-        const shopItems = computed(() => {
-            return store.getters['Data/getShopItems'];
-        });
+        // const shopItems = computed(() => {
+        //     return store.getters['Data/getShopItems'];
+        // });
+
+        function emitHandler(value) {
+            (value == null) ? DATA_API.value = '/api/products/all' : DATA_API.value = `/api/products/all?category=${value}`;
+            fetchData()
+        }
+
+        function fetchData() {
+            axios.get(DATA_API.value).then((res) => {
+                if (res.status === 200) {
+                    shopItems.value = res.data;
+                }
+            }).catch(e => console.log('Could not fetch products', e));
+        }
 
         onMounted(() => {
-            if (shopItems.value.length <= 1) {
-                store.dispatch('Data/setShopItems');
-            }
+            fetchData()
+            // if (shopItems.value.length <= 1) {
+            //     store.dispatch('Data/setShopItems');
+            // }
         });
 
 
         return {
-            shopItems
+            shopItems,
+            emitHandler
         }
     }
 }

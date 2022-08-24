@@ -1,10 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap);
 @import url(https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css);
 @charset "UTF-8";
-:root {
-  --swiper-navigation-color: #659498;
-}
-
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10310,164 +10306,32 @@ i.bi {
   color: #1877f2;
 }
 
-.btn_primary {
-  background-color: #192123;
-  border: 4px solid transparent;
-  border-radius: 0;
-  padding: 1rem 2rem;
-  transition: background 200ms ease-in;
-  color: white;
-}
-.btn_primary:hover, .btn_primary:focus, .btn_primary:active, .btn_primary:focus:hover {
-  background: transparent;
-  border: 4px solid #192123;
-  color: #0C1011;
-}
-
-.btn_secondary {
-  background-color: #9e49a3;
-  border: 4px solid transparent;
-  border-radius: 0;
-  padding: 1rem 2rem;
-  transition: background 200ms ease-in;
-  color: white;
-}
-.btn_secondary:hover, .btn_secondary:focus, .btn_secondary:active, .btn_secondary:focus:hover {
-  background: transparent;
-  border: 4px solid #9e49a3;
-  color: #9e49a3;
-}
-
-.btn_tertiary {
-  background-color: #659498;
-  border: 4px solid transparent;
-  border-radius: 0;
-  padding: 1rem 2rem;
-  transition: background 200ms ease-in;
-  color: white;
-}
-.btn_tertiary:hover, .btn_tertiary:focus, .btn_tertiary:active, .btn_tertiary:focus:hover {
-  background: transparent;
-  border: 4px solid #659498;
-}
-.btn_tertiary.btn-inverse {
-  background-color: transparent;
-  border: 4px solid #659498;
-}
-.btn_tertiary.btn-inverse:hover, .btn_tertiary.btn-inverse:focus, .btn_tertiary.btn-inverse:active, .btn_tertiary.btn-inverse:focus:hover {
-  background: #659498;
-}
-
-.text_primary {
-  color: #0C1011;
-}
-
-.text_secondary {
-  color: #9e49a3;
-}
-
-.text_tertiary {
-  color: #659498;
-}
-
-.text_fourtriary {
-  color: #798a8a;
-}
-
-.disabled-class {
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-.underlined {
-  position: relative;
-}
-.underlined:after {
-  content: "";
-  display: block;
-  width: 100px;
-  height: 2px;
-  margin: 1.25rem auto;
-  background-color: #9e49a3;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-@media screen and (max-width: 576px) {
-  .underlined:after {
-    width: 85px;
-  }
-}
-
-.formkit-label,
-.formkit-help {
-  color: #d3d3d3 !important;
-}
-
-.formkit-input:not([type=submit]) {
-  border: 2px solid #798a8a;
-  box-shadow: none;
-  outline: 0;
-  color: white;
-}
-
-.formkit-inner {
-  box-shadow: none !important;
-}
-
-.formkit-message {
-  color: #ed4337 !important;
-}
-
-.formkit-options {
-  display: flex;
-  flex-direction: column;
-}
-
-[data-type=radio] .formkit-input:checked ~ .formkit-decorator .formkit-icon {
-  color: #659498 !important;
-}
-
-[data-type=radio] .formkit-input:checked ~ .formkit-decorator {
-  box-shadow: 0 0 0 1px #659498 !important;
-}
-
-.formkit-wrapper {
-  max-width: unset !important;
-}
-
-.vfm__content {
-  max-width: 500px !important;
-  margin: auto !important;
-}
-
 html {
   font-size: 62.5%;
-  /* Track */
-  /* Handle */
-  /* Handle on hover */
-  scrollbar-width: thin;
-  scrollbar-color: #9e49a3 #0C1011;
-}
-html::-webkit-scrollbar {
-  width: 8px;
-}
-html::-webkit-scrollbar-track {
-  background: #0C1011;
-}
-html::-webkit-scrollbar-thumb {
-  background: #9e49a3;
-  border-radius: 20px;
-}
-html::-webkit-scrollbar-thumb:hover {
-  background: #ad53b2;
 }
 
 body {
   font-size: 1.6rem;
-  color: white;
-  background-color: #0C1011;
+  color: #0C1011;
+  background: whitesmoke;
   margin: auto;
   font-family: "Montserrat", sans-serif;
+}
+
+.btn {
+  font-size: 1.4rem;
+}
+
+.form-control {
+  padding: 0.675rem;
+  font-size: 1.4rem;
+}
+
+.section {
+  padding: 0.5rem;
+  margin: 3rem 0;
+}
+
+.section-heading {
+  margin-bottom: 2rem;
 }

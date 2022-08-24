@@ -23,6 +23,7 @@ Route::get('appointments', [\App\Http\Controllers\AppointmentController::class, 
 
 Route::group(['prefix' => 'products'], function () {
     Route::get('all', [\App\Http\Controllers\ProductController::class, 'index'])->name('get.products.all');
+    Route::get('categories', [\App\Http\Controllers\ProductsCategoryController::class, 'index'])->name('get.products.categories');
     Route::get('single/{id}', [\App\Http\Controllers\ProductController::class, 'show'])->name('get.product.single');
 });
 

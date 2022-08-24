@@ -64,15 +64,16 @@
     <div class="mt-5 text-center min-vh-100" v-else>
         <div class="container-xxl">
             <h1 class="">Зареждане...</h1>
-<!--            <router-link class="d-inline-block mt-5 btn_secondary" to="/">-->
-<!--                Към начална страница-->
-<!--            </router-link>-->
+            <!--            <router-link class="d-inline-block mt-5 btn_secondary" to="/">-->
+            <!--                Към начална страница-->
+            <!--            </router-link>-->
         </div>
     </div>
 </template>
 <script>
 import {useStore} from 'vuex'
 import {computed, ref, onMounted} from "vue";
+import axios from "axios";
 
 export default {
     props: {
@@ -83,16 +84,14 @@ export default {
     setup(props) {
         const store = useStore();
         const cartItemAmount = ref(1);
-        const isLoading = ref(false);
-
-        const item = computed(() => {
-            return store.getters["Data/getShopItemsByID"](parseInt(props.id));
-        });
+        const item = ref(null)
 
         onMounted(() => {
-            if (store.getters['Data/getShopItems'].length <= 0) {
-                store.dispatch('Data/setShopItems');
-            }
+            axios.get(`/api/products/single/${props.id}`).then((res) => {
+                if (res.status === 200) {
+                    item.value = res.data;
+                }
+            }).catch(e => console.log('Could not fetch products', e));
         });
 
         let itemsFromSession;
@@ -130,7 +129,6 @@ export default {
             item,
             cartItemAmount,
             isAddedInCart,
-            isLoading
         };
     },
 };

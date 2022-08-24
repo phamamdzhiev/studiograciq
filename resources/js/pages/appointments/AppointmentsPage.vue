@@ -32,7 +32,9 @@
                         <td v-for="i in 10">
                             <template v-for="item in appointments">
                                 <div class="slot" v-if="item[0].split(':')[0] == i+9"
-                                     :data-hours="parseInt(item[1]) - parseInt(item[0])">
+                                     :data-hours="parseInt(item[1]) - parseInt(item[0])"
+                                     :data-minutes="item[1].split(':')[1]"
+                                >
                                 </div>
                             </template>
                         </td>
@@ -118,6 +120,8 @@ td, th {
     background-color: #659498;
     width: 100%;
     height: 70px;
+    border-left: 2px solid #2c3034;
+    border-right: 2px solid #2c3034;
 
     &:after {
         display: block;
@@ -130,6 +134,18 @@ td, th {
         transform: translate(-50%, -50%);
         font-size: 15px;
         line-height: 70px;
+    }
+
+    &[data-minutes="30"] {
+        left: 50% !important;
+    }
+
+    &[data-hours='0'] {
+        width: 100%;
+
+        &[data-minutes="30"] {
+            width: 50%;
+        }
     }
 
     &[data-hours='1'] {
@@ -171,6 +187,8 @@ td, th {
     &[data-hours='10'] {
         width: 1000%;
     }
+
+
 }
 
 .slot.active {
