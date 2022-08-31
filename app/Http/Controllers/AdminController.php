@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -63,5 +65,35 @@ class AdminController extends Controller
     public function appointments(Request $request)
     {
         return view('auth.admin.appointments');
+    }
+
+    public function storeAppointments(Request $request)
+    {
+        if ($request->input('hours_from') === $request->input('hours_to')) {
+            return redirect()->back()->with('msg', 'Не може двата часа да са еднакви');
+        }
+
+        $days = DB::table('appointments')->where('day', '=', $request->input('date'))->get();
+
+        foreach ($days as $day) {
+            if ($day->from_h === $request->input('hours_from')) {
+                return redirect()->back()->with('msg', 'Ne stavaa, brat');
+            }
+        }
+
+        try {
+            Appointment::create([
+                'name' => 'Анонимен',
+                'service_id' => 1,
+                'day' => $request->input('date'),
+                'from_h' => $request->input('hours_from'),
+                'until_h' => $request->input('hours_to')
+            ]);
+
+            return redirect()->back()->with('msg', 'Успешно записа час!');
+
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage());
+        }
     }
 }

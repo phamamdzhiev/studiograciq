@@ -27,11 +27,11 @@
                         <thead>
                         <tr>
                             <th class="fw-normal position-relative"
-                                style="min-width: 125px; height:50px;border-right: 2px solid white;" v-for="i in 9">
+                                style="min-width: 125px; height:50px;border-right: 2px solid white;" v-for="i in 8">
                             <span class="position-absolute top-50 start-50 translate-middle"
                                   style="white-space: nowrap">
                                 {{
-                                    (i + 9) + ':00 - ' + (i + 10) + ':00'
+                                    (i + 10) + ':00 - ' + (i + 11) + ':00'
                                 }}
                             </span>
                             </th>
@@ -41,10 +41,10 @@
                         <tr>
                             <td v-for="i in 10">
                                 <template v-for="item in appointments">
-                                    <div class="slot" v-if="item[0].split(':')[0] == i+9"
+                                    <div class="slot" v-if="item[0].split('.')[0] == i+9"
                                          :data-hours="parseInt(item[1]) - parseInt(item[0])"
-                                         :data-minutes="item[0].split(':')[1]"
-                                         :data-minutes-end="item[1].split(':')[1]"
+                                         :data-minutes="item[0].split('.')[1]"
+                                         :data-minutes-end="item[1].split('.')[1]"
                                          :data-full-day="parseInt(item[1]) - parseInt(item[0]) === 9 ? 'true' : 'false'"
                                     >
                                     </div>
@@ -59,7 +59,8 @@
                 </div>
             </div>
             <div class="actions">
-                <a :href="`tel:${$MOBILE_CONST}`" class="d-inline-block btn_tertiary btn-inverse">Запази час по телефона</a>
+                <a :href="`tel:${$MOBILE_CONST}`" class="d-inline-block btn_tertiary btn-inverse">Запази час по
+                    телефона</a>
             </div>
         </div>
     </div>
@@ -118,11 +119,15 @@ export default {
 
 <style lang="scss" scoped>
 table {
-    min-width: 1000px;
+    min-width: 1100px;
     margin: auto;
 }
 
 tr {
+    border: 0;
+}
+
+td {
     border: 0;
 }
 
@@ -156,7 +161,7 @@ td, th {
 
     &:after {
         display: block;
-        content: 'Зает час';
+        content: 'Зает';
         position: absolute;
         top: 50%;
         left: 50%;

@@ -24,23 +24,23 @@
                 </h3>
                 <h3 class="text_fourtriary">
                     <i class="bi bi-facebook"></i>
-                    <a target="_blank" href="https://www.facebook.com/studio.gratzia" class="ps-2 text_fourtriary">Facebook</a>
+                    <a target="_blank" :href="$FACEBOOK" class="ps-2 text_fourtriary">Facebook</a>
                 </h3>
                 <h3 class="text_fourtriary">
                     <i class="bi bi-instagram"></i>
-                    <a target="_blank" href="/" class="ps-2 text_fourtriary">Instagram</a>
+                    <a target="_blank" :href="$INSTAGRAM" class="ps-2 text_fourtriary">Instagram</a>
                 </h3>
             </div>
-            <a href="tel:+35914543548" class="d-inline-block fw-bold text_tertiary"
+            <a :href="`tel:${$MOBILE_CONST}`" class="d-inline-block fw-bold text_tertiary"
             >Запази час</a>
         </div>
         <div class="contacts-singleton text-center p-5">
             <h1>Работно време</h1>
             <h3 class="text_fourtriary py-4">
-                <span class="d-block"> Пон-събота: 09.00ч - 19.00ч </span>
+                <span class="d-block"> Пон-събота: 11.00ч - 19.00ч </span>
                 <span class="d-block"> Неделя: почивен ден </span>
             </h3>
-            <router-link to="/" class="d-inline-block fw-bold text_tertiary"
+            <router-link to="/appointments" class="d-inline-block fw-bold text_tertiary"
             >Виж график
             </router-link
             >

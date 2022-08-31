@@ -21666,41 +21666,56 @@ var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
 });
 
 var _hoisted_13 = ["href"];
+var _hoisted_14 = {
+  "class": "text_fourtriary"
+};
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h3 class=\"text_fourtriary\" data-v-25ddb069><i class=\"bi bi-facebook\" data-v-25ddb069></i><a target=\"_blank\" href=\"https://www.facebook.com/studio.gratzia\" class=\"ps-2 text_fourtriary\" data-v-25ddb069>Facebook</a></h3><h3 class=\"text_fourtriary\" data-v-25ddb069><i class=\"bi bi-instagram\" data-v-25ddb069></i><a target=\"_blank\" href=\"/\" class=\"ps-2 text_fourtriary\" data-v-25ddb069>Instagram</a></h3>", 2);
-
-var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: "tel:+35914543548",
-    "class": "d-inline-block fw-bold text_tertiary"
-  }, "Запази час", -1
+var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+    "class": "bi bi-facebook"
+  }, null, -1
   /* HOISTED */
   );
 });
 
+var _hoisted_16 = ["href"];
 var _hoisted_17 = {
-  "class": "contacts-singleton text-center p-5"
+  "class": "text_fourtriary"
 };
 
 var _hoisted_18 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+    "class": "bi bi-instagram"
+  }, null, -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_19 = ["href"];
+var _hoisted_20 = ["href"];
+var _hoisted_21 = {
+  "class": "contacts-singleton text-center p-5"
+};
+
+var _hoisted_22 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Работно време", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_19 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_23 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
     "class": "text_fourtriary py-4"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "d-block"
-  }, " Пон-събота: 09.00ч - 19.00ч "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  }, " Пон-събота: 11.00ч - 19.00ч "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "d-block"
   }, " Неделя: почивен ден ")], -1
   /* HOISTED */
   );
 });
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Виж график ");
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Виж график ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -21714,12 +21729,29 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "ps-2 text_fourtriary"
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$MOBILE_CONST_HR), 9
   /* TEXT, PROPS */
-  , _hoisted_13)]), _hoisted_14]), _hoisted_16]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_hoisted_18, _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/",
+  , _hoisted_13)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    target: "_blank",
+    href: _ctx.$FACEBOOK,
+    "class": "ps-2 text_fourtriary"
+  }, "Facebook", 8
+  /* PROPS */
+  , _hoisted_16)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    target: "_blank",
+    href: _ctx.$INSTAGRAM,
+    "class": "ps-2 text_fourtriary"
+  }, "Instagram", 8
+  /* PROPS */
+  , _hoisted_19)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "tel:".concat(_ctx.$MOBILE_CONST),
+    "class": "d-inline-block fw-bold text_tertiary"
+  }, "Запази час", 8
+  /* PROPS */
+  , _hoisted_20)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/appointments",
     "class": "d-inline-block fw-bold text_tertiary"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_20];
+      return [_hoisted_24];
     }),
     _: 1
     /* STABLE */
@@ -21919,6 +21951,8 @@ app.config.globalProperties.$MOBILE_CONST = '+359878888605';
 app.config.globalProperties.$MOBILE_CONST_HR = '+359 878 888 605';
 app.config.globalProperties.$ADDRESS_STREET_CONST = 'ул. Стоян Попов 8';
 app.config.globalProperties.$ADDRESS_CITY_CONST = 'Пещера';
+app.config.globalProperties.$FACEBOOK = 'https://www.facebook.com/studio.gratzia';
+app.config.globalProperties.$INSTAGRAM = 'https://www.instagram.com/hairstyle_studio_graciq';
 app.mount("#app");
 
 /***/ }),

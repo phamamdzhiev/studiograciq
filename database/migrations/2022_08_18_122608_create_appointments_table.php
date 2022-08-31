@@ -19,8 +19,8 @@ class CreateAppointmentsTable extends Migration
             $table->string('name');
             $table->unsignedBigInteger('service_id');
             $table->date('day');
-            $table->time('from_h')->unique();
-            $table->time('until_h')->unique();
+            $table->decimal('from_h');
+            $table->decimal('until_h');
             $table->timestamps();
         });
     }
