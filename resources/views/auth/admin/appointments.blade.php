@@ -3,12 +3,58 @@
 @section('content')
     <div class="container">
         @if (\Session::has('msg'))
-            <div class="alert alert-success">
+            <div class="alert">
                 <ul>
                     <li>{!! \Session::get('msg') !!}</li>
                 </ul>
             </div>
         @endif
+        <div class="section">
+            <h1 class="section-heading">График</h1>
+            <h4 class="mb-4"><i>Днес е: {{\Illuminate\Support\Carbon::today()->format('d.m.Y')}}г.</i></h4>
+            <div>
+                <form action="{{route('admin.appointments')}}" method="GET">
+                    @csrf
+                    <label class="fw-bold" for="filter">Филтър</label>
+                    <input type="date" id="filter" name="filter" required/>
+                    <button type="submit" class="btn btn-info">Търси</button>
+                    <a href="{{route('admin.appointments')}}" class="btn btn-dark text-white">Изчисти филтър</a>
+                </form>
+            </div>
+            <div class="table-responsive">
+                @if (count($appointments) > 0)
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Дата</th>
+                            <th scope="col">Час от</th>
+                            <th scope="col">Час до</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($appointments as $appointment)
+                            <tr>
+                                <th scope="row">{{$loop->iteration}}</th>
+                                <td>
+                                    {{\Illuminate\Support\Carbon::parse($appointment->day)->format('d.m.Y')}}
+                                    {!!  \Illuminate\Support\Carbon::parse($appointment->day)->isToday() ? '<i>(днес)<i>' : ''!!}
+                                    {!!  \Illuminate\Support\Carbon::parse($appointment->day)->isTomorrow() ? '<i>(утре)<i>' : ''!!}
+                                </td>
+                                <td> {{$appointment->from_h}}ч.</td>
+                                <td>{{$appointment->until_h}}ч.</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                @else
+                    <div class="mb-3 mt-5">
+                        <h4 class="fw-bold">Няма записани клиенти за тази дата</h4>
+                    </div>
+                @endif
+            </div>
+        </div>
+        <hr/>
         <div class="section">
             <h1 class="section-heading">Запазване на час</h1>
             <form id="add-category-form" action="{{route('post.admin.appointments')}}" method="POST">

@@ -64,7 +64,12 @@ class AdminController extends Controller
      */
     public function appointments(Request $request)
     {
-        return view('auth.admin.appointments');
+        if (!is_null($request->input('filter'))) {
+            $appointments = DB::table('appointments')->where('day', '=', $request->input('filter'))->orderBy('day')->orderBy('from_h')->get();
+        } else {
+            $appointments = DB::table('appointments')->orderBy('day')->orderBy('from_h')->get();
+        }
+        return view('auth.admin.appointments', compact('appointments'));
     }
 
     public function storeAppointments(Request $request)
