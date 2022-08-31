@@ -1,69 +1,69 @@
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+    #page_login {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        margin: 1rem auto;
+    }
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+    .heading {
+        text-align: center;
+    }
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+    #page_login form {
+        width: 100%;
+    }
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+    #page_login form input {
+        width: 100%;
+        padding: 5px 10px;
+        margin-top: 1rem;
+    }
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+    .invalid-feedback {
+        color: #dc3545;
+        text-align: center;
+    }
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    button[type="submit"] {
+        width: 100%;
+        padding: 5px 10px;
+        margin-top: 1rem;
+        color: white;
+        font-weight: bold;
+        background-color: #659498;
+        border: 2px solid #659498;
+    }
+</style>
+<section id="page_login">
+    <h3 class="heading">Вход в админ панел</h3>
+    @error('email')
+    <div class="invalid-feedback" role="alert">
+        <strong>Грешен имейл адрес или парола. Опитайте отново!</strong>
     </div>
-</div>
+    @enderror
+    @error('password')
+    <div class="invalid-feedback" role="alert">
+        <strong>Грешен имейл адрес или парола. Опитайте отново!</strong>
+    </div>
+    @enderror
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
+        <input id="email" placeholder="Имейл адрес" type="email"
+               class="form-control @error('email') is-invalid @enderror"
+               name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+        <input id="password" placeholder="Парола" type="password"
+               class="form-control @error('password') is-invalid @enderror"
+               name="password" required autocomplete="current-password">
+        <button type="submit" class="btn btn-primary">
+            Вход
+        </button>
+    </form>
+</section>

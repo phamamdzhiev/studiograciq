@@ -19,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('appointments', [\App\Http\Controllers\AppointmentController::class, 'index'])->name('get.appointments');
+Route::get('services', [\App\Http\Controllers\ServiceController::class, 'index'])->name('get.services');
 
 
 Route::group(['prefix' => 'products'], function () {

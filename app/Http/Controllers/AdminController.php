@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Customer;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\Service;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +18,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('auth.admin.admin');
+        return redirect('admin/appointments');
     }
 
     /**
@@ -65,11 +68,29 @@ class AdminController extends Controller
     public function appointments(Request $request)
     {
         if (!is_null($request->input('filter'))) {
-            $appointments = DB::table('appointments')->where('day', '=', $request->input('filter'))->orderBy('day')->orderBy('from_h')->get();
+            $appointments = DB::table('appointments')->join('customers', 'customers.id', '=', 'appointments.client_id')
+                ->join('services', 'services.id', '=', 'appointments.service_id')
+                ->select('appointments.*', 'services.name as sName', 'customers.name as cName')
+                ->where('day', '=', $request->input('filter'))
+                ->orderBy('day')->orderBy('from_h')
+                ->get();
         } else {
-            $appointments = DB::table('appointments')->orderBy('day')->orderBy('from_h')->get();
+//            $today = Carbon::now();
+            $appointments = DB::table('appointments')
+//                ->whereBetween('day', [
+//                    $today->startOfMonth()->format('Y-m-d'),
+//                    $today->endOfMonth()->format('Y-m-d')
+//                ])
+                ->join('customers', 'customers.id', '=', 'appointments.client_id')
+                ->join('services', 'services.id', '=', 'appointments.service_id')
+                ->select('appointments.*', 'services.name as sName', 'customers.name as cName')
+                ->orderBy('day')
+                ->orderBy('from_h')
+                ->get();
         }
-        return view('auth.admin.appointments', compact('appointments'));
+        $services = Service::all();
+        $customers = Customer::all();
+        return view('auth.admin.appointments', compact('appointments', 'services', 'customers'));
     }
 
     public function storeAppointments(Request $request)
@@ -89,13 +110,69 @@ class AdminController extends Controller
         try {
             Appointment::create([
                 'name' => 'Анонимен',
-                'service_id' => 1,
+                'service_id' => $request->input('service'),
+                'client_id' => $request->input('customer'),
                 'day' => $request->input('date'),
                 'from_h' => $request->input('hours_from'),
                 'until_h' => $request->input('hours_to')
             ]);
 
             return redirect()->back()->with('msg', 'Успешно записа час!');
+
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage());
+        }
+    }
+
+    public function services()
+    {
+        $services = Service::all();
+        return view('auth.admin.services', compact('services'));
+    }
+
+    public function storeServices(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required'
+        ]);
+
+        try {
+            Service::create([
+                'name' => $request->input('name'),
+                'price' => $request->input('price')
+            ]);
+
+            return redirect()->back()->with('msg', 'Успешно добавена услуга!');
+
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage());
+        }
+    }
+
+    public function customers()
+    {
+        $customers = Customer::all();
+        return view('auth.admin.customers', compact('customers'));
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function storeCustomers(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        try {
+            Customer::create([
+                'name' => $request->input('name'),
+                'mobile' => $request->input('mobile') ?? 'N/a',
+                'email' => $request->input('email') ?? 'N/a',
+            ]);
+
+            return redirect()->back()->with('msg', 'Успешно добавена клиент!');
 
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());

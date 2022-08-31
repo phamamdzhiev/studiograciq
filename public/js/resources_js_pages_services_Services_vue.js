@@ -59,6 +59,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PriceSingleton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PriceSingleton */ "./resources/js/pages/services/PriceSingleton.vue");
 /* harmony import */ var _components_SectionDivider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/SectionDivider */ "./resources/js/components/SectionDivider.vue");
 /* harmony import */ var _components_PageBanner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/PageBanner */ "./resources/js/components/PageBanner.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
 
 
 
@@ -70,28 +75,28 @@ __webpack_require__.r(__webpack_exports__);
     PageBanner: _components_PageBanner__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   setup: function setup() {
-    var prices = [{
-      id: 1,
-      title: 'Подстрицка',
-      price: 54
-    }, {
-      id: 2,
-      title: 'Подстрицка',
-      price: 510
-    }, {
-      id: 3,
-      title: 'Подстрицка',
-      price: 150
-    }, {
-      id: 4,
-      title: 'Подстрицка',
-      price: 540
-    }, {
-      id: 5,
-      title: 'Подстрицка',
-      price: 5
-    }];
+    var prices = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)([]);
+    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)(false);
+
+    function getServices() {
+      isLoading.value = true;
+      axios__WEBPACK_IMPORTED_MODULE_3___default().get('api/services').then(function (res) {
+        isLoading.value = false;
+
+        if (res.status === 200) {
+          return prices.value = res.data;
+        }
+      })["catch"](function (e) {
+        isLoading.value = false;
+        return console.log('Could not fetch services', e);
+      });
+    }
+
+    (0,vue__WEBPACK_IMPORTED_MODULE_4__.onMounted)(function () {
+      getServices();
+    });
     return {
+      isLoading: isLoading,
       prices: prices
     };
   }
@@ -219,8 +224,35 @@ var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
 });
 
 var _hoisted_6 = {
+  key: 0
+};
+
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+    "class": "text-center"
+  }, " Зареждане ...", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_8 = [_hoisted_7];
+var _hoisted_9 = {
+  key: 1,
   "class": "d-grid"
 };
+var _hoisted_10 = {
+  key: 2
+};
+
+var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+    "class": "text-center"
+  }, "Няма добавени услуги", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_12 = [_hoisted_11];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_PageBanner = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PageBanner");
 
@@ -229,17 +261,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PageBanner, {
     title: "Всички услуги",
     image: "https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-31-dark-copyright.jpg"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.prices, function (price) {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, _hoisted_8)) : $setup.prices.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.prices, function (price) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PriceSingleton, {
       key: price.id,
-      title: price.title,
+      title: price.name,
       price: price.price
     }, null, 8
     /* PROPS */
     , ["title", "price"]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])])])]);
+  ))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, _hoisted_12))])])])]);
 }
 
 /***/ }),

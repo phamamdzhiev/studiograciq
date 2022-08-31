@@ -22,8 +22,8 @@ class CreateOrdersTable extends Migration
             $table->string('country');
             $table->string('shipping_type');
             $table->longText('delivery_desc');
-            $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+//            $table->unsignedBigInteger('customer_id');
+//            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -39,9 +39,9 @@
                         </thead>
                         <tbody v-if="appointments.length > 0">
                         <tr>
-                            <td v-for="i in 10">
+                            <td v-for="i in 8">
                                 <template v-for="item in appointments">
-                                    <div class="slot" v-if="item[0].split('.')[0] == i+9"
+                                    <div class="slot" v-if="item[0].split('.')[0] == i+10"
                                          :data-hours="parseInt(item[1]) - parseInt(item[0])"
                                          :data-minutes="item[0].split('.')[1]"
                                          :data-minutes-end="item[1].split('.')[1]"

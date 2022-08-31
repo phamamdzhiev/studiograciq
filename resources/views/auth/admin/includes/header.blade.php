@@ -8,8 +8,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="{{route('admin')}}">Начало</a>
+{{--                    <a class="nav-link" href="{{route('admin')}}">Начало</a>--}}
                     <a class="nav-link" href="{{route('admin.appointments')}}">График</a>
+                    <a class="nav-link" href="{{route('admin.customers')}}">Клиенти</a>
+                    <a class="nav-link" href="{{route('admin.services')}}">Услуги</a>
                     <a class="nav-link" href="{{route('admin.products')}}">Продукти</a>
                     <a class="nav-link" href="{{route('admin.categories')}}">Категории</a>
                     <form action="{{route('logout')}}" method="POST">
