@@ -146,18 +146,10 @@ var _hoisted_4 = {
   "class": "gallery"
 };
 var _hoisted_5 = ["src"];
-
-var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "action text-center my-5"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: "tel:+35914543548",
-    "class": "btn btn_secondary d-inline-block"
-  }, "Запази час")], -1
-  /* HOISTED */
-  );
-});
-
+var _hoisted_6 = {
+  "class": "action text-center my-5"
+};
+var _hoisted_7 = ["href"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_PageBanner = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PageBanner");
 
@@ -177,7 +169,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , _hoisted_5)]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), _hoisted_6])]);
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "tel:".concat(_ctx.$MOBILE_CONST),
+    "class": "btn btn_secondary d-inline-block"
+  }, "Запази час по телефона", 8
+  /* PROPS */
+  , _hoisted_7)])])]);
 }
 
 /***/ }),

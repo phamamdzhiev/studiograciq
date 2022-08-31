@@ -46,4 +46,8 @@ app.use(VueSmoothScroll, {
     easingFunction: 'easeInOutQuint'
 })
 app.use(store);
+app.config.globalProperties.$MOBILE_CONST = '+359878888605'
+app.config.globalProperties.$MOBILE_CONST_HR = '+359 878 888 605'
+app.config.globalProperties.$ADDRESS_STREET_CONST = 'ул. Стоян Попов 8'
+app.config.globalProperties.$ADDRESS_CITY_CONST = 'Пещера'
 app.mount("#app");

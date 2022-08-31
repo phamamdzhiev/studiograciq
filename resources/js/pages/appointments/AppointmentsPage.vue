@@ -9,7 +9,7 @@
                 <FormKit
                     type="date"
                     name="date"
-                    :value="toslot"
+                    :value="today"
                     label="Изберете дата"
                     validation="required"
                     validation-visibility="live"
@@ -18,47 +18,64 @@
                 />
             </div>
             <div class="table-responsive my-5" v-if="appointments">
-                <table v-if="appointments.length > 0" class="table table-dark table-striped text-center align-middle">
-                    <thead>
-                    <tr>
-                        <th class="fw-normal" style="border-right: 2px solid white;" v-for="i in 10">{{
-                                i + 9
-                            }}:00ч.
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td v-for="i in 10">
-                            <template v-for="item in appointments">
-                                <div class="slot" v-if="item[0].split(':')[0] == i+9"
-                                     :data-hours="parseInt(item[1]) - parseInt(item[0])"
-                                     :data-minutes="item[1].split(':')[1]"
-                                >
-                                </div>
-                            </template>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="min-vh-100" v-else>
-                    <h1 class="text-center my-5">Няма данни за тези дати...</h1>
+                <div class="min-vh-100" v-if="isLoading">
+                    <h1 class="text-center my-5">Зареждане...</h1>
                 </div>
+                <div v-else>
+                    <strong><small>Час</small></strong>
+                    <table class="table table-dark table-striped text-center align-middle">
+                        <thead>
+                        <tr>
+                            <th class="fw-normal position-relative"
+                                style="min-width: 125px; height:50px;border-right: 2px solid white;" v-for="i in 9">
+                            <span class="position-absolute top-50 start-50 translate-middle"
+                                  style="white-space: nowrap">
+                                {{
+                                    (i + 9) + ':00 - ' + (i + 10) + ':00'
+                                }}
+                            </span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody v-if="appointments.length > 0">
+                        <tr>
+                            <td v-for="i in 10">
+                                <template v-for="item in appointments">
+                                    <div class="slot" v-if="item[0].split(':')[0] == i+9"
+                                         :data-hours="parseInt(item[1]) - parseInt(item[0])"
+                                         :data-minutes="item[0].split(':')[1]"
+                                         :data-minutes-end="item[1].split(':')[1]"
+                                         :data-full-day="parseInt(item[1]) - parseInt(item[0]) === 9 ? 'true' : 'false'"
+                                    >
+                                    </div>
+                                </template>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center my-5" v-if="appointments.length === 0">
+                    Всички часове за тази дата са свободни
+                </div>
+            </div>
+            <div class="actions">
+                <a :href="`tel:${$MOBILE_CONST}`" class="d-inline-block btn_tertiary btn-inverse">Запази час по телефона</a>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import {onMounted, ref, computed} from "vue";
+import {computed, onMounted, ref} from "vue";
 import axios from "axios";
 
 export default {
     name: "AppointmentsPage",
     setup() {
         const appointments = ref(null);
+        const isLoading = ref(false);
 
-        const toslot = computed(() => {
+        const today = computed(() => {
             const date = new Date();
             const dd = String(date.getDate()).padStart(2, '0');
             const mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -68,27 +85,32 @@ export default {
         })
 
         function submitFormHandler(data) {
+            isLoading.value = true;
             axios.get('/api/appointments', {params: {date: data}}).then(res => {
+                isLoading.value = false;
                 if (res.status === 200) {
                     appointments.value = res.data.map(e => {
                         return [e.from_h, e.until_h]
                     });
-
                 }
             }).catch(
-                e => console.log('Could not fetch appointments', e)
+                e => {
+                    isLoading.value = false;
+                    console.log('Could not fetch appointments', e)
+                }
             )
         }
 
         onMounted(() => {
-            submitFormHandler(toslot.value)
+            submitFormHandler(today.value)
         });
 
 
         return {
             appointments,
             submitFormHandler,
-            toslot
+            today,
+            isLoading
         }
     }
 }
@@ -96,7 +118,7 @@ export default {
 
 <style lang="scss" scoped>
 table {
-    min-width: 750px;
+    min-width: 1000px;
     margin: auto;
 }
 
@@ -122,10 +144,19 @@ td, th {
     height: 70px;
     border-left: 2px solid #2c3034;
     border-right: 2px solid #2c3034;
+    white-space: nowrap;
+
+    &[data-full-day="true"] {
+        background-color: transparent;
+
+        &:after {
+            content: 'Няма свободни часове за този ден';
+        }
+    }
 
     &:after {
         display: block;
-        content: 'Зает слот';
+        content: 'Зает час';
         position: absolute;
         top: 50%;
         left: 50%;
@@ -134,42 +165,117 @@ td, th {
         transform: translate(-50%, -50%);
         font-size: 15px;
         line-height: 70px;
+        white-space: nowrap;
     }
 
+
     &[data-minutes="30"] {
-        left: 50% !important;
+        left: 50%;
     }
 
     &[data-hours='0'] {
-        width: 100%;
+        width: 50%;
 
-        &[data-minutes="30"] {
+        &[data-minutes-end="30"] {
             width: 50%;
         }
     }
 
     &[data-hours='1'] {
         width: 100%;
+
+        &[data-minutes="30"] {
+            width: 50%;
+        }
+
+        &[data-minutes-end="30"] {
+            width: 150%;
+        }
+
+        &[data-minutes-end="30"][data-minutes="30"] {
+            width: 100%;
+        }
     }
 
     &[data-hours='2'] {
         width: 200%;
+
+        &[data-minutes="30"] {
+            width: 150%;
+        }
+
+        &[data-minutes-end="30"] {
+            width: 250%;
+        }
+
+
+        &[data-minutes-end="30"][data-minutes="30"] {
+            width: 200%;
+        }
     }
 
     &[data-hours='3'] {
         width: 300%;
+
+        &[data-minutes="30"] {
+            width: 250%;
+        }
+
+        &[data-minutes-end="30"] {
+            width: 350%;
+        }
+
+        &[data-minutes-end="30"][data-minutes="30"] {
+            width: 300%;
+        }
     }
 
     &[data-hours='4'] {
         width: 400%;
+
+        &[data-minutes="30"] {
+            width: 350%;
+        }
+
+        &[data-minutes-end="30"] {
+            width: 450%;
+        }
+
+        &[data-minutes-end="30"][data-minutes="30"] {
+            width: 400%;
+        }
     }
 
     &[data-hours='5'] {
         width: 500%;
+
+        &[data-minutes="30"] {
+            width: 450%;
+        }
+
+        &[data-minutes-end="30"] {
+            width: 550%;
+        }
+
+        &[data-minutes-end="30"][data-minutes="30"] {
+            width: 500%;
+        }
     }
 
     &[data-hours='6'] {
         width: 600%;
+
+        &[data-minutes="30"] {
+            width: 550%;
+        }
+
+        &[data-minutes-end="30"] {
+            width: 650%;
+        }
+
+        &[data-minutes-end="30"][data-minutes="30"] {
+            width: 600%;
+        }
     }
 
     &[data-hours='7'] {
@@ -178,17 +284,35 @@ td, th {
 
     &[data-hours='8'] {
         width: 800%;
+
+        &[data-minutes="30"] {
+            width: 750%;
+        }
+
+        &[data-minutes-end="30"] {
+            width: 850%;
+        }
+
+        &[data-minutes-end="30"][data-minutes="30"] {
+            width: 800%;
+        }
     }
 
     &[data-hours='9'] {
         width: 900%;
+
+        &[data-minutes="30"] {
+            width: 850%;
+        }
+
+        &[data-minutes-end="30"] {
+            width: 950%;
+        }
+
+        &[data-minutes-end="30"][data-minutes="30"] {
+            width: 900%;
+        }
     }
-
-    &[data-hours='10'] {
-        width: 1000%;
-    }
-
-
 }
 
 .slot.active {

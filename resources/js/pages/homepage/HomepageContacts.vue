@@ -3,8 +3,8 @@
         <div class="contacts-singleton text-center p-5">
             <h1>Локация</h1>
             <h3 class="text_fourtriary py-4">
-                <span class="d-block"> ул. Стоян Попов №8 </span>
-                <span class="d-block"> гр. Пещера </span>
+                <span class="d-block"> {{ $ADDRESS_STREET_CONST }}</span>
+                <span class="d-block"> {{ $ADDRESS_CITY_CONST }} </span>
             </h3>
             <a
                 href="https://goo.gl/maps/1Bm3DzHKc4eHLhgh9"
@@ -18,7 +18,9 @@
             <div class="py-4 d-flex flex-column align-items-start mx-auto mw-mc">
                 <h3 class="text_fourtriary">
                     <i class="bi bi-telephone-fill"></i>
-                    <a href="tel:+359878741978" class="ps-2 text_fourtriary">0878 741 978</a>
+                    <a :href="`tel:${$MOBILE_CONST}`" class="ps-2 text_fourtriary">
+                        {{ $MOBILE_CONST_HR }}
+                    </a>
                 </h3>
                 <h3 class="text_fourtriary">
                     <i class="bi bi-facebook"></i>

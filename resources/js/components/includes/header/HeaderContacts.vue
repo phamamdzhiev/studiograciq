@@ -1,15 +1,15 @@
 <template>
     <ul class="header-contacts py-1">
         <li class="me-4">
-            <i class="bi bi-telephone-fill text_secondary"></i>
-            <a href="tel:+35914543548">
-                089 737 1439
+            <i class="bi bi-telephone-fill text_secondary me-2"></i>
+            <a :href="`tel:${$MOBILE_CONST}`">
+                {{$MOBILE_CONST_HR}}
             </a>
         </li>
         <li>
-            <i class="bi bi-geo-alt-fill text_secondary"></i>
+            <i class="bi bi-geo-alt-fill text_secondary me-2"></i>
             <a href="https://goo.gl/maps/1Bm3DzHKc4eHLhgh9" target="_blank">
-                ул. Стоян Попов 8, Пещера
+               {{$ADDRESS_STREET_CONST}}, {{$ADDRESS_CITY_CONST}}
             </a>
         </li>
     </ul>
