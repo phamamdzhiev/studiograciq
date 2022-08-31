@@ -53,4 +53,15 @@ class AdminController extends Controller
         $categories = ProductCategory::all();
         return view('auth.admin.categories', compact('categories'));
     }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Application|Factory|View
+     */
+    public function appointments(Request $request)
+    {
+        return view('auth.admin.appointments');
+    }
 }

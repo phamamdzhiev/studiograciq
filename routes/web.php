@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth:web', 'prefix' => 'admin'], function () {
     Route::post('/products', [\App\Http\Controllers\AdminController::class, 'storeProducts'])->name('post.admin.products');
     Route::get('/categories', [\App\Http\Controllers\AdminController::class, 'categories'])->name('admin.categories');
     Route::post('/categories', [\App\Http\Controllers\ProductsCategoryController::class, 'store'])->name('post.admin.categories');
+    Route::get('/appointments', [\App\Http\Controllers\AdminController::class, 'appointments'])->name('admin.appointments');
 });
 
 Auth::routes();
