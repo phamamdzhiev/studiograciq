@@ -10301,6 +10301,9 @@ i.bi {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.bi-instagram.unset {
+  all: unset;
+}
 
 .bi-facebook {
   color: #1877f2;

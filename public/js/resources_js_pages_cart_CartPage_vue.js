@@ -114,7 +114,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 5:
                 res = _context.sent;
 
-                if (!res) {
+                if (!(res.status === 200)) {
                   _context.next = 10;
                   break;
                 }
@@ -130,7 +130,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 12:
                 _context.prev = 12;
                 _context.t0 = _context["catch"](2);
-                console.log(_context.t0);
+                console.log('Cannot proceed with checkout', _context.t0);
 
               case 15:
               case "end":
@@ -294,7 +294,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.amount) + " бр.", 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.price * item.amount) + " BGN", 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((item.price * item.amount).toFixed(2)) + " BGN", 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       "class": "btn",
@@ -307,7 +307,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , _hoisted_8)])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.grandTotal) + " BGN", 1
+  ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.grandTotal.toFixed(2)) + " BGN", 1
   /* TEXT */
   )])]), _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_OrderFrom, {
     "cart-items": $setup.cartItems
@@ -397,8 +397,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
         type: "text",
         name: "email",
-        label: "Имейл (незадължителен)",
-        validation: "email"
+        label: "Имейл",
+        validation: "required|email"
       }), $setup.shipping === '2' || $setup.shipping === '3' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
         type: "text",
         name: "street",

@@ -27,8 +27,8 @@ import {Swiper, SwiperSlide} from 'swiper/vue';
 import {Navigation, Virtual} from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import {computed} from "vue";
-import {useStore} from "vuex";
+import {onMounted, ref} from "vue";
+import axios from "axios";
 
 export default {
     name: "HomepageShop",
@@ -38,10 +38,20 @@ export default {
         SwiperSlide,
     },
     setup() {
-        const store = useStore();
+        const DATA_API = '/api/products/all';
 
-        const shopItems = computed(() => {
-            return store.getters['Data/getShopItems'];
+        const shopItems = ref([]);
+
+        function fetchData() {
+            axios.get(DATA_API).then((res) => {
+                if (res.status === 200) {
+                    shopItems.value = res.data;
+                }
+            }).catch(e => console.log('Could not fetch products', e));
+        }
+
+        onMounted(() => {
+            fetchData()
         });
 
         const swiperBreakPoints = {
@@ -69,7 +79,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.heading {
-    font-size: 4rem;
-}
+
 </style>

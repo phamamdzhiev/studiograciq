@@ -1,6 +1,6 @@
 <template>
-    <PageBanner :black="true" title="Магазин"
-                image="https://hair.nelson.themerex.net/wp-content/uploads/2020/04/hair-global-bg1-copyright.jpg"/>
+    <PageBanner  title="Магазин"
+                image="/storage/assets/banners/banner-shop.png"/>
     <div class="section-wrapper my-5">
         <div class="container-xxl">
             <h1 class="my-5 d-flex align-items-center">
@@ -31,7 +31,6 @@
 
 <script>
 import {onMounted, ref} from "vue";
-import {useStore} from "vuex";
 import ProductItemSingleton from "../../components/ProductItemSingleton";
 import CategoriesHeader from "./CategoriesHeader";
 import PageBanner from "../../components/PageBanner";
@@ -45,7 +44,6 @@ export default {
         CategoriesHeader
     },
     setup() {
-        const store = useStore();
         const shopItems = ref([]);
         const DATA_API = ref('/api/products/all');
 
@@ -82,7 +80,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .heading {
     color: black !important;
 }
@@ -91,5 +89,9 @@ export default {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
+
+    @media screen and (max-width: 991px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 </style>

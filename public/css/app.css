@@ -10305,6 +10305,9 @@ i.bi {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.bi-instagram.unset {
+  all: unset;
+}
 
 .bi-facebook {
   color: #1877f2;
@@ -10386,9 +10389,9 @@ i.bi {
   content: "";
   display: block;
   width: 100px;
-  height: 2px;
+  height: 3px;
   margin: 1.25rem auto;
-  background-color: #9e49a3;
+  background-color: white;
   position: absolute;
   top: 100%;
   left: 50%;

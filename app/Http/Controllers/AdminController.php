@@ -12,6 +12,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -90,23 +91,50 @@ class AdminController extends Controller
         }
         $services = Service::all();
         $customers = Customer::all();
-        return view('auth.admin.appointments', compact('appointments', 'services', 'customers'));
+        $daysForToday = DB::table('appointments')
+            ->where('day', '=', Carbon::today()->format('Y-m-d'))
+            ->get();
+        return view('auth.admin.appointments', compact('appointments', 'services', 'customers', 'daysForToday'));
     }
 
+    /**
+     * @throws \Exception
+     */
     public function storeAppointments(Request $request)
     {
         if ($request->input('hours_from') === $request->input('hours_to')) {
             return redirect()->back()->with('msg', 'Не може двата часа да са еднакви');
         }
 
-        $days = DB::table('appointments')->where('day', '=', $request->input('date'))->get();
+        $days = DB::table('appointments')
+            ->where('day', '=', $request->input('date'))
+            ->get();
 
         foreach ($days as $day) {
             if ($day->from_h === $request->input('hours_from')) {
-                return redirect()->back()->with('msg', 'Ne stavaa, brat');
+                return redirect()->back()->with('msg', 'Има запазен клиент за тези часове');
+            }
+
+            /**
+             * P1 starts between the start and end of P2 (P2.from <= P1.from <= P2.to)
+             * P2 starts between the start and end of P1 (P1.from <= P2.from <= P1.to)
+             *
+             * $from = $day->from_h
+             * $from_compare = request
+             */
+
+            $from = (float)$day->from_h;
+            $to = (float)$day->until_h;
+            $from_compare = (float)$request->input('hours_from');
+            $to_compare = (float)$request->input('hours_to');
+
+            if (
+                ($from > $from_compare && $from < $to_compare) ||
+                ($from_compare > $from && $from_compare < $to)
+            ) {
+                return redirect()->back()->with('msg', 'Има запазен клиент за тези часове');
             }
         }
-
         try {
             Appointment::create([
                 'name' => 'Анонимен',

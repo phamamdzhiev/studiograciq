@@ -13,7 +13,7 @@ export default {
     margin: 6rem auto;
     width: 100px;
     height: 1px;
-    background-color: #9e49a3;
+    background-color: #798a8a;
 
     @media screen and (max-width: 992px) {
         width: 40%

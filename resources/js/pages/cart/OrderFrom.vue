@@ -25,8 +25,8 @@
                     <FormKit
                         type="text"
                         name="email"
-                        label="Имейл (незадължителен)"
-                        validation="email"
+                        label="Имейл"
+                        validation="required|email"
                     />
                     <div v-if="shipping === '2' || shipping === '3'"
                     >
@@ -112,12 +112,12 @@ export default {
 
             try {
                 const res = await axios.post('api/order/create', formData);
-                if (res) {
+                if (res.status === 200) {
                     store.commit('Cart/emptyCart');
                     await router.replace('/');
                 }
             } catch (e) {
-                console.log(e)
+                console.log('Cannot proceed with checkout', e);
             }
         }
 

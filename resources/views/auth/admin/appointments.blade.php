@@ -1,9 +1,15 @@
 @extends('auth.admin.admin')
 
 @section('content')
+    <style>
+        tbody td > div.no {
+            background-color: #dc3545;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
     <div class="container">
         @include('auth.admin.includes.session-message')
-
         <div class="section">
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
@@ -13,14 +19,15 @@
                             <span style="font-size: 18px">График</span>
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show px-5 py-3" aria-labelledby="headingOne"
+                    <div id="collapseOne" class="accordion-collapse show collapse px-5 py-3"
+                         aria-labelledby="headingOne"
                          data-bs-parent="#accordionExample">
-                        <h4 class="mb-4"><i>В момента е: {{ date('d-m-Y ; H:i')}}ч.</i></h4>
+                        <h4 class="mb-4"><i>В момента е: {{ date('d-m-Y ; H:i') }}ч.</i></h4>
                         <div>
                             <form action="{{route('admin.appointments')}}" method="GET">
                                 @csrf
                                 <label class="fw-bold" for="filter">Филтър</label>
-                                <input type="date" id="filter" name="filter" required/>
+                                <input type="date" value="{{ date('Y-m-d')}}" id="filter" name="filter" required/>
                                 <button type="submit" class="btn btn-info">Търси</button>
                                 <a href="{{route('admin.appointments')}}" class="btn btn-dark text-white">Изчисти
                                     филтър</a>
@@ -93,7 +100,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="date" class="form-label">Дата</label>
-                                <input type="date" class="form-control" name="date" id="date" required>
+                                <input type="date" value="{{ date('Y-m-d')}}" class="form-control" name="date" id="date"
+                                       required>
                             </div>
                             <div class="mb-3">
                                 <label for="hours_from" class="form-label">Час от</label>

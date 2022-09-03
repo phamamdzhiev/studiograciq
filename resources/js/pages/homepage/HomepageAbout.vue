@@ -3,7 +3,7 @@
         <div class="image-wrapper">
             <img
                 class="img-fluid"
-                src="https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-10-copyright.jpg"
+                src="/storage/assets/banners/banner-home-about.jpg"
                 alt="About me section image"
             />
         </div>
@@ -39,6 +39,10 @@ export default {
     @media screen and (max-width: 992px) {
         grid-template-columns: 1fr;
     }
+}
+
+.img-fluid {
+    filter: brightness(0.8);
 }
 
 .heading {

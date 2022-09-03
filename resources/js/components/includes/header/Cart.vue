@@ -1,8 +1,8 @@
 <template>
-    <div id="header_cart" v-if="getCartItems.length > 0">
+    <div id="header_cart">
         <router-link to="/cart">
             <i class="bi bi-cart-fill fs-2"></i>
-            <div id="badge">
+            <div id="badge" v-if="getCartItems.length > 0">
                 {{ (getCartItems.length < 99) ? getCartItems.length : '99' }}
             </div>
         </router-link>

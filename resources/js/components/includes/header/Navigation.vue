@@ -19,6 +19,7 @@
 
 <script>
 import Cart from "./Cart";
+
 export default {
     name: "Navigation",
     components: {Cart},
@@ -45,6 +46,13 @@ export default {
                 slug: "about",
                 label: "За мен",
                 url: "/about",
+            },
+            {
+                id: 3,
+                icon: '<i class="bi bi-image me-3 fs-1"></i>',
+                slug: "gallery",
+                label: "Галерия",
+                url: "/gallery",
             },
             // {
             //     id: 3,

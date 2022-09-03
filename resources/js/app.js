@@ -11,6 +11,7 @@ import Cart from "./store/cart";
 // import Data from "./store/data";
 import {plugin, defaultConfig} from '@formkit/vue'
 import '@formkit/themes/genesis'
+import VueLazyLoad from 'vue3-lazyload'
 
 const store = createStore({
     modules: {
@@ -46,8 +47,23 @@ app.use(VueSmoothScroll, {
     easingFunction: 'easeInOutQuint'
 })
 app.use(store);
-app.config.globalProperties.$MOBILE_CONST = '+359878888605'
-app.config.globalProperties.$MOBILE_CONST_HR = '+359 878 888 605'
+app.use(VueLazyLoad, {
+    loading: '',
+    error: '',
+    lifecycle: {
+        loading: (el) => {
+            console.log('loading', el)
+        },
+        error: (el) => {
+            console.log('error', el)
+        },
+        loaded: (el) => {
+            console.log('loaded', el)
+        }
+    }
+});
+app.config.globalProperties.$MOBILE_CONST = '+359897371439'
+app.config.globalProperties.$MOBILE_CONST_HR = '+359 897 371 439'
 app.config.globalProperties.$ADDRESS_STREET_CONST = 'ул. Стоян Попов 8'
 app.config.globalProperties.$ADDRESS_CITY_CONST = 'Пещера'
 app.config.globalProperties.$FACEBOOK = 'https://www.facebook.com/studio.gratzia'

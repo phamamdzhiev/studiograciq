@@ -1,11 +1,11 @@
 <template>
     <div class="page homepage">
         <BrandBanner
-            image="https://hair.nelson.themerex.net/wp-content/uploads/2020/05/image-88-copyright.jpg"
+            image="/storage/assets/banners/banner-home.jpg"
         >
-            <div id="homepage-banner-slot">
+            <div id="homepage-banner-slot" class="text-start">
                 <div class="container-xxl">
-                    <h1 class="heading text_primary">
+                    <h1 class="heading text-white">
                         <span class="d-block">Почувстай твоя</span>
                         <span class="d-block"> нов "Грация" стил</span>
                     </h1>
@@ -25,6 +25,8 @@
             <section-divider/>
             <HomepageServices/>
             <section-divider/>
+            <HomepageGallery/>
+            <section-divider/>
             <HomepageShop/>
             <section-divider/>
         </div>
@@ -40,9 +42,13 @@ import BrandBanner from "./BrandBanner.vue";
 import HomepageAbout from "./HomepageAbout";
 import HomepageServices from "./HomepageServices";
 import HomepageShop from "./HomepageShop";
+import HomepageGallery from "./HomepageGallery";
 import HomepageContacts from "./HomepageContacts";
 import SectionDivider from "../../components/SectionDivider";
 import Brands from "./Brands";
+
+import {useRoute} from 'vue-router';
+import {onMounted} from "vue";
 
 export default {
     name: "Homepage",
@@ -53,8 +59,16 @@ export default {
         SectionDivider,
         HomepageShop,
         Brands,
-        HomepageContacts
+        HomepageContacts,
+        HomepageGallery
     },
+    setup() {
+        // console.log(this,$route);
+        const route = useRoute();
+        onMounted(async () => {
+            await console.log(route);
+        })
+    }
 };
 </script>
 <style scoped lang="scss">
@@ -96,7 +110,7 @@ export default {
             position: absolute;
             width: calc(50% - 75px);
             height: 1px;
-            background: #0c101186;
+            background: white;
             bottom: -1px;
             left: 0;
             @media screen and (max-width: 992px) {

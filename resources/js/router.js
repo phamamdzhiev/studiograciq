@@ -33,6 +33,11 @@ const routes = [
         path: "/appointments",
         name: "appointments.page",
         component: () => import("./pages/appointments/AppointmentsPage"),
+    },
+    {
+        path: "/gallery",
+        name: "gallery.page",
+        component: () => import("./pages/gallery/GalleryPage"),
     }
     // {
     //     path: "/delivery",
@@ -42,6 +47,7 @@ const routes = [
 ];
 
 const router = createRouter({
+    mode: 'history',
     history: createWebHistory(),
     routes,
 });
