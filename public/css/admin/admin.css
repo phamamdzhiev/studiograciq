@@ -10338,3 +10338,22 @@ body {
 .section-heading {
   margin-bottom: 2rem;
 }
+
+.order_status {
+  padding: 3px 5px;
+  color: white;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.order_status.processing {
+  background: #0a58ca;
+}
+.order_status.sent {
+  background: #9e49a3;
+}
+.order_status.rejected {
+  background: #dc3545;
+}
+.order_status.done {
+  background: #17814e;
+}

@@ -29,6 +29,9 @@ Route::group(['middleware' => 'auth:web', 'prefix' => 'admin'], function () {
     Route::post('/services', [\App\Http\Controllers\AdminController::class, 'storeServices'])->name('post.admin.services');
     Route::get('/customers', [\App\Http\Controllers\AdminController::class, 'customers'])->name('admin.customers');
     Route::post('/customers', [\App\Http\Controllers\AdminController::class, 'storeCustomers'])->name('post.admin.customers');
+    Route::get('/orders', [\App\Http\Controllers\AdminController::class, 'orders'])->name('admin.orders');
+    Route::get('/order/{id}', [\App\Http\Controllers\AdminController::class, 'order'])->name('admin.order');
+    Route::post('/order/{id}/status', [\App\Http\Controllers\AdminController::class, 'changeOrderStatus'])->name('admin.order.status');
 });
 
 Auth::routes();

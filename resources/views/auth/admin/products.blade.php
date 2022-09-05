@@ -13,16 +13,22 @@
                             <th scope="col">#</th>
                             <th scope="col">Продукт</th>
                             <th scope="col">Цена</th>
-                            <th scope="col">Снимка</th>
+                            <th scope="col">Марка</th>
+                            <th scope="col">Каталожен номер</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($products as $product)
                             <tr>
                                 <th scope="row">{{$loop->iteration}}</th>
-                                <td>{{$product->name}}</td>
+                                <td>
+                                    <a target="_blank" href="/product/{{$product->id}}">
+                                        {{$product->name}}
+                                    </a>
+                                </td>
                                 <td>{{$product->price}} лева</td>
-                                <td>{{$product->image_big}}</td>
+                                <td>{{$product->brand}}</td>
+                                <td>{{$product->catalogue_number}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -35,7 +41,8 @@
         <hr/>
         <div class="section">
             <h1 class="section-heading">Добавяне на нов продукт</h1>
-            <form id="add-product-form" action="{{route('post.admin.products')}}" method="POST" enctype='multipart/form-data'>
+            <form id="add-product-form" action="{{route('post.admin.products')}}" method="POST"
+                  enctype='multipart/form-data'>
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Име на продукта</label>

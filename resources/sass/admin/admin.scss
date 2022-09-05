@@ -37,3 +37,27 @@ body {
 .section-heading {
     margin-bottom: 2rem;
 }
+
+//ORDERS STATUS
+.order_status {
+    padding: 3px 5px;
+    color: white;
+    border-radius: 6px;
+    font-size: 12px;
+
+    &.processing {
+        background: #0a58ca;
+    }
+
+    &.sent {
+        background: #9e49a3;
+    }
+
+    &.rejected {
+        background: #dc3545;
+    }
+
+    &.done {
+        background: #17814e;
+    }
+}

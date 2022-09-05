@@ -236,4 +236,61 @@ class AdminController extends Controller
             throw new \Exception($e->getMessage());
         }
     }
+
+    public function orders()
+    {
+        $orders = DB::table('orders')
+            ->join('shop_customers', 'shop_customers.id', '=', 'orders.customer_id')
+            ->select('orders.created_at', 'orders.status', 'orders.id as orderId', 'shop_customers.*')
+            ->orderBy('orders.created_at', 'desc')
+            ->get();
+
+
+//        Mail::raw('Имаш нова поръчйа', function ($message) {
+//            $message->to('hamamdzhiev@hotmail.com')
+//                ->subject('нова поръчка');
+//        });
+
+        return \view('auth.admin.orders', compact('orders'));
+    }
+
+
+    public function order($id)
+    {
+        $order = DB::table('orders as o')
+            ->where('o.id', '=', $id)
+            ->join('order_product as op', 'op.order_id', '=', 'o.id')
+            ->join('products as p', 'p.id', '=', 'op.product_id')
+            ->join('shop_customers as sc', 'sc.id', '=', 'o.customer_id')
+            ->select(
+                'o.status', 'o.shipping_type', 'o.postal_code', 'o.region', 'o.city', 'o.street', 'o.created_at as orderCreatedAt', 'o.id as orderId',
+                'p.catalogue_number as productSKU', 'p.price as productPrice', 'p.name as productName',
+                'op.amount as productAmount',
+                'sc.name as customerName', 'sc.mobile as customerMobile', 'sc.email as customerEmail',
+            )
+            ->get();
+
+
+        return \view('auth.admin.order', compact('order'));
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function changeOrderStatus(Request $request, $orderId): RedirectResponse
+    {
+        $status = $request->input('order_status');
+
+        try {
+            DB::table('orders')
+                ->where('id', '=', $orderId)
+                ->update([
+                    'status' => $status
+                ]);
+            return redirect()->back()->with('msg', 'Успешно променихте статуса на поръчката!');
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage());
+        }
+
+    }
 }
