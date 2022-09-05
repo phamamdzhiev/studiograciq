@@ -1,7 +1,7 @@
-<template>
+\<template>
     <div class="shop-item-singleton text-center p-4">
         <router-link :to="`/product/${id}`">
-            <img :src="image"
+            <img :src="`/storage/products/${image}`"
                  class="img-fluid mb-4"
                  alt="Product item image"
             />

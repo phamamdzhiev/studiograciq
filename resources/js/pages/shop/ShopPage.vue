@@ -13,7 +13,7 @@
                 <div v-for="item in shopItems" :key="item.id">
                     <ProductItemSingleton
                         :id="item.id"
-                        :image="item.image"
+                        :image="item.image_big"
                         :title="item.title"
                         :desc="item.desc"
                         :price="item.price"

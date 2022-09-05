@@ -20879,7 +20879,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-        src: $props.image,
+        src: "/storage/products/".concat($props.image),
         "class": "img-fluid mb-4",
         alt: "Product item image"
       }, null, 8
@@ -22003,7 +22003,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
             return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ProductItemSingleton, {
               id: item.id,
-              image: item.image,
+              image: item.image_big,
               title: item.title,
               desc: item.desc,
               price: item.price

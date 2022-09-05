@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        @include('auth.admin.includes.session-message')
         <div class="section">
             <h1 class="section-heading">Продукти <small>({{count($products)}})</small></h1>
             <div class="table-responsive">
@@ -34,7 +35,7 @@
         <hr/>
         <div class="section">
             <h1 class="section-heading">Добавяне на нов продукт</h1>
-            <form id="add-product-form" action="{{route('post.admin.products')}}" method="POST">
+            <form id="add-product-form" action="{{route('post.admin.products')}}" method="POST" enctype='multipart/form-data'>
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Име на продукта</label>
@@ -57,7 +58,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="category" class="form-label">Категория</label>
-                    <select class="form-control" name="category" id="category" required>
+                    <select class="form-control" name="category_id" id="category" required>
                         <option selected>Избери категория</option>
                         @foreach($categories as $category)
                             <option class="text-capitalize" value="{{$category->id}}">{{$category->name}}</option>
@@ -67,10 +68,6 @@
                 <div class="mb-3">
                     <label for="image_big" class="form-label">Голяма снимка</label>
                     <input type="file" class="form-control" name="image_big" id="image_big" required>
-                </div>
-                <div class="mb-3">
-                    <label for="image_small" class="form-label">Малка снимка</label>
-                    <input type="file" class="form-control" name="image_small" id="image_small" required>
                 </div>
                 <div class="mb-3">
                     <label for="catalogue_number" class="form-label">Каталожен номер</label>

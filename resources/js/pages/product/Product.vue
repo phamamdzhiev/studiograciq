@@ -15,7 +15,7 @@
                     <div class="left section p-3">
                         <img
                             class="img-fluid"
-                            src="https://hair.nelson.themerex.net/wp-content/uploads/2019/08/image-28-copyright.jpg"
+                            :src="`/storage/products/${item.image_big}`"
                             alt="Product"
                         />
                     </div>

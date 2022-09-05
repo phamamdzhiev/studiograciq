@@ -14,6 +14,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use ImageKit\ImageKit;
 
 class AdminController extends Controller
 {
@@ -33,22 +34,51 @@ class AdminController extends Controller
     }
 
     /**
-     * @return void
+     * @return RedirectResponse
+     * @throws \Exception
      */
-    public function storeProducts(Request $request)
+    public function storeProducts(Request $request): RedirectResponse
     {
+        $imageKit = new ImageKit(
+            env('IMAGEKIT_PUBLIC_KEY'),
+            env('IMAGEKIT_PRIVATE_KEY'),
+            env('IMAGEKIT_URL_ENDPOINT')
+        );
+
         $request->validate([
             'name' => 'required',
             'desc' => 'required',
             'price' => 'required',
             'brand' => 'required',
-            'category' => 'required',
-            'image_big' => 'required',
-            'image_small' => 'required',
+            'category_id' => 'required',
+            'image_big' => 'required|image|mimes:jpeg,png,jpg',
             'catalogue_number' => 'required'
         ]);
 
-        dd($request->all());
+        try {
+
+            if (!$request->hasFile('image_big')) {
+                throw new \Exception('Missing product image file');
+            }
+
+            $file = $request->file('image_big');
+            $file->storeAs('/public/products', $file->getClientOriginalName());
+
+            Product::create([
+                'name' => $request->input('name'),
+                'desc' => $request->input('desc'),
+                'price' => $request->input('price'),
+                'brand' => $request->input('brand'),
+                'category_id' => $request->input('category_id'),
+                'image_big' => $file->getClientOriginalName(),
+                'image_small' => 'N/a',
+                'catalogue_number' => $request->input('catalogue_number')
+            ]);
+
+            return redirect()->back()->with('msg', 'Успешно добавихте продукт!');
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage());
+        }
     }
 
     /**
