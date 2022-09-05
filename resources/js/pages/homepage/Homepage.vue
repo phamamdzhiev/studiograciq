@@ -47,9 +47,6 @@ import HomepageContacts from "./HomepageContacts";
 import SectionDivider from "../../components/SectionDivider";
 import Brands from "./Brands";
 
-import {useRoute} from 'vue-router';
-import {onMounted} from "vue";
-
 export default {
     name: "Homepage",
     components: {
@@ -61,13 +58,6 @@ export default {
         Brands,
         HomepageContacts,
         HomepageGallery
-    },
-    setup() {
-        // console.log(this,$route);
-        const route = useRoute();
-        onMounted(async () => {
-            await console.log(route);
-        })
     }
 };
 </script>

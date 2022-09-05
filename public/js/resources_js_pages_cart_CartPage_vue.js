@@ -121,7 +121,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 store.commit('Cart/emptyCart');
                 _context.next = 10;
-                return router.replace('/');
+                return router.replace('/thanks');
 
               case 10:
                 _context.next = 15;

@@ -38,12 +38,12 @@ const routes = [
         path: "/gallery",
         name: "gallery.page",
         component: () => import("./pages/gallery/GalleryPage"),
+    },
+    {
+        path: "/thanks",
+        name: "thanks.page",
+        component: () => import("./pages/thanks/OrderThanksPage"),
     }
-    // {
-    //     path: "/delivery",
-    //     name: "delivery.page",
-    //     component: () => import("./pages/delivery/DeliveryPage"),
-    // }
 ];
 
 const router = createRouter({

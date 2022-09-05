@@ -4,7 +4,6 @@
             title="За мен"
             image="/storage/assets/banners/banner-about.png"
         />
-        <button @click="() => this.$router.push({name: 'home'})">Redirect</button>
         <div class="container-xxl">
             <div class="text-center p-3 my-5 text_fourtriary">
                 <p>
@@ -47,8 +46,6 @@
 
 <script>
 import PageBanner from "../../components/PageBanner";
-import {useRouter, useRoute} from "vue-router";
-import {onMounted} from "vue";
 
 export default {
     name: "About",
@@ -57,12 +54,6 @@ export default {
     },
 
     setup() {
-        const router = useRouter();
-        const route = useRoute();
-        onMounted(async () => {
-            await router.isReady();
-            await console.log(route);
-        })
         const images = [
             {id: 1, image: "damuana1.jpg"},
             {id: 2, image: "damuana2.jpg"},

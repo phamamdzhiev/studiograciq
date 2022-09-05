@@ -114,7 +114,7 @@ export default {
                 const res = await axios.post('api/order/create', formData);
                 if (res.status === 200) {
                     store.commit('Cart/emptyCart');
-                    await router.replace('/');
+                    await router.replace('/thanks');
                 }
             } catch (e) {
                 console.log('Cannot proceed with checkout', e);
