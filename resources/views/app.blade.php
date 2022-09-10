@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Petar Hamamdzhiev" />
+    <meta name="description" content="Студио Грация град Пещера. Мъжко и дамско подстригване. Изсушаване и стилизиране. Омбре, кичури, балеаж. Официални прически за балове, сватби и други събития. Терапия и подхранване на увредена коса. Стилист - Дамяна Стайкова">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

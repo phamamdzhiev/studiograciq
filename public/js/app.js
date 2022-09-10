@@ -20489,7 +20489,7 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup() {
     var swiperBreakPoints = {
       0: {
-        slidesPerView: 1
+        slidesPerView: 2
       },
       480: {
         slidesPerView: 2
@@ -20498,10 +20498,24 @@ __webpack_require__.r(__webpack_exports__);
         slidesPerView: 3
       },
       1024: {
-        slidesPerView: 4
+        slidesPerView: 3
       }
     };
+    var images = [{
+      id: 1,
+      image: 'alfaparf-brand.png',
+      title: 'Alfaparf Milano'
+    }, {
+      id: 2,
+      image: 'italia-brand.png',
+      title: 'Barba Italiana'
+    }, {
+      id: 3,
+      image: "bes-brand.png",
+      title: 'BES | Beauty & Science'
+    }];
     return {
+      images: images,
       swiperBreakPoints: swiperBreakPoints,
       modules: [swiper__WEBPACK_IMPORTED_MODULE_3__.Autoplay]
     };
@@ -20920,13 +20934,10 @@ var _hoisted_1 = {
   "class": "service-singleton text-center p-5"
 };
 var _hoisted_2 = {
-  "class": "heading fw-light"
-};
-var _hoisted_3 = {
-  "class": "my-5"
+  "class": "heading fw-light my-5"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Виж още");
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Виж още");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -20940,15 +20951,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* CLASS */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.tagline), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p class=\"my-5\" style=\"opacity: 0\">{{ tagline }}</p> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/services",
-    "class": "d-inline-block fw-bold text_tertiary",
+    "class": "d-inline-block fw-bold text_tertiary my-3",
     id: "read-more"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_4];
+      return [_hoisted_3];
     }),
     _: 1
     /* STABLE */
@@ -21048,6 +21057,7 @@ var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
     "class": "img-fluid py-4 px-1",
     width: "120",
     src: "/storage/assets/logo-transparent.png",
+    title: "Студио Грация | Дамяна Стайкова",
     alt: "Brand Logo"
   }, null, -1
   /* HOISTED */
@@ -21358,70 +21368,7 @@ var _hoisted_1 = {
   "class": "section-wrapper my-5 text-center",
   id: "homepageBrands"
 };
-
-var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: "https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png",
-    alt: ""
-  }, null, -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: "https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png",
-    alt: ""
-  }, null, -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: "https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png",
-    alt: ""
-  }, null, -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: "https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png",
-    alt: ""
-  }, null, -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: "https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png",
-    alt: ""
-  }, null, -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: "https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png",
-    alt: ""
-  }, null, -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: "https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png",
-    alt: ""
-  }, null, -1
-  /* HOISTED */
-  );
-});
-
+var _hoisted_2 = ["title", "src", "alt"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_swiper_slide = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("swiper-slide");
 
@@ -21438,56 +21385,29 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_swiper_slide, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_2];
-        }),
-        _: 1
-        /* STABLE */
+      return [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.images, function (image) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_swiper_slide, {
+          key: image.id
+        }, {
+          "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+              width: "200",
+              title: image.title,
+              src: "/storage/assets/brands/".concat(image.image),
+              alt: "".concat(image.title, " logo")
+            }, null, 8
+            /* PROPS */
+            , _hoisted_2)];
+          }),
+          _: 2
+          /* DYNAMIC */
 
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_swiper_slide, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_3];
-        }),
-        _: 1
-        /* STABLE */
-
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_swiper_slide, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_4];
-        }),
-        _: 1
-        /* STABLE */
-
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_swiper_slide, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_5];
-        }),
-        _: 1
-        /* STABLE */
-
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_swiper_slide, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_6];
-        }),
-        _: 1
-        /* STABLE */
-
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_swiper_slide, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_7];
-        }),
-        _: 1
-        /* STABLE */
-
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_swiper_slide, null, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_8];
-        }),
-        _: 1
-        /* STABLE */
-
-      })];
+        }, 1024
+        /* DYNAMIC_SLOTS */
+        );
+      }), 128
+      /* KEYED_FRAGMENT */
+      ))];
     }),
     _: 1
     /* STABLE */
@@ -21909,7 +21829,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ServiceContainer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ServiceContainer");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ServiceContainer, {
-    title: "Подстрижка",
+    title: "Подстригване",
     tagline: "Таглине, таглине, таглине, таглине",
     icon: "bi-scissors",
     url: "/"
@@ -24589,7 +24509,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#homepageBrands[data-v-eab4e358] {\n  background-color: #ebd0d9;\n}\n#homepageBrands img[data-v-eab4e358] {\n  padding: 4rem 1rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#homepageBrands[data-v-eab4e358] {\n  background-color: #ebd0d9;\n}\n#homepageBrands img[data-v-eab4e358] {\n  padding: 4rem 1rem;\n  filter: brightness(0);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

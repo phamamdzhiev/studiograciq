@@ -10,26 +10,13 @@
               "disableOnInteraction": false
             }'
         >
-            <swiper-slide>
-                <img src="https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png" alt="">
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png" alt="">
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png" alt="">
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png" alt="">
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png" alt="">
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png" alt="">
-            </swiper-slide>
-            <swiper-slide>
-                <img src="https://hair.nelson.themerex.net/wp-content/uploads/2020/06/partner-logo-5.png" alt="">
+            <swiper-slide v-for="image in images" :key="image.id">
+                <img 
+                    width="200" 
+                    :title="image.title"  
+                    :src="`/storage/assets/brands/${image.image}`" 
+                    :alt="`${image.title} logo`"
+                />
             </swiper-slide>
         </swiper>
     </div>
@@ -50,7 +37,7 @@ export default {
     setup() {
         const swiperBreakPoints = {
             0: {
-                slidesPerView: 1,
+                slidesPerView: 2,
             },
             480: {
                 slidesPerView: 2,
@@ -59,10 +46,28 @@ export default {
                 slidesPerView: 3,
             },
             1024: {
-                slidesPerView: 4,
+                slidesPerView: 3,
             }
         }
+        const images = [
+            {
+                id: 1,
+                image: 'alfaparf-brand.png',
+                title: 'Alfaparf Milano'
+            },
+            {
+                id: 2,
+                image: 'italia-brand.png',
+                title: 'Barba Italiana'
+            },
+            {
+                id: 3,
+                image: "bes-brand.png",
+                title: 'BES | Beauty & Science'
+            }
+        ]
         return {
+            images,
             swiperBreakPoints,
             modules: [Autoplay]
         }
@@ -76,6 +81,7 @@ export default {
 
     img {
         padding: 4rem 1rem;
+        filter: brightness(0);
     }
 }
 </style>

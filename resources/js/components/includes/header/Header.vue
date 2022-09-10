@@ -9,6 +9,7 @@
                             class="img-fluid py-4 px-1"
                             width="120"
                             src="/storage/assets/logo-transparent.png"
+                            title="Студио Грация | Дамяна Стайкова"
                             alt="Brand Logo"
                         />
                     </router-link>

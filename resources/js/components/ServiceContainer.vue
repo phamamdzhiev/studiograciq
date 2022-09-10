@@ -2,9 +2,9 @@
     <div class="service-singleton text-center p-5">
         <!--        <img src="" alt="">-->
         <i :class="icon" class="bi animated text_secondary" style="font-size: 6.5rem"></i>
-        <h1 class="heading fw-light">{{ title }}</h1>
-        <p class="my-5">{{ tagline }}</p>
-        <router-link to="/services" class="d-inline-block fw-bold text_tertiary" id="read-more">Виж още</router-link>
+        <h1 class="heading fw-light my-5">{{ title }}</h1>
+        <!-- <p class="my-5" style="opacity: 0">{{ tagline }}</p> -->
+        <router-link to="/services" class="d-inline-block fw-bold text_tertiary my-3" id="read-more">Виж още</router-link>
     </div>
 </template>
 
