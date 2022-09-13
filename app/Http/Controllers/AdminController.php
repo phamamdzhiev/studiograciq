@@ -210,7 +210,7 @@ class AdminController extends Controller
 
     public function customers()
     {
-        $customers = Customer::all();
+        $customers = DB::table('customers')->where('name', '<>', 'Анонимен')->get();
         return view('auth.admin.customers', compact('customers'));
     }
 
