@@ -37,7 +37,7 @@
 
             </div>
             <div class="total">
-                <div class="mt-5 d-flex justify-content-end align-items-center">
+                <div class="my-5 d-flex justify-content-end align-items-center">
                     <i class="bi bi-bag-check fs-1 me-3"></i>
                     Обща стойност: <strong class="ps-2"> {{ grandTotal.toFixed(2) }} лв.</strong>
                 </div>

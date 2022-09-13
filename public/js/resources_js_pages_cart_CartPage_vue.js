@@ -227,7 +227,7 @@ var _hoisted_11 = {
   "class": "total"
 };
 var _hoisted_12 = {
-  "class": "mt-5 d-flex justify-content-end align-items-center"
+  "class": "my-5 d-flex justify-content-end align-items-center"
 };
 
 var _hoisted_13 = /*#__PURE__*/_withScopeId(function () {

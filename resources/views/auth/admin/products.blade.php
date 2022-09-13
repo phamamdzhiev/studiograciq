@@ -61,6 +61,8 @@
                     <select class="form-control" name="brand" id="brand" required>
                         <option selected>Избери марка</option>
                         <option value="Alfaparf">Alfaparf</option>
+                        <option value="BES">BES</option>
+                        <option value="Barba Italiana">Barba Italiana</option>
                     </select>
                 </div>
                 <div class="mb-3">

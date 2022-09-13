@@ -1,5 +1,5 @@
 <template>
-    <PageBanner  title="Магазин"
+    <PageBanner title="Магазин"
                 image="/storage/assets/banners/banner-shop.png"/>
     <div class="section-wrapper my-5">
         <div class="container-xxl">
@@ -92,6 +92,9 @@ export default {
 
     @media screen and (max-width: 991px) {
         grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 576px) {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 </style>

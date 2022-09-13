@@ -174,11 +174,11 @@ var _hoisted_21 = {
   "class": "text-uppercase fw-bold"
 };
 var _hoisted_22 = {
-  "class": "d-flex mt-5 align-items-center w-100"
+  "class": "mt-5 add_to_cart_action"
 };
 var _hoisted_23 = {
   type: "submit",
-  "class": "btn_tertiary btn-inverse ms-3"
+  "class": "btn_tertiary btn-inverse"
 };
 var _hoisted_24 = {
   "class": "text_fourtriary mt-5"
@@ -289,7 +289,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "h1[data-v-1b42dc54] {\n  margin: 0;\n}\n.price[data-v-1b42dc54] {\n  font-size: 3.5rem;\n}\nform input#number[data-v-1b42dc54] {\n  border: 4px solid #798a8a;\n  border-radius: 0;\n  padding: 1rem 2rem;\n  background-color: transparent;\n  color: white;\n  outline: 0;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n          user-select: none;\n}\n.aditional-details ul[data-v-1b42dc54] {\n  display: flex;\n  flex-direction: column;\n}\n.aditional-details ul li[data-v-1b42dc54] {\n  display: inline-block;\n}\n.underlined[data-v-1b42dc54]::after {\n  background-color: #798a8a;\n  height: 1px;\n  left: 0;\n  transform: translateX(0);\n}\n.section.bottom[data-v-1b42dc54] {\n  margin-top: 1rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "h1[data-v-1b42dc54] {\n  margin: 0;\n}\n.price[data-v-1b42dc54] {\n  font-size: 3.5rem;\n}\nform#buy_now[data-v-1b42dc54] {\n  display: flex;\n  align-items: center;\n}\n@media screen and (max-width: 991px) {\nform#buy_now[data-v-1b42dc54] {\n    flex-direction: column;\n}\n}\nform#buy_now input#number[data-v-1b42dc54] {\n  border: 4px solid #798a8a;\n  border-radius: 0;\n  padding: 1rem 2rem;\n  background-color: transparent;\n  color: white;\n  outline: 0;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n          user-select: none;\n}\n@media screen and (max-width: 991px) {\nform#buy_now input#number[data-v-1b42dc54] {\n    width: 100%;\n}\n}\nform#buy_now .btn_tertiary[type=submit][data-v-1b42dc54] {\n  margin: 0 0 0 1rem;\n}\n@media screen and (max-width: 991px) {\nform#buy_now .btn_tertiary[type=submit][data-v-1b42dc54] {\n    width: 100%;\n    margin: 1rem 0 0 0;\n}\n}\n.aditional-details ul[data-v-1b42dc54] {\n  display: flex;\n  flex-direction: column;\n}\n.aditional-details ul li[data-v-1b42dc54] {\n  display: inline-block;\n}\n.underlined[data-v-1b42dc54]::after {\n  background-color: #798a8a;\n  height: 1px;\n  left: 0;\n  transform: translateX(0);\n}\n.section.bottom[data-v-1b42dc54] {\n  margin-top: 1rem;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

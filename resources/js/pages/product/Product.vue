@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="right section p-3">
-                        <h2 class="mb-4 d-inline-block text_fourtriary">{{item.name}}</h2>
+                        <h2 class="mb-4 d-inline-block text_fourtriary">{{ item.name }}</h2>
                         <h1 class="price text_secondary underlined">{{ item.price }} лв.</h1>
                         <div class="aditional-details mt-5">
                             <ul>
@@ -32,11 +32,11 @@
                                 </li>
                                 <li class="text_fourtriary">
                                     <span class="me-3">Категория:</span>
-                                    <span class="text-uppercase fw-bold">{{item.productCategoryName}}</span>
+                                    <span class="text-uppercase fw-bold">{{ item.productCategoryName }}</span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="d-flex mt-5 align-items-center w-100">
+                        <div class="mt-5 add_to_cart_action">
                             <form @submit.prevent="submitFormHandler" id="buy_now" class="form">
                                 <input
                                     type="number"
@@ -48,7 +48,7 @@
                                     :class="{'disabled-class': isAddedInCart}"
                                     required
                                 />
-                                <button type="submit" class="btn_tertiary btn-inverse ms-3">
+                                <button type="submit" class="btn_tertiary btn-inverse">
                                     {{ (isAddedInCart) ? 'Премахни от ' : 'Добави в ' }}кошницата
                                 </button>
                             </form>
@@ -77,7 +77,7 @@
 </template>
 <script>
 import {useStore} from 'vuex'
-import {computed, ref, onMounted} from "vue";
+import {computed, onMounted, ref} from "vue";
 import axios from "axios";
 
 export default {
@@ -149,7 +149,13 @@ h1 {
     font-size: 3.5rem;
 }
 
-form {
+form#buy_now {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 991px) {
+        flex-direction: column;
+    }
+
     input#number {
         border: 4px solid #798a8a;
         border-radius: 0;
@@ -158,6 +164,17 @@ form {
         color: white;
         outline: 0;
         user-select: none;
+        @media screen and (max-width: 991px) {
+            width: 100%;
+        }
+    }
+
+    .btn_tertiary[type='submit'] {
+        margin: 0 0 0 1rem;
+        @media screen and (max-width: 991px) {
+            width: 100%;
+            margin: 1rem 0 0 0;
+        }
     }
 }
 
