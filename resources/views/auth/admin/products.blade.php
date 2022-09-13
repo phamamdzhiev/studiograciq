@@ -63,6 +63,7 @@
                         <option value="Alfaparf">Alfaparf</option>
                         <option value="BES">BES</option>
                         <option value="Barba Italiana">Barba Italiana</option>
+                        <option value="Mi Amante">Mi Amante</option>
                     </select>
                 </div>
                 <div class="mb-3">
