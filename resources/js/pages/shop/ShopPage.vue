@@ -9,7 +9,10 @@
 
             <CategoriesHeader @changeUri="emitHandler"/>
 
-            <div class="shop" v-if="shopItems.length > 0">
+            <div v-if="isLoading">
+                Зареждане...
+            </div>
+            <div class="shop" v-else-if="shopItems.length > 0">
                 <div v-for="item in shopItems" :key="item.id">
                     <ProductItemSingleton
                         :id="item.id"
@@ -45,6 +48,7 @@ export default {
     },
     setup() {
         const shopItems = ref([]);
+        const isLoading = ref(false);
         const DATA_API = ref('/api/products/all');
 
         // const shopItems = computed(() => {
@@ -57,11 +61,16 @@ export default {
         }
 
         function fetchData() {
+            isLoading.value = true;
             axios.get(DATA_API.value).then((res) => {
+                isLoading.value = false;
                 if (res.status === 200) {
                     shopItems.value = res.data;
                 }
-            }).catch(e => console.log('Could not fetch products', e));
+            }).catch(e => {
+                isLoading.value = false;
+                console.log('Could not fetch products', e)
+            });
         }
 
         onMounted(() => {
@@ -74,7 +83,8 @@ export default {
 
         return {
             shopItems,
-            emitHandler
+            emitHandler,
+            isLoading
         }
     }
 }
