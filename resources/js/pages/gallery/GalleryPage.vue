@@ -49,6 +49,8 @@ export default {
             {id: 21, src: '21'},
             {id: 22, src: '22'},
             {id: 23, src: '23'},
+            {id: 31, src: '31'},
+            {id: 32, src: '32'}
         ]);
 
         return {

@@ -31,6 +31,8 @@ export default {
             {id: 28, src: '28'},
             {id: 29, src: '29'},
             {id: 30, src: '30'},
+            {id: 31, src: '31'},
+            {id: 32, src: '32'}
             // {id: 16, src: '16'},
         ];
 
