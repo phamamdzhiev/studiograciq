@@ -17,7 +17,7 @@
                     <a target="_blank" class="d-inline-block mt-5 pt-5" :href="$INSTAGRAM ">
                         <h2>
                             <i class="bi bi-instagram unset "></i>
-                            Вижте още в Instagram профилът ни
+                            Вижте още в Instagram
                         </h2>
                     </a>
                 </div>

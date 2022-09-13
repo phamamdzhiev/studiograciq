@@ -36,7 +36,7 @@ export default {
     //border-bottom: 4px solid #9e49a3;
     @media screen and (max-width: 992px) {
         height: 70vh;
-        background-position: 60% 50%;
+        background-position: 57% 50%;
     }
 }
 </style>
