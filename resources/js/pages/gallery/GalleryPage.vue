@@ -44,7 +44,11 @@ export default {
             {id: 2, src: '2'},
             {id: 3, src: '3'},
             {id: 4, src: '4'},
-            {id: 5, src: '5'}
+            {id: 5, src: '5'},
+            {id: 20, src: '20'},
+            {id: 21, src: '21'},
+            {id: 22, src: '22'},
+            {id: 23, src: '23'},
         ]);
 
         return {
@@ -66,7 +70,7 @@ export default {
     aspect-ratio: 1;
     grid-template-columns: repeat(5, auto);
     @media screen and (max-width: 991px) {
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(4, auto);
     }
 }
 

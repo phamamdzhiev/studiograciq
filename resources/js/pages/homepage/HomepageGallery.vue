@@ -25,6 +25,12 @@ export default {
             // {id: 11, src: '11'},
             // {id: 12, src: '12'},
             {id: 13, src: '13'},
+            {id: 25, src: '25'},
+            {id: 26, src: '26'},
+            {id: 27, src: '27'},
+            {id: 28, src: '28'},
+            {id: 29, src: '29'},
+            {id: 30, src: '30'},
             // {id: 16, src: '16'},
         ];
 
@@ -49,11 +55,11 @@ img.gallery__img {
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, auto);
-    grid-template-rows: 275px 275px;
+    grid-template-rows: repeat(5, 275px);
 
     @media screen and (max-width: 992px) {
         grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(4, 250px);
+        grid-template-rows: repeat(6, 250px);
     }
 }
 </style>
