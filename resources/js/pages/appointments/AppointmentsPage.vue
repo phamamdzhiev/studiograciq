@@ -18,6 +18,7 @@
                 />
             </div>
             <div class="table-responsive my-5" v-if="appointments">
+                <i class="bi bi-arrow-left-right fs-1 d-block d-sm-none text-center"></i>
                 <div v-if="isLoading">
                     <h1 class="text-center my-5">Зареждане...</h1>
                 </div>
@@ -320,6 +321,13 @@ td, th {
     }
 }
 
+.bi-arrow-left-right {
+    animation: moveScroll;
+    animation-duration: 4000ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
 .slot.active {
     background-color: red;
     color: black;
@@ -329,5 +337,23 @@ td, th {
     background-color: red;
     color: black;
     width: 150%;
+}
+
+@keyframes moveScroll {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 </style>
