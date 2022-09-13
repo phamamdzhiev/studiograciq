@@ -55,7 +55,7 @@ img.gallery__img {
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(5, 275px);
+    grid-template-rows: repeat(3, 275px);
 
     @media screen and (max-width: 992px) {
 
