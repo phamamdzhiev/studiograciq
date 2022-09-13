@@ -76,7 +76,6 @@ export default {
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    //align-items: stretch;
     border-radius: 6px;
     overflow: hidden;
     @media screen and (max-width: 991px) {
