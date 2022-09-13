@@ -6,15 +6,15 @@
             :slides-per-view="4"
             :space-between="40"
             :autoplay='{
-              "delay": 2500,
+              "delay": 1500,
               "disableOnInteraction": false
             }'
         >
             <swiper-slide v-for="image in images" :key="image.id">
-                <img 
-                    width="200" 
-                    :title="image.title"  
-                    :src="`/storage/assets/brands/${image.image}`" 
+                <img
+                    width="200"
+                    :title="image.title"
+                    :src="`/storage/assets/brands/${image.image}`"
                     :alt="`${image.title} logo`"
                 />
             </swiper-slide>
@@ -37,13 +37,13 @@ export default {
     setup() {
         const swiperBreakPoints = {
             0: {
-                slidesPerView: 2,
+                slidesPerView: 1,
             },
             480: {
-                slidesPerView: 2,
+                slidesPerView: 1,
             },
             768: {
-                slidesPerView: 3,
+                slidesPerView: 2,
             },
             1024: {
                 slidesPerView: 3,

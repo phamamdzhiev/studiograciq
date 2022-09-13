@@ -1,5 +1,5 @@
 <template>
-    <div class="section-wrapper my-5 min-vh-100">
+    <div class="section-wrapper my-5">
         <div class="container-xxl">
             <div class="text-center">
                 <i style="font-size: 60px" class="bi bi-bag-heart-fill d-inline-block mb-4"></i>

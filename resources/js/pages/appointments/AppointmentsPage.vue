@@ -1,5 +1,5 @@
 <template>
-    <div class="section-wrapper my-5 min-vh-100">
+    <div class="section-wrapper my-5">
         <div class="container-xxl">
             <h1 class="my-5 d-flex align-items-center">
                 <i class="bi bi-calendar-week me-3 fs-1"></i>
@@ -18,7 +18,7 @@
                 />
             </div>
             <div class="table-responsive my-5" v-if="appointments">
-                <div class="min-vh-100" v-if="isLoading">
+                <div v-if="isLoading">
                     <h1 class="text-center my-5">Зареждане...</h1>
                 </div>
                 <div v-else>

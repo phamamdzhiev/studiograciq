@@ -45,11 +45,16 @@ const routes = [
         component: () => import("./pages/thanks/OrderThanksPage"),
     }
 ];
-
 const router = createRouter({
     mode: 'history',
     history: createWebHistory(),
     routes,
+    scrollBehavior(to, from, savedPosition) {
+        return {
+            top: 0
+        }
+    },
 });
+
 
 export default router;

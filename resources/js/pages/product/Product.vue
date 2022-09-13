@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-    <div class="mt-5 text-center min-vh-100" v-else>
+    <div class="mt-5 text-center" v-else>
         <div class="container-xxl">
             <h1 class="">Зареждане...</h1>
             <!--            <router-link class="d-inline-block mt-5 btn_secondary" to="/">-->

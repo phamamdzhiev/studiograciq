@@ -1,5 +1,5 @@
 <template>
-    <div class="section-wrapper my-5 min-vh-100">
+    <div class="section-wrapper my-5">
         <div class="container-xxl">
             <h1 class="my-5 d-flex align-items-center">
                 <i class="bi bi-image me-3 fs-1"></i>

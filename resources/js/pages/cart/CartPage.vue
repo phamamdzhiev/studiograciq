@@ -48,7 +48,7 @@
             </h1>
             <OrderFrom :cart-items="cartItems"/>
         </div>
-        <div class="text-center min-vh-100" v-else>
+        <div class="text-center" v-else>
             <h1 class="mt-5">Количката е празна!</h1>
             <router-link to="/shop" class="d-inline-block btn_secondary mt-3">Към магазина</router-link>
         </div>

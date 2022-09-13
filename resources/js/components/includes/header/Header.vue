@@ -74,19 +74,7 @@ export default {
 
 <style lang="scss" scoped>
 #header {
-    //outline: 2px solid salmon;
     position: relative;
-    //top: 0;
-    //left: 0;
-    //width: 100%;
-    div#logo {
-        transform-origin: center center;
-        transition: transform 100ms ease-in;
-
-        &:hover {
-            transform: rotate(-5deg);
-        }
-    }
 
     div#navigation {
         width: 100%;
