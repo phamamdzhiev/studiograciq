@@ -22,6 +22,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="right section p-3">
+                        <h2 class="mb-4 d-inline-block text_fourtriary">{{item.name}}</h2>
                         <h1 class="price text_secondary underlined">{{ item.price }} лв.</h1>
                         <div class="aditional-details mt-5">
                             <ul>
