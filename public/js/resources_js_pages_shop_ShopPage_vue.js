@@ -59,6 +59,7 @@ __webpack_require__.r(__webpack_exports__);
     });
 
     function handleClickEvent(value) {
+      shown.value = false;
       emit('changeUri', value);
     }
 

@@ -42,6 +42,7 @@ export default {
 
 
         function handleClickEvent(value) {
+            shown.value = false;
             emit('changeUri', value)
         }
 
