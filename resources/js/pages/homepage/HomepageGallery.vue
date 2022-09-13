@@ -58,6 +58,7 @@ img.gallery__img {
     grid-template-rows: repeat(5, 275px);
 
     @media screen and (max-width: 992px) {
+
         grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(6, 250px);
     }
