@@ -93,6 +93,7 @@
                             <div class="mb-3">
                                 <label for="service" class="form-label">Услуга</label>
                                 <select class="form-control" name="service" id="service" required>
+                                    <option value="0">{{$service->name}}</option>
                                     @foreach($services as $service)
                                         <option value="{{$service->id}}">{{$service->name}}</option>
                                     @endforeach

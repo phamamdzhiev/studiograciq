@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ServiceController extends Controller
 {
@@ -15,7 +16,7 @@ class ServiceController extends Controller
      */
     public function index(): JsonResponse
     {
-        return response()->json(Service::all());
+        return response()->json(DB::table('services')->where('price', '<>', 'no')->get());
     }
 
     /**
