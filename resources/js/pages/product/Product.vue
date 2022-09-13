@@ -22,12 +22,16 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="right section p-3">
-                        <h1 class="price text_secondary underlined">{{ item.price }} BGN</h1>
+                        <h1 class="price text_secondary underlined">{{ item.price }} лв.</h1>
                         <div class="aditional-details mt-5">
                             <ul>
                                 <li class="text_fourtriary">
                                     <span class="me-3">Каталожен номер:</span>
                                     <span>{{ item.id + '0'.repeat(2) }}</span>
+                                </li>
+                                <li class="text_fourtriary">
+                                    <span class="me-3">Категория:</span>
+                                    <span class="text-uppercase fw-bold">{{item.productCategoryName}}</span>
                                 </li>
                             </ul>
                         </div>
@@ -90,6 +94,7 @@ export default {
             axios.get(`/api/products/single/${props.id}`).then((res) => {
                 if (res.status === 200) {
                     item.value = res.data;
+                    console.log('item ', item.value)
                 }
             }).catch(e => console.log('Could not fetch products', e));
         });

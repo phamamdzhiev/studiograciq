@@ -47,6 +47,24 @@ __webpack_require__.r(__webpack_exports__);
     }, {
       id: 5,
       src: '5'
+    }, {
+      id: 20,
+      src: '20'
+    }, {
+      id: 21,
+      src: '21'
+    }, {
+      id: 22,
+      src: '22'
+    }, {
+      id: 23,
+      src: '23'
+    }, {
+      id: 31,
+      src: '31'
+    }, {
+      id: 32,
+      src: '32'
     }]);
     return {
       images: images
@@ -74,7 +92,7 @@ var _withScopeId = function _withScopeId(n) {
 };
 
 var _hoisted_1 = {
-  "class": "section-wrapper my-5 min-vh-100"
+  "class": "section-wrapper my-5"
 };
 var _hoisted_2 = {
   "class": "container-xxl"
@@ -106,7 +124,7 @@ var _hoisted_8 = ["href"];
 var _hoisted_9 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
     "class": "bi bi-instagram unset"
-  }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Вижте още в Instagram профилът ни ")], -1
+  }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Вижте още в Instagram ")], -1
   /* HOISTED */
   );
 });
@@ -152,7 +170,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".gallery[data-v-1b16746a] {\n  --s: 150px; /* controls the size */\n  --f: 1.2; /* controls the scale factor */\n  display: grid;\n  gap: 15px;\n  width: 100%;\n  margin: auto;\n  aspect-ratio: 1;\n  grid-template-columns: repeat(5, auto);\n}\n@media screen and (max-width: 991px) {\n.gallery[data-v-1b16746a] {\n    grid-template-columns: repeat(3, auto);\n}\n}\n.gallery__img[data-v-1b16746a] {\n  width: 0;\n  height: 0;\n  min-height: 100%;\n  min-width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: all 300ms ease-in;\n}\n.gallery img[data-v-1b16746a]:hover {\n  width: calc(var(--s) * var(--f));\n  height: calc(var(--s) * var(--f));\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".gallery[data-v-1b16746a] {\n  --s: 150px; /* controls the size */\n  --f: 1.2; /* controls the scale factor */\n  display: grid;\n  gap: 15px;\n  width: 100%;\n  margin: auto;\n  aspect-ratio: 1;\n  grid-template-columns: repeat(5, auto);\n}\n@media screen and (max-width: 991px) {\n.gallery[data-v-1b16746a] {\n    grid-template-columns: repeat(4, auto);\n}\n}\n.gallery__img[data-v-1b16746a] {\n  width: 0;\n  height: 0;\n  min-height: 100%;\n  min-width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: all 300ms ease-in;\n}\n.gallery img[data-v-1b16746a]:hover {\n  width: calc(var(--s) * var(--f));\n  height: calc(var(--s) * var(--f));\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

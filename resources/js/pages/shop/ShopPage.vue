@@ -14,8 +14,8 @@
                     <ProductItemSingleton
                         :id="item.id"
                         :image="item.image_big"
-                        :title="item.title"
-                        :desc="item.desc"
+                        :name="item.name"
+                        :brand="item.brand"
                         :price="item.price"
                     />
                 </div>

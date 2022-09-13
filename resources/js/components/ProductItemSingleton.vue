@@ -1,13 +1,13 @@
-\<template>
+<template>
     <div class="shop-item-singleton text-center p-4">
         <router-link :to="`/product/${id}`">
             <img :src="`/storage/products/${image}`"
                  class="img-fluid mb-4"
                  alt="Product item image"
             />
-            <h1 class="item-heading fw-light">{{title}}</h1>
-            <p class="my-3 text_fourtriary">{{desc}}</p>
-            <p class="fw-bold text_secondary mt-5" id="price">{{price}} BGN</p>
+            <h4 class="text-uppercase fw-bold">{{brand}}</h4>
+            <h3 class="item-heading fw-light my-3">{{name}}</h3>
+            <p class="fw-bold text_secondary" id="price">{{price}} лв.</p>
         </router-link>
     </div>
 </template>
@@ -15,7 +15,7 @@
 <script>
 export default {
     name: "ProductItemSingleton",
-    props: ['image', 'title', 'desc', 'price', 'id']
+    props: ['image', 'name', 'desc', 'price', 'id', 'brand']
 }
 </script>
 
@@ -26,12 +26,12 @@ export default {
     justify-content: center;
     background-color: #1d2223;
 
-    .item-heading {
-        font-size: 2.6rem;
-        @media screen and (max-width: 1024px) {
-            font-size: 2.2rem;
-        }
-    }
+    //.item-heading {
+    //    font-size: 2.6rem;
+    //    @media screen and (max-width: 1024px) {
+    //        font-size: 2.2rem;
+    //    }
+    //}
 
     p#price {
         font-size: 2.2rem;

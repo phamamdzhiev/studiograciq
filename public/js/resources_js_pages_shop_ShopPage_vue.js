@@ -288,12 +288,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ProductItemSingleton, {
       id: item.id,
       image: item.image_big,
-      title: item.title,
-      desc: item.desc,
+      name: item.name,
+      brand: item.brand,
       price: item.price
     }, null, 8
     /* PROPS */
-    , ["id", "image", "title", "desc", "price"])]);
+    , ["id", "image", "name", "brand", "price"])]);
   }), 128
   /* KEYED_FRAGMENT */
   ))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, _hoisted_7))])])], 64

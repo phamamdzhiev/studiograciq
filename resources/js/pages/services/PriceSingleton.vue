@@ -1,7 +1,7 @@
 <template>
     <div class="price-singleton py-4">
         <span class="me-3"> {{ title }} </span>
-        <span class="text_secondary fw-bold"> {{ price }} BGN </span>
+        <span class="text_secondary fw-bold"> {{ price }} лв.</span>
     </div>
 </template>
 <script>

@@ -256,7 +256,7 @@ var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
 
 var _hoisted_17 = {
   key: 1,
-  "class": "text-center min-vh-100"
+  "class": "text-center"
 };
 
 var _hoisted_18 = /*#__PURE__*/_withScopeId(function () {
@@ -290,11 +290,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
     }, 1032
     /* PROPS, DYNAMIC_SLOTS */
-    , ["to"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.price) + " BGN", 1
+    , ["to"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.price) + " лв.", 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.amount) + " бр.", 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((item.price * item.amount).toFixed(2)) + " BGN", 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((item.price * item.amount).toFixed(2)) + " лв.", 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       "class": "btn",
@@ -307,7 +307,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , _hoisted_8)])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.grandTotal.toFixed(2)) + " BGN", 1
+  ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.grandTotal.toFixed(2)) + " лв.", 1
   /* TEXT */
   )])]), _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_OrderFrom, {
     "cart-items": $setup.cartItems
@@ -430,8 +430,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
         options: {
           '1': 'Взимане от салона - ул. Стоян Попов 8, гр. Пещера',
-          '2': 'Доставка с ЕКОНТ до адрес (+ 7 BGN)',
-          '3': 'Доставка с ЕКОНТ до oфис (+ 5 BGN)'
+          '2': 'Доставка с ЕКОНТ до адрес (+ 7 лв.)',
+          '3': 'Доставка с ЕКОНТ до oфис (+ 5 лв.)'
         },
         validation: "required"
       }, null, 8

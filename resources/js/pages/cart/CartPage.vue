@@ -23,9 +23,9 @@
                                 {{ item.name }}
                             </router-link>
                         </td>
-                        <td>{{ item.price }} BGN</td>
+                        <td>{{ item.price }} лв.</td>
                         <td>{{ item.amount }} бр.</td>
-                        <td>{{ (item.price * item.amount).toFixed(2) }} BGN</td>
+                        <td>{{ (item.price * item.amount).toFixed(2) }} лв.</td>
                         <th>
                             <button class="btn" type="button" @click="removeItem(item.id)">
                                 <i class="bi bi-x text_tertiary fs-1"></i>
@@ -39,7 +39,7 @@
             <div class="total">
                 <div class="mt-5 d-flex justify-content-end align-items-center">
                     <i class="bi bi-bag-check fs-1 me-3"></i>
-                    Обща стойност: <strong class="ps-2"> {{ grandTotal.toFixed(2) }} BGN</strong>
+                    Обща стойност: <strong class="ps-2"> {{ grandTotal.toFixed(2) }} лв.</strong>
                 </div>
             </div>
             <h1 class="mb-5 d-flex align-items-center">

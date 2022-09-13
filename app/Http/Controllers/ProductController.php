@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\ProductCategory;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -52,7 +51,13 @@ class ProductController extends Controller
     public function show(int $id): JsonResponse
     {
         try {
-            return response()->json(Product::findOrFail($id));
+            $product = DB::table('products as p')
+                ->where('p.id', '=', $id)
+                ->join('product_categories as pc', 'pc.id', '=', 'p.category_id')
+                ->select('p.*', 'pc.name as productCategoryName')
+                ->first();
+
+            return response()->json($product);
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());
         }
