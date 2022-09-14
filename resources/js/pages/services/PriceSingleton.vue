@@ -20,6 +20,9 @@ export default {
     flex-flow: row nowrap;
     width: 100%;
     border-bottom: 2px dotted #3b4146;
-    white-space: nowrap;
+    @media screen and (max-width: 991px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 </style>
