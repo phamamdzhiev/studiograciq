@@ -3,7 +3,7 @@
         <router-link :to="`/product/${id}`">
             <img :src="`/storage/products/${image}`"
                  class="img-fluid mb-4"
-                 alt="Product item image"
+                 :alt="name"
             />
             <h4 class="text-uppercase fw-bold">{{brand}}</h4>
             <h3 class="item-heading fw-light my-3">{{name}}</h3>

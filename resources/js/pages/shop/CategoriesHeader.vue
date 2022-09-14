@@ -6,13 +6,13 @@
         </div>
         <template v-if="productsCategories.length > 0">
             <ul id="shop_categories" v-show="shown">
-                <li>
-                    <button class="d-block mb-3 btn_tertiary" @click="handleClickEvent(null)">
+                <li class="mb-2 me-2">
+                    <button class="d-block btn_tertiary" @click="handleClickEvent(null)">
                         Всички
                     </button>
                 </li>
-                <li v-for="category in productsCategories" :key="category.id">
-                    <button class="d-block mb-3 btn_tertiary text-capitalize" @click="handleClickEvent(category.id)">
+                <li class="mb-2 me-2" v-for="category in productsCategories" :key="category.id">
+                    <button class="d-block btn_tertiary text-capitalize" @click="handleClickEvent(category.id)">
                         {{ category.name }}
                     </button>
                 </li>
