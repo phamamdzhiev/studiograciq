@@ -184,6 +184,7 @@ td, th {
 
         &[data-minutes-end="30"] {
             width: 50%;
+            float: left;
         }
     }
 

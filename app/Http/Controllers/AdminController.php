@@ -167,7 +167,7 @@ class AdminController extends Controller
         }
         try {
             Appointment::create([
-                'name' => $request->input('name'),
+                'name' => '?',
                 'service_id' => $request->input('service'),
                 'client_id' => $request->input('customer'),
                 'day' => $request->input('date'),
