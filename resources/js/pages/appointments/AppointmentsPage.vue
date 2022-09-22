@@ -161,9 +161,10 @@ td, th {
     }
 
     &:after {
-        display: block;
+        display: table;
         content: 'Зает';
         position: absolute;
+        clear: both;
         top: 50%;
         left: 50%;
         width: 100%;
@@ -185,6 +186,7 @@ td, th {
         &[data-minutes-end="30"] {
             width: 50%;
             float: left;
+            overflow: auto;
         }
     }
 
