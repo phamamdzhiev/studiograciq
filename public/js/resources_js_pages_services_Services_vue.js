@@ -292,7 +292,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".heading[data-v-67516474] {\n  font-size: 5rem;\n}\n@media screen and (max-width: 992px) {\n.heading[data-v-67516474] {\n    font-size: 2.6rem;\n}\n}\n@media screen and (max-width: 576px) {\nimg#banner-image[data-v-67516474] {\n    height: 200px;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".heading[data-v-67516474] {\n  font-size: 5rem;\n}\n@media screen and (max-width: 992px) {\n.heading[data-v-67516474] {\n    font-size: 2.6rem;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -315,7 +315,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".price-singleton[data-v-eff4404c] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-flow: row nowrap;\n  width: 100%;\n  border-bottom: 2px dotted #3b4146;\n  white-space: nowrap;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".price-singleton[data-v-eff4404c] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-flow: row nowrap;\n  width: 100%;\n  border-bottom: 2px dotted #3b4146;\n}\n@media screen and (max-width: 991px) {\n.price-singleton[data-v-eff4404c] {\n    flex-direction: column;\n    align-items: flex-start;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

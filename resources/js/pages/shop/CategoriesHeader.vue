@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div class="d-flex align-items-center mb-4 fw-bold text_tertiary" role="button" @click="shown = !shown">
+        <button class="btn btn_tertiary text-white btn-inverse fs-4 py-1 px-3 d-flex align-items-center mb-4 fw-bold" role="button" @click="shown = !shown">
             Категории
-            <i :class="!shown ? 'bi-arrow-down-short' : 'bi-arrow-up-short'" class="bi ps-1 text_tertiary"></i>
-        </div>
-        <template v-if="productsCategories.length > 0">
+            <i :class="!shown ? 'bi-list' : 'bi-x-lg'" class="bi ps-1 text-white"></i>
+        </button>
+        <div v-if="productsCategories.length > 0">
             <ul id="shop_categories" v-show="shown">
                 <li class="mb-2 me-2">
                     <button class="d-block btn_tertiary" @click="handleClickEvent(null)">
@@ -17,7 +17,7 @@
                     </button>
                 </li>
             </ul>
-        </template>
+        </div>
     </div>
 </template>
 
@@ -27,7 +27,7 @@ import axios from "axios";
 
 export default {
     name: "CategoriesHeader",
-    setup(props, {emit}) {
+    setup(_, {emit}) {
         const productsCategories = ref([]);
         const DATA_API = '/api/products/categories'
         const shown = ref(false);
@@ -37,7 +37,7 @@ export default {
                 if (res.status === 200) {
                     productsCategories.value = res.data;
                 }
-            })
+            }).catch(e => console.log(e, 'Could not fetch categories'));
         });
 
 

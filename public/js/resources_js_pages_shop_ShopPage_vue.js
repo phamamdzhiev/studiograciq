@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "CategoriesHeader",
-  setup: function setup(props, _ref) {
+  setup: function setup(_, _ref) {
     var emit = _ref.emit;
     var productsCategories = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
     var DATA_API = '/api/products/categories';
@@ -55,6 +55,8 @@ __webpack_require__.r(__webpack_exports__);
         if (res.status === 200) {
           productsCategories.value = res.data;
         }
+      })["catch"](function (e) {
+        return console.log(e, 'Could not fetch categories');
       });
     });
 
@@ -205,25 +207,27 @@ var _withScopeId = function _withScopeId(n) {
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Категории ");
 
 var _hoisted_2 = {
-  key: 0,
-  id: "shop_categories"
+  key: 0
 };
 var _hoisted_3 = {
+  id: "shop_categories"
+};
+var _hoisted_4 = {
   "class": "mb-2 me-2"
 };
-var _hoisted_4 = ["onClick"];
+var _hoisted_5 = ["onClick"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "d-flex align-items-center mb-4 fw-bold text_tertiary",
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "btn btn_tertiary text-white btn-inverse fs-4 py-1 px-3 d-flex align-items-center mb-4 fw-bold",
     role: "button",
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.shown = !$setup.shown;
     })
   }, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([!$setup.shown ? 'bi-arrow-down-short' : 'bi-arrow-up-short', "bi ps-1 text_tertiary"])
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([!$setup.shown ? 'bi-list' : 'bi-x-lg', "bi ps-1 text-white"])
   }, null, 2
   /* CLASS */
-  )]), $setup.productsCategories.length > 0 ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  )]), $setup.productsCategories.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "d-block btn_tertiary",
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.handleClickEvent(null);
@@ -239,12 +243,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(category.name), 9
     /* TEXT, PROPS */
-    , _hoisted_4)]);
+    , _hoisted_5)]);
   }), 128
   /* KEYED_FRAGMENT */
   ))], 512
   /* NEED_PATCH */
-  )), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.shown]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.shown]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),
@@ -355,7 +359,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".heading[data-v-67516474] {\n  font-size: 5rem;\n}\n@media screen and (max-width: 992px) {\n.heading[data-v-67516474] {\n    font-size: 2.6rem;\n}\n}\n@media screen and (max-width: 576px) {\nimg#banner-image[data-v-67516474] {\n    height: 200px;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".heading[data-v-67516474] {\n  font-size: 5rem;\n}\n@media screen and (max-width: 992px) {\n.heading[data-v-67516474] {\n    font-size: 2.6rem;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -401,7 +405,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".heading[data-v-73a6ffb6] {\n  color: black !important;\n}\n.shop[data-v-73a6ffb6] {\n  display: grid;\n  grid-template-columns: repeat(5, 1fr);\n  gap: 15px;\n}\n@media screen and (max-width: 991px) {\n.shop[data-v-73a6ffb6] {\n    grid-template-columns: repeat(2, 1fr);\n}\n}\n@media screen and (max-width: 576px) {\n.shop[data-v-73a6ffb6] {\n    grid-template-columns: repeat(1, 1fr);\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".heading[data-v-73a6ffb6] {\n  color: black !important;\n}\n.shop[data-v-73a6ffb6] {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 15px;\n}\n@media screen and (max-width: 991px) {\n.shop[data-v-73a6ffb6] {\n    grid-template-columns: repeat(2, 1fr);\n}\n}\n@media screen and (max-width: 576px) {\n.shop[data-v-73a6ffb6] {\n    grid-template-columns: repeat(1, 1fr);\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

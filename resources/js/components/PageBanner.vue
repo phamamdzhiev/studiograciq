@@ -32,10 +32,4 @@ export default {
         font-size: 2.6rem;
     }
 }
-
-img#banner-image {
-    @media screen and (max-width: 576px) {
-        height: 200px;
-    }
-}
 </style>

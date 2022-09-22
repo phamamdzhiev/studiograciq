@@ -97,7 +97,7 @@ export default {
 
 .shop {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 
     @media screen and (max-width: 991px) {
