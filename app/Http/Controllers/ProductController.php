@@ -22,6 +22,8 @@ class ProductController extends Controller
     {
         if ($request->has('category')) {
             $sql = DB::table('products')->where('category_id', '=', $request->query('category'));
+        } else if ($request->has('latest')) {
+            $sql = DB::table('products')->latest()->take(10);
         } else {
             $sql = DB::table('products');
         }
