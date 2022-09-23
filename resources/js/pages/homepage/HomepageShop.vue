@@ -1,6 +1,6 @@
 <template>
   <div class="section-wrapper my-5 text-center">
-    <h1 class="text-start text_tertiary mb-5">Последно добавени</h1>
+    <h1 class="text-start text_fourtriary mb-5">Последно добавени</h1>
     <swiper
       :breakpoints="swiperBreakPoints"
       :slides-per-view="4"
@@ -21,7 +21,7 @@
     </swiper>
     <router-link
       class="btn_tertiary btn-inverse mt-5 d-inline-block"
-      to="/gallery"
+      to="/shop"
     >
       Към магазина
     </router-link>
