@@ -85,6 +85,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var shipping = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
     var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_2__.useRouter)();
     var store = (0,vuex__WEBPACK_IMPORTED_MODULE_3__.useStore)();
+    var errorMessage = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
 
     function submitHandler(_x) {
       return _submitHandler.apply(this, arguments);
@@ -124,15 +125,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return router.replace('/thanks');
 
               case 10:
-                _context.next = 15;
+                _context.next = 16;
                 break;
 
               case 12:
                 _context.prev = 12;
                 _context.t0 = _context["catch"](2);
                 console.log('Cannot proceed with checkout', _context.t0);
+                errorMessage.value = 'Оопс! Нещо се обърка, моля опитайте отново!';
 
-              case 15:
+              case 16:
               case "end":
                 return _context.stop();
             }
@@ -144,7 +146,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     return {
       shipping: shipping,
-      submitHandler: submitHandler
+      submitHandler: submitHandler,
+      errorMessage: errorMessage
     };
   }
 });
@@ -350,13 +353,17 @@ var _hoisted_1 = {
   "class": "container text-black p-5"
 };
 var _hoisted_2 = {
-  "class": "d-grid"
+  key: 0,
+  "class": "mb-5 text-danger"
 };
 var _hoisted_3 = {
+  "class": "d-grid"
+};
+var _hoisted_4 = {
   key: 0
 };
 
-var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "class": "formkit-label"
   }, "Доставка", -1
@@ -364,7 +371,7 @@ var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", {
     "class": "text-white"
   }, "* Всички поръчки се изпращат с наложен платеж")], -1
@@ -375,7 +382,9 @@ var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_FormKit = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("FormKit");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [$setup.errorMessage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h3", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.errorMessage), 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
     type: "form",
     id: "order-form",
     "submit-label": "",
@@ -384,7 +393,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSubmit: $setup.submitHandler
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
         type: "text",
         name: "name",
         label: "Име",
@@ -399,7 +408,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         name: "email",
         label: "Имейл",
         validation: "required|email"
-      }), $setup.shipping === '2' || $setup.shipping === '3' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
+      }), $setup.shipping === '2' || $setup.shipping === '3' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
         type: "text",
         name: "street",
         label: $setup.shipping === '2' ? 'Адрес на клиента' : 'Адрес на офис на Еконт',
@@ -421,7 +430,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         name: "postal_code",
         label: "Пощенски код",
         validation: "required"
-      })])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
+      })])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormKit, {
         type: "radio",
         name: "shipping",
         modelValue: $setup.shipping,
@@ -440,7 +449,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "submit",
         label: "Поръчай",
         "input-class": "$reset btn_tertiary"
-      }), _hoisted_5];
+      }), _hoisted_6];
     }),
     _: 1
     /* STABLE */

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderMailNotification;
 use App\Models\Order;
 use App\Models\ShopCustomer;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -68,6 +70,8 @@ class OrderController extends Controller
                 ]
             );
         }
+
+        Mail::to('info@studiograciq.com')->send(new OrderMailNotification());
 
         return response()->json($newOrder);
     }

@@ -1,5 +1,8 @@
 <template>
     <div id="order-form-wrapper" class="container text-black p-5">
+        <h3 v-if="errorMessage" class="mb-5 text-danger">
+            {{errorMessage}}
+        </h3>
         <FormKit
             type="form"
             id="order-form"
@@ -96,6 +99,7 @@ export default {
         const shipping = ref(null);
         const router = useRouter();
         const store = useStore();
+        const errorMessage = ref(null);
 
         async function submitHandler(orderData) {
             const cartItems = props.cartItems.map(e => {
@@ -118,12 +122,14 @@ export default {
                 }
             } catch (e) {
                 console.log('Cannot proceed with checkout', e);
+                errorMessage.value = 'Оопс! Нещо се обърка, моля опитайте отново!';
             }
         }
 
         return {
             shipping,
-            submitHandler
+            submitHandler,
+            errorMessage
         }
     }
 }
