@@ -64,7 +64,7 @@ app.use(VueLazyLoad, {
 });
 app.config.globalProperties.$MOBILE_CONST = '+359897371439'
 app.config.globalProperties.$MOBILE_CONST_HR = '+359 897 371 439'
-app.config.globalProperties.$ADDRESS_STREET_CONST = 'ул. Александър Стамболийски 45'
+app.config.globalProperties.$ADDRESS_STREET_CONST = 'ул. Ал. Стамболийски 45'
 app.config.globalProperties.$ADDRESS_CITY_CONST = 'Пещера'
 app.config.globalProperties.$FACEBOOK = 'https://www.facebook.com/studio.gratzia'
 app.config.globalProperties.$INSTAGRAM = 'https://www.instagram.com/hairstyle_studio_graciq'

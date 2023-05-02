@@ -8,7 +8,7 @@
         </li>
         <li>
             <i class="bi bi-geo-alt-fill text_secondary me-2"></i>
-            <a href="https://goo.gl/maps/1Bm3DzHKc4eHLhgh9" target="_blank">
+            <a href="https://goo.gl/maps/KuiTdiCH93d8QXuf7" target="_blank">
                {{$ADDRESS_STREET_CONST}}, {{$ADDRESS_CITY_CONST}}
             </a>
         </li>

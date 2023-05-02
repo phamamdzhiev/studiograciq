@@ -7,7 +7,7 @@
                 <span class="d-block"> {{ $ADDRESS_CITY_CONST }} </span>
             </h3>
             <a
-                href="https://goo.gl/maps/1Bm3DzHKc4eHLhgh9"
+                href="https://goo.gl/maps/KuiTdiCH93d8QXuf7"
                 target="_blank"
                 class="d-inline-block fw-bold text_tertiary"
             >Виж на картата</a
